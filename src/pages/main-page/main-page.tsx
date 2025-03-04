@@ -3,9 +3,9 @@ import PlaceCard from '../../components/place-card/place-card';
 
 type MainPageProps = {
   placesCount: number;
-}
+};
 
-function MainPage ({placesCount}: MainPageProps) {
+function MainPage({ placesCount }: MainPageProps) {
   return (
     <div className="page page--gray page--main">
       <Header />
@@ -61,16 +61,27 @@ function MainPage ({placesCount}: MainPageProps) {
                   </svg>
                 </span>
                 <ul className="places__options places__options--custom places__options">
-                  <li className="places__option places__option--active" tabIndex={0}>Popular</li>
-                  <li className="places__option" tabIndex={0}>Price: low to high</li>
-                  <li className="places__option" tabIndex={0}>Price: high to low</li>
-                  <li className="places__option" tabIndex={0}>Top rated first</li>
+                  <li
+                    className="places__option places__option--active"
+                    tabIndex={0}
+                  >
+                    Popular
+                  </li>
+                  <li className="places__option" tabIndex={0}>
+                    Price: low to high
+                  </li>
+                  <li className="places__option" tabIndex={0}>
+                    Price: high to low
+                  </li>
+                  <li className="places__option" tabIndex={0}>
+                    Top rated first
+                  </li>
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                {
-                  Array.from({length: placesCount}, (_, index) => <PlaceCard key={index}/>)
-                }
+                {Array.from({ length: placesCount }, (_, index) => (
+                  <PlaceCard key={index} />
+                ))}
               </div>
             </section>
             <div className="cities__right-section">
