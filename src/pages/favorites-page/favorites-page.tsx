@@ -1,10 +1,6 @@
-import PlaceCard from '../../components/place-card/place-card';
+import Footer from '../../components/footer/footer';
 
-type FavoritesPageProps = {
-  placesCount: number;
-};
-
-function FavoritesPage({ placesCount }: FavoritesPageProps) {
+function FavoritesPage() {
   return (
     <div className="page">
       <header className="header">
@@ -60,9 +56,6 @@ function FavoritesPage({ placesCount }: FavoritesPageProps) {
                   </div>
                 </div>
                 <div className="favorites__places">
-                  {Array.from({ length: placesCount }, (_, index) => (
-                    <PlaceCard key={index} block="favorites" size="small" />
-                  ))}
                   <article className="favorites__card place-card">
                     <div className="place-card__mark">
                       <span>Premium</span>
@@ -223,17 +216,7 @@ function FavoritesPage({ placesCount }: FavoritesPageProps) {
           </section>
         </div>
       </main>
-      <footer className="footer container">
-        <a className="footer__logo-link" href="main.html">
-          <img
-            className="footer__logo"
-            src="img/logo.svg"
-            alt="6 cities logo"
-            width="64"
-            height="33"
-          />
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }
