@@ -14,4 +14,24 @@ const ImageSize: TSize = {
   large: { width: '260', height: '200' },
 } as const;
 
-export { Settings, BookmarkSize, ImageSize };
+enum Cities {
+  Paris = 'Paris',
+  Cologne = 'Cologne',
+  Brussels = 'Brussels',
+  Amsterdam = 'Amsterdam',
+  Hamburg = 'Hamburg',
+  Dusseldorf = 'Dusseldorf',
+}
+
+const CityMap = {
+  [Cities.Paris]: { id: 1, name: Cities.Paris },
+  [Cities.Cologne]: { id: 2, name: Cities.Cologne },
+  [Cities.Brussels]: { id: 3, name: Cities.Brussels },
+  [Cities.Amsterdam]: { id: 4, name: Cities.Amsterdam },
+  [Cities.Hamburg]: { id: 5, name: Cities.Hamburg },
+  [Cities.Dusseldorf]: { id: 6, name: Cities.Dusseldorf },
+};
+
+const DEFAULT_CITY = CityMap[Cities.Paris];
+
+export { Settings, BookmarkSize, ImageSize, Cities, CityMap, DEFAULT_CITY };
