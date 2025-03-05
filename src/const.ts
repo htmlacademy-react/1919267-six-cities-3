@@ -34,4 +34,22 @@ const CityMap = {
 
 const DEFAULT_CITY = CityMap[Cities.Paris];
 
-export { Settings, BookmarkSize, ImageSize, Cities, CityMap, DEFAULT_CITY };
+enum Sorting {
+  Popular = 'Popular',
+  LowToHigh = 'Price: low to high',
+  HighToLow = 'Price: high to low',
+  TopRating = 'Top rated first',
+}
+
+const DEFAULT_SORTING_OPTION = Sorting['LowToHigh'];
+
+export {
+  Settings,
+  BookmarkSize,
+  ImageSize,
+  Cities,
+  CityMap,
+  DEFAULT_CITY,
+  Sorting,
+  DEFAULT_SORTING_OPTION,
+};
