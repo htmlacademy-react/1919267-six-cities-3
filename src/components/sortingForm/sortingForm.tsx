@@ -19,16 +19,25 @@ function SortingForm({ activeSorting, onSortingOptionClick }: SortingProps) {
     onSortingOptionClick(type);
   }
 
+  const arrowStyle = {
+    transform: `translateY(-50%) ${isOpen ? 'rotate(180deg)' : ''}`,
+  };
+
   return (
     <form className="places__sorting" action="#" method="get">
-      <span className="places__sorting-caption">Sort by</span>
+      <span className="places__sorting-caption">Sort by </span>
       <span
         className="places__sorting-type"
         tabIndex={0}
         onClick={handleTypeClick}
       >
         {activeSorting}
-        <svg className="places__sorting-arrow" width="7" height="4">
+        <svg
+          className="places__sorting-arrow"
+          width="7"
+          height="4"
+          style={arrowStyle}
+        >
           <use xlinkHref="#icon-arrow-select"></use>
         </svg>
       </span>

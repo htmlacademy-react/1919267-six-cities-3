@@ -46,7 +46,7 @@ enum Sorting {
   TopRating = 'Top rated first',
 }
 
-const DEFAULT_SORTING_OPTION = Sorting['LowToHigh'];
+const DEFAULT_SORTING_OPTION = Sorting['Popular'];
 
 export {
   Settings,
