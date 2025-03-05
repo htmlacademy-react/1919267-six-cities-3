@@ -1,7 +1,11 @@
-import cn from 'classnames';
 import HeaderNavigation from '../header-navigation/header-navigation';
+import Logo from '../logo/logo';
 
-function Header() {
+type HeaderProps = {
+  withNav?: boolean;
+};
+
+function Header({ withNav = true }: HeaderProps) {
   //временное решение
   const isLoggedIn = true;
 
@@ -10,21 +14,9 @@ function Header() {
       <div className="container">
         <div className="header__wrapper">
           <div className="header__left">
-            <a
-              className={cn('header__logo-link', {
-                'header__logo-link--active': isLoggedIn,
-              })}
-            >
-              <img
-                className="header__logo"
-                src="img/logo.svg"
-                alt="6 cities logo"
-                width="81"
-                height="41"
-              />
-            </a>
+            <Logo block="header" size="large" />
           </div>
-          <HeaderNavigation isLoggedIn={isLoggedIn} />
+          {withNav && <HeaderNavigation isLoggedIn={isLoggedIn} />}
         </div>
       </div>
     </header>

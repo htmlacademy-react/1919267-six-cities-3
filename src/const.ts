@@ -14,6 +14,11 @@ const ImageSize: TSize = {
   large: { width: '260', height: '200' },
 } as const;
 
+const LogoSize: TSize = {
+  small: { width: '64', height: '33' },
+  large: { width: '81', height: '41' },
+} as const;
+
 enum Cities {
   Paris = 'Paris',
   Cologne = 'Cologne',
@@ -47,6 +52,7 @@ export {
   Settings,
   BookmarkSize,
   ImageSize,
+  LogoSize,
   Cities,
   CityMap,
   DEFAULT_CITY,
