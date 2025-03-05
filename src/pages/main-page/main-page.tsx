@@ -80,7 +80,7 @@ function MainPage({ placesCount }: MainPageProps) {
               </form>
               <div className="cities__places-list places__list tabs__content">
                 {Array.from({ length: placesCount }, (_, index) => (
-                  <PlaceCard key={index} />
+                  <PlaceCard key={index} block="cities" size="large" />
                 ))}
               </div>
             </section>

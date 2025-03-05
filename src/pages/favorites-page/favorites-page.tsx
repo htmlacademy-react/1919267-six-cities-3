@@ -1,4 +1,10 @@
-function FavoritesPage() {
+import PlaceCard from '../../components/place-card/place-card';
+
+type FavoritesPageProps = {
+  placesCount: number;
+};
+
+function FavoritesPage({ placesCount }: FavoritesPageProps) {
   return (
     <div className="page">
       <header className="header">
@@ -54,6 +60,9 @@ function FavoritesPage() {
                   </div>
                 </div>
                 <div className="favorites__places">
+                  {Array.from({ length: placesCount }, (_, index) => (
+                    <PlaceCard key={index} block="favorites" size="small" />
+                  ))}
                   <article className="favorites__card place-card">
                     <div className="place-card__mark">
                       <span>Premium</span>
