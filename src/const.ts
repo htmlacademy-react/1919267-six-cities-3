@@ -1,5 +1,19 @@
 import { TSize } from './types/size';
 
+const AppRoute = {
+  root: '/',
+  login: '/login',
+  favorites: '/ favorites',
+  offer: '/offer',
+  notFound: '*',
+} as const;
+
+enum AuthStatus {
+  Auth = 'AUTH',
+  NoAuth = 'NO_AUTH',
+  Unknown = 'UNKNOWN',
+}
+
 const Settings = {
   PLACES_COUNT: 5,
 } as const;
@@ -49,6 +63,8 @@ enum Sorting {
 const DEFAULT_SORTING_OPTION = Sorting['Popular'];
 
 export {
+  AppRoute,
+  AuthStatus,
   Settings,
   BookmarkSize,
   ImageSize,

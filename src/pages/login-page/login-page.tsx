@@ -1,9 +1,14 @@
 import Header from '../../components/header/header';
+import { AuthStatus } from '../../const';
 
-function LoginPage() {
+type LoginPageProps = {
+  authorizationStatus: AuthStatus;
+};
+
+function LoginPage({ authorizationStatus }: LoginPageProps) {
   return (
     <div className="page page--gray page--login">
-      <Header withNav={false} />
+      <Header isAuth={authorizationStatus} />
 
       <main className="page__main page__main--login">
         <div className="page__login-container container">

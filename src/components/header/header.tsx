@@ -1,13 +1,14 @@
+import { useLocation } from 'react-router-dom';
+import { AppRoute, AuthStatus } from '../../const';
 import HeaderNavigation from '../header-navigation/header-navigation';
 import Logo from '../logo/logo';
 
 type HeaderProps = {
-  withNav?: boolean;
+  isAuth: AuthStatus;
 };
 
-function Header({ withNav = true }: HeaderProps) {
-  //временное решение
-  const isLoggedIn = true;
+function Header({ isAuth }: HeaderProps) {
+  const { pathname } = useLocation();
 
   return (
     <header className="header">
@@ -16,7 +17,7 @@ function Header({ withNav = true }: HeaderProps) {
           <div className="header__left">
             <Logo block="header" size="large" />
           </div>
-          {withNav && <HeaderNavigation isLoggedIn={isLoggedIn} />}
+          {pathname !== AppRoute.login && <HeaderNavigation isAuth={isAuth} />}
         </div>
       </div>
     </header>

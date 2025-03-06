@@ -2,15 +2,21 @@ import { useState } from 'react';
 import Header from '../../components/header/header';
 import PlaceCard from '../../components/place-card/place-card';
 import Tabs from '../../components/tabs/tabs';
-import { DEFAULT_CITY, DEFAULT_SORTING_OPTION, Sorting } from '../../const';
+import {
+  AuthStatus,
+  DEFAULT_CITY,
+  DEFAULT_SORTING_OPTION,
+  Sorting,
+} from '../../const';
 import { TCity } from '../../types/city';
 import SortingForm from '../../components/sortingForm/sortingForm';
 
 type MainPageProps = {
   placesCount: number;
+  authorizationStatus: AuthStatus;
 };
 
-function MainPage({ placesCount }: MainPageProps) {
+function MainPage({ placesCount, authorizationStatus }: MainPageProps) {
   const [currentCity, setCurrentCity] = useState<TCity>(DEFAULT_CITY);
   const [activeSorting, setActiveSorting] = useState<Sorting>(
     DEFAULT_SORTING_OPTION,
@@ -18,7 +24,7 @@ function MainPage({ placesCount }: MainPageProps) {
 
   return (
     <div className="page page--gray page--main">
-      <Header />
+      <Header isAuth={authorizationStatus} />
 
       <main className="page__main page__main--index">
         <h1 className="visually-hidden">Cities</h1>

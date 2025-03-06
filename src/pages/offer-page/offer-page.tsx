@@ -1,9 +1,14 @@
 import Header from '../../components/header/header';
+import { AuthStatus } from '../../const';
 
-function OfferPage() {
+type OfferPageProps = {
+  authorizationStatus: AuthStatus;
+};
+
+function OfferPage({ authorizationStatus }: OfferPageProps) {
   return (
     <div className="page">
-      <Header />
+      <Header isAuth={authorizationStatus} />
 
       <main className="page__main page__main--offer">
         <section className="offer">

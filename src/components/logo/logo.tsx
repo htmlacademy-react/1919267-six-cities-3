@@ -1,4 +1,5 @@
-import { LogoSize } from '../../const';
+import { Link } from 'react-router-dom';
+import { AppRoute, LogoSize } from '../../const';
 import { TSize } from '../../types/size';
 
 type LogoProps = {
@@ -8,14 +9,17 @@ type LogoProps = {
 
 function Logo({ block, size }: LogoProps) {
   return (
-    <a className={`${block}__logo-link ${block}__logo-link--active`}>
+    <Link
+      to={AppRoute.root}
+      className={`${block}__logo-link ${block}__logo-link--active`}
+    >
       <img
         className={`${block}__logo`}
         src="img/logo.svg"
         alt="6 cities logo"
         {...LogoSize[size]}
       />
-    </a>
+    </Link>
   );
 }
 

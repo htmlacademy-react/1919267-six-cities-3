@@ -1,10 +1,15 @@
 import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
+import { AuthStatus } from '../../const';
 
-function FavoritesPage() {
+type FavoritesPageProps = {
+  authorizationStatus: AuthStatus;
+};
+
+function FavoritesPage({ authorizationStatus }: FavoritesPageProps) {
   return (
     <div className="page">
-      <Header />
+      <Header isAuth={authorizationStatus} />
 
       <main className="page__main page__main--favorites">
         <div className="page__favorites-container container">
