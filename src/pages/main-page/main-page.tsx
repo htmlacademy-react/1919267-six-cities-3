@@ -10,13 +10,14 @@ import {
 } from '../../const';
 import { City } from '../../types/city';
 import SortingForm from '../../components/sortingForm/sortingForm';
+import { Offer } from '../../types/offer';
 
 type MainPageProps = {
-  placesCount: number;
+  offers: Offer[];
   authorizationStatus: AuthStatus;
 };
 
-function MainPage({ placesCount, authorizationStatus }: MainPageProps) {
+function MainPage({ offers, authorizationStatus }: MainPageProps) {
   const [currentCity, setCurrentCity] = useState<City>(DEFAULT_CITY);
   const [activeSorting, setActiveSorting] = useState<Sorting>(
     DEFAULT_SORTING_OPTION,
@@ -39,8 +40,8 @@ function MainPage({ placesCount, authorizationStatus }: MainPageProps) {
                 onSortingOptionClick={setActiveSorting}
               />
               <div className="cities__places-list places__list tabs__content">
-                {Array.from({ length: placesCount }, (_, index) => (
-                  <PlaceCard key={index} block="cities" size="large" />
+                {offers.map((offer) => (
+                  <PlaceCard key={offer.id} block="cities" size="large" />
                 ))}
               </div>
             </section>

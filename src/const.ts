@@ -15,10 +15,6 @@ enum AuthStatus {
   Unknown = 'UNKNOWN',
 }
 
-const Settings = {
-  PLACES_COUNT: 5,
-} as const;
-
 const BookmarkSize: Size = {
   small: { width: '18', height: '19' },
   large: { width: '31', height: '33' },
@@ -108,7 +104,6 @@ const DEFAULT_SORTING_OPTION = Sorting['Popular'];
 export {
   AppRoute,
   AuthStatus,
-  Settings,
   BookmarkSize,
   ImageSize,
   LogoSize,

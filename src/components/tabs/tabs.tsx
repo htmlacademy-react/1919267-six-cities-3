@@ -1,15 +1,23 @@
 import { Dispatch, SetStateAction } from 'react';
-import { CityMap } from '../../const';
-import { TCity } from '../../types/city';
+import { CITIES, CityName } from '../../const';
+import { City } from '../../types/city';
 import cn from 'classnames';
 
 type TabsProps = {
-  currentCity: TCity;
-  onTabClick: Dispatch<SetStateAction<TCity>>;
+  currentCity: City;
+  onTabClick: Dispatch<SetStateAction<City>>;
 };
 
 function Tabs({ currentCity, onTabClick }: TabsProps) {
-  const cities = Object.values(CityMap);
+  const cities = CITIES.map((city) => city.name);
+
+  const handleTabClick = (city: keyof typeof CityName) => {
+    const selectedCity = CITIES.find((item) => item.name === city);
+    if (!selectedCity) {
+      return;
+    }
+    onTabClick(selectedCity);
+  };
 
   return (
     <div className="tabs">
@@ -17,17 +25,17 @@ function Tabs({ currentCity, onTabClick }: TabsProps) {
         <ul className="locations__list tabs__list">
           {cities.map((item) => (
             <li
-              key={item.id}
+              key={item}
               className="locations__item"
-              onClick={() => onTabClick(item)}
+              onClick={() => handleTabClick(item)}
             >
               <a
                 className={cn('locations__item-link', 'tabs__item', {
-                  'tabs__item--active': item === currentCity,
+                  'tabs__item--active': item === currentCity.name,
                 })}
                 href="#"
               >
-                <span>{item.name}</span>
+                <span>{item}</span>
               </a>
             </li>
           ))}

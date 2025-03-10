@@ -6,22 +6,20 @@ import LoginPage from '../../pages/login-page/login-page';
 import OfferPage from '../../pages/offer-page/offer-page';
 import NotFoundPage from '../../pages/not-found-page/not-found-page';
 import PrivateRoute from '../private-route/private-route';
+import { Offer } from '../../types/offer';
 
 type AppProps = {
-  placesCount: number;
+  offers: Offer[];
 };
 
-function App({ placesCount }: AppProps) {
+function App({ offers }: AppProps) {
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path={AppRoute.root}
           element={
-            <MainPage
-              placesCount={placesCount}
-              authorizationStatus={AuthStatus.Auth}
-            />
+            <MainPage offers={offers} authorizationStatus={AuthStatus.Auth} />
           }
         />
         <Route
