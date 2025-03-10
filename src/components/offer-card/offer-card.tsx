@@ -1,14 +1,14 @@
 import { ImageSize } from '../../const';
-import { TSize } from '../../types/size';
+import { Size } from '../../types/size';
 import BookmarkButton from '../bookmark-button/bookmark-button';
 import PremiumMark from '../premium-mark/premium-mark';
 
-type PlaceCardProps = {
+type OfferCardProps = {
   block: 'favorites' | 'cities';
-  size: keyof TSize;
+  size: keyof Size;
 };
 
-function PlaceCard({ block, size }: PlaceCardProps) {
+function OfferCard({ block, size }: OfferCardProps) {
   return (
     <article className={`${block}__card place-card`}>
       <PremiumMark block="place-card" />
@@ -45,4 +45,4 @@ function PlaceCard({ block, size }: PlaceCardProps) {
   );
 }
 
-export default PlaceCard;
+export default OfferCard;

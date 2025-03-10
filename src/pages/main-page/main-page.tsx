@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Header from '../../components/header/header';
-import PlaceCard from '../../components/place-card/place-card';
+import OfferCard from '../../components/offer-card/offer-card';
 import Tabs from '../../components/tabs/tabs';
 import {
   AuthStatus,
@@ -34,14 +34,16 @@ function MainPage({ offers, authorizationStatus }: MainPageProps) {
           <div className="cities__places-container container">
             <section className="cities__places places">
               <h2 className="visually-hidden">Places</h2>
-              <b className="places__found">312 places to stay in Amsterdam</b>
+              <b className="places__found">
+                {offers.length} places to stay in {currentCity.name}
+              </b>
               <SortingForm
                 activeSorting={activeSorting}
                 onSortingOptionClick={setActiveSorting}
               />
               <div className="cities__places-list places__list tabs__content">
                 {offers.map((offer) => (
-                  <PlaceCard key={offer.id} block="cities" size="large" />
+                  <OfferCard key={offer.id} block="cities" size="large" />
                 ))}
               </div>
             </section>
