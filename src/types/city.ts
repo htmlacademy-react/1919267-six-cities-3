@@ -1,6 +1,7 @@
-import { Cities } from '../const';
+import { CityName } from '../const';
+import { Location } from './location';
 
-export type TCity = {
-  id: number;
-  name: keyof typeof Cities;
+export type City = {
+  name: (typeof CityName)[keyof typeof CityName];
+  location: Location;
 };

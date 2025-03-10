@@ -8,7 +8,7 @@ import {
   DEFAULT_SORTING_OPTION,
   Sorting,
 } from '../../const';
-import { TCity } from '../../types/city';
+import { City } from '../../types/city';
 import SortingForm from '../../components/sortingForm/sortingForm';
 
 type MainPageProps = {
@@ -17,7 +17,7 @@ type MainPageProps = {
 };
 
 function MainPage({ placesCount, authorizationStatus }: MainPageProps) {
-  const [currentCity, setCurrentCity] = useState<TCity>(DEFAULT_CITY);
+  const [currentCity, setCurrentCity] = useState<City>(DEFAULT_CITY);
   const [activeSorting, setActiveSorting] = useState<Sorting>(
     DEFAULT_SORTING_OPTION,
   );

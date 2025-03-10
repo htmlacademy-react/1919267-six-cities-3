@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import { AppRoute, LogoSize } from '../../const';
-import { TSize } from '../../types/size';
+import { Size } from '../../types/size';
 
 type LogoProps = {
   block: 'header' | 'footer';
-  size: keyof TSize;
+  size: keyof Size;
 };
 
 function Logo({ block, size }: LogoProps) {
