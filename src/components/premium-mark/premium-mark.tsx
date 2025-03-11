@@ -1,11 +1,12 @@
 type PremiumMarkProps = {
   block: 'place-card' | 'offer';
+  isPremium: boolean;
 };
 
-function PremiumMark({ block }: PremiumMarkProps) {
+function PremiumMark({ block, isPremium }: PremiumMarkProps) {
   return (
-    <div className={`${block}__mark`}>
-      <span>Premium</span>
+    <div className={isPremium ? `${block}__mark` : 'visually-hidden'}>
+      <span>{isPremium ? 'Premium' : null}</span>
     </div>
   );
 }

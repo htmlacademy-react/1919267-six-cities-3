@@ -1,7 +1,8 @@
 import { Dispatch, SetStateAction } from 'react';
-import { CITIES, CityName } from '../../const';
+import { AppRoute, CITIES, CityName } from '../../const';
 import { City } from '../../types/city';
 import cn from 'classnames';
+import { Link } from 'react-router-dom';
 
 type TabsProps = {
   currentCity: City;
@@ -29,14 +30,14 @@ function Tabs({ currentCity, onTabClick }: TabsProps) {
               className="locations__item"
               onClick={() => handleTabClick(item)}
             >
-              <a
+              <Link
                 className={cn('locations__item-link', 'tabs__item', {
                   'tabs__item--active': item === currentCity.name,
                 })}
-                href="#"
+                to={AppRoute.root}
               >
                 <span>{item}</span>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

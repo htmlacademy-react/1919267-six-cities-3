@@ -1,16 +1,10 @@
 import { useState } from 'react';
 import Header from '../../components/header/header';
-import OfferCard from '../../components/offer-card/offer-card';
 import Tabs from '../../components/tabs/tabs';
-import {
-  AuthStatus,
-  DEFAULT_CITY,
-  DEFAULT_SORTING_OPTION,
-  Sorting,
-} from '../../const';
+import { AuthStatus, DEFAULT_CITY } from '../../const';
 import { City } from '../../types/city';
-import SortingForm from '../../components/sortingForm/sortingForm';
 import { Offer } from '../../types/offer';
+import MainBlock from '../../components/main-block/main-block';
 
 type MainPageProps = {
   offers: Offer[];
@@ -19,9 +13,6 @@ type MainPageProps = {
 
 function MainPage({ offers, authorizationStatus }: MainPageProps) {
   const [currentCity, setCurrentCity] = useState<City>(DEFAULT_CITY);
-  const [activeSorting, setActiveSorting] = useState<Sorting>(
-    DEFAULT_SORTING_OPTION,
-  );
 
   return (
     <div className="page page--gray page--main">
@@ -31,26 +22,7 @@ function MainPage({ offers, authorizationStatus }: MainPageProps) {
         <h1 className="visually-hidden">Cities</h1>
         <Tabs currentCity={currentCity} onTabClick={setCurrentCity} />
         <div className="cities">
-          <div className="cities__places-container container">
-            <section className="cities__places places">
-              <h2 className="visually-hidden">Places</h2>
-              <b className="places__found">
-                {offers.length} places to stay in {currentCity.name}
-              </b>
-              <SortingForm
-                activeSorting={activeSorting}
-                onSortingOptionClick={setActiveSorting}
-              />
-              <div className="cities__places-list places__list tabs__content">
-                {offers.map((offer) => (
-                  <OfferCard key={offer.id} block="cities" size="large" />
-                ))}
-              </div>
-            </section>
-            <div className="cities__right-section">
-              <section className="cities__map map"></section>
-            </div>
-          </div>
+          <MainBlock currentLocation={currentCity} currentOffers={offers} />
         </div>
       </main>
     </div>
