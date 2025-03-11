@@ -3,7 +3,7 @@ import Header from '../../components/header/header';
 import OfferCard from '../../components/offer-card/offer-card';
 import { AuthStatus } from '../../const';
 import { Offer } from '../../types/offer';
-import { getOffersByLocation } from '../../utils/offer';
+import { groupOffersByLocation } from '../../utils/offer';
 
 type FavoritesPageProps = {
   offers: Offer[];
@@ -12,7 +12,7 @@ type FavoritesPageProps = {
 
 function FavoritesPage({ offers, authorizationStatus }: FavoritesPageProps) {
   const favorites = offers.filter((item) => item.isFavorite);
-  const favoritesByLocation = getOffersByLocation(favorites);
+  const favoritesByLocation = groupOffersByLocation(favorites);
 
   return (
     <div className="page">

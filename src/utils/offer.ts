@@ -4,7 +4,7 @@ function getRatingWidth(rating: number | undefined) {
   return rating ? `${rating / 0.05}%` : '0%';
 }
 
-function getOffersByLocation(items: Offer[]) {
+function groupOffersByLocation(items: Offer[]) {
   return items.reduce<{ [key: string]: Offer[] }>((acc, current) => {
     const location = current.city.name;
     if (!(location in acc)) {
@@ -16,4 +16,4 @@ function getOffersByLocation(items: Offer[]) {
   }, {});
 }
 
-export { getRatingWidth, getOffersByLocation };
+export { getRatingWidth, groupOffersByLocation };
