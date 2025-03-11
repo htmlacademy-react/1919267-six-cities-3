@@ -30,7 +30,10 @@ function App({ offers }: AppProps) {
           path={AppRoute.favorites}
           element={
             <PrivateRoute authorizationStatus={AuthStatus.Auth}>
-              <FavoritesPage authorizationStatus={AuthStatus.Auth} />
+              <FavoritesPage
+                offers={offers}
+                authorizationStatus={AuthStatus.Auth}
+              />
             </PrivateRoute>
           }
         />

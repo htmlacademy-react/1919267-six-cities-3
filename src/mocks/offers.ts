@@ -171,4 +171,42 @@ export const Offers: Offer[] = [
     ],
     maxAdults: 4,
   },
+  {
+    id: '4da58b5e-1a67-40f0-b998-2af668bbdfc8',
+    title: 'Penthouse, 4-5 rooms + 5 balconies',
+    type: OfferType.Room,
+    price: 111,
+    previewImage: 'https://15.design.htmlacademy.pro/static/hotel/12.jpg',
+    city: {
+      name: 'Paris',
+      location: {
+        latitude: 48.85661,
+        longitude: 2.351499,
+        zoom: 13,
+      },
+    },
+    location: {
+      latitude: 48.858610000000006,
+      longitude: 2.330499,
+      zoom: 16,
+    },
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Washer'],
+    isFavorite: true,
+    isPremium: false,
+    rating: 4.1,
+    bedrooms: 1,
+    description:
+      'A new spacious villa, one floor. All commodities, jacuzzi and beautiful scenery. Ideal for families or friends.',
+    host: {
+      id: 25,
+      name: 'Angelina',
+      isPro: true,
+      avatarUrl: 'img/avatar-angelina.jpg',
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/11.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/2.jpg',
+    ],
+    maxAdults: 2,
+  },
 ];

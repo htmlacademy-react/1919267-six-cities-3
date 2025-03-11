@@ -10,7 +10,7 @@ type OfferCardProps = {
   offer: Offer;
   block: 'favorites' | 'cities';
   size: keyof Size;
-  onCardHover: (offerId: Offer['id'] | null) => void;
+  onCardHover?: (offerId: Offer['id'] | null) => void;
 };
 
 function OfferCard({ offer, block, size, onCardHover }: OfferCardProps) {
