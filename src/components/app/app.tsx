@@ -24,7 +24,9 @@ function App({ offers }: AppProps) {
         />
         <Route
           path={`${AppRoute.offer}/:id`}
-          element={<OfferPage authorizationStatus={AuthStatus.Auth} />}
+          element={
+            <OfferPage offers={offers} authorizationStatus={AuthStatus.Auth} />
+          }
         />
         <Route
           path={AppRoute.favorites}

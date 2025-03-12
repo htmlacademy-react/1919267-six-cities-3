@@ -22,17 +22,17 @@ export const Offers: Offer[] = [
       longitude: 2.342499,
       zoom: 16,
     },
-    goods: ['Laptop friendly workspace', 'Breakfast'],
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
     isFavorite: true,
     isPremium: true,
-    rating: 3.1,
+    rating: 3.5,
     bedrooms: 1,
     description:
       'A new spacious villa, one floor. All commodities, jacuzzi and beautiful scenery. Ideal for families or friends.',
     host: {
       id: 25,
       name: 'Angelina',
-      isPro: true,
+      isPro: false,
       avatarUrl: 'img/avatar-angelina.jpg',
     },
     images: [
@@ -117,10 +117,10 @@ export const Offers: Offer[] = [
     description:
       'A new spacious villa, one floor. All commodities, jacuzzi and beautiful scenery. Ideal for families or friends.',
     host: {
-      id: 25,
-      name: 'Angelina',
+      id: 36,
+      name: 'Max',
       isPro: true,
-      avatarUrl: 'img/avatar-angelina.jpg',
+      avatarUrl: 'img/avatar-max.jpg',
     },
     images: [
       'https://15.design.htmlacademy.pro/static/hotel/3.jpg',
@@ -172,10 +172,10 @@ export const Offers: Offer[] = [
     maxAdults: 4,
   },
   {
-    id: '4da58b5e-1a67-40f0-b998-2af668bbdfc8',
+    id: '4da58b5e-1a67-40f0-b998-2af668bsssdfc8',
     title: 'Penthouse, 4-5 rooms + 5 balconies',
-    type: OfferType.Room,
-    price: 111,
+    type: OfferType.House,
+    price: 1111,
     previewImage: 'https://15.design.htmlacademy.pro/static/hotel/12.jpg',
     city: {
       name: 'Paris',
@@ -194,19 +194,23 @@ export const Offers: Offer[] = [
     isFavorite: true,
     isPremium: false,
     rating: 4.1,
-    bedrooms: 1,
+    bedrooms: 4,
     description:
       'A new spacious villa, one floor. All commodities, jacuzzi and beautiful scenery. Ideal for families or friends.',
     host: {
-      id: 25,
-      name: 'Angelina',
-      isPro: true,
-      avatarUrl: 'img/avatar-angelina.jpg',
+      id: 36,
+      name: 'Max',
+      isPro: false,
+      avatarUrl: 'img/avatar-max.jpg',
     },
     images: [
       'https://15.design.htmlacademy.pro/static/hotel/11.jpg',
       'https://15.design.htmlacademy.pro/static/hotel/2.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/3.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/7.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/8.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/9.jpg',
     ],
-    maxAdults: 2,
+    maxAdults: 8,
   },
 ];
