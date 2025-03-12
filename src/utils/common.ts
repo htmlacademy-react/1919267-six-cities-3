@@ -6,4 +6,11 @@ function addPluralEnding(itemsCount: number) {
   return itemsCount > 1 ? 's' : '';
 }
 
-export { capitalizeFirstLetter, addPluralEnding };
+function formatDate(date: Date) {
+  const month = date.toLocaleString('en-US', { month: 'long' });
+  const year = date.getFullYear();
+
+  return `${month} ${year}`;
+}
+
+export { capitalizeFirstLetter, addPluralEnding, formatDate };

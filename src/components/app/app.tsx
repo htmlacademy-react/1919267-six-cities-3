@@ -7,12 +7,14 @@ import OfferPage from '../../pages/offer-page/offer-page';
 import NotFoundPage from '../../pages/not-found-page/not-found-page';
 import PrivateRoute from '../private-route/private-route';
 import { Offer } from '../../types/offer';
+import { Review } from '../../types/review';
 
 type AppProps = {
   offers: Offer[];
+  reviews: Review[];
 };
 
-function App({ offers }: AppProps) {
+function App({ offers, reviews }: AppProps) {
   return (
     <BrowserRouter>
       <Routes>
@@ -25,7 +27,11 @@ function App({ offers }: AppProps) {
         <Route
           path={`${AppRoute.offer}/:id`}
           element={
-            <OfferPage offers={offers} authorizationStatus={AuthStatus.Auth} />
+            <OfferPage
+              offers={offers}
+              reviews={reviews}
+              authorizationStatus={AuthStatus.Auth}
+            />
           }
         />
         <Route
