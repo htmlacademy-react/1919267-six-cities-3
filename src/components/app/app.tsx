@@ -49,7 +49,10 @@ function App({ offers, reviews }: AppProps) {
           path={AppRoute.login}
           element={<LoginPage authorizationStatus={AuthStatus.Auth} />}
         />
-        <Route path={AppRoute.notFound} element={<NotFoundPage />} />
+        <Route
+          path={AppRoute.notFound}
+          element={<NotFoundPage type="page" />}
+        />
       </Routes>
     </BrowserRouter>
   );

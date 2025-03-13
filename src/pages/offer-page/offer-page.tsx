@@ -24,7 +24,7 @@ function OfferPage({ offers, authorizationStatus, reviews }: OfferPageProps) {
   );
 
   if (!currentOffer) {
-    return <NotFoundPage />;
+    return <NotFoundPage type="offer" />;
   }
 
   const {
