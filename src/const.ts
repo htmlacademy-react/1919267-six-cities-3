@@ -101,6 +101,9 @@ enum Sorting {
 
 const DEFAULT_SORTING_OPTION = Sorting['Popular'];
 
+const MIN_COMMENT_LENGTH = 50;
+const MAX_COMMENT_LENGTH = 300;
+
 export {
   AppRoute,
   AuthStatus,
@@ -112,4 +115,6 @@ export {
   DEFAULT_CITY,
   Sorting,
   DEFAULT_SORTING_OPTION,
+  MIN_COMMENT_LENGTH,
+  MAX_COMMENT_LENGTH,
 };

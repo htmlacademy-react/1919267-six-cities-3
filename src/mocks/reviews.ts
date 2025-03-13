@@ -14,7 +14,7 @@ export const reviews: Review[] = [
     rating: 2,
   },
   {
-    id: 'b67ddfd5-b953-4a30-8c8d-bd083cd6b62a',
+    id: 'b67ddfd5-b953-4a30-8c8d-bd083cff6b62a',
     date: '2020-08-08T18:00:00.569Z',
     user: {
       name: 'Sara Parker',
