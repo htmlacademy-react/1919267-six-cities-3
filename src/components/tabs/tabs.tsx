@@ -1,15 +1,24 @@
 import { Dispatch, SetStateAction } from 'react';
-import { CityMap } from '../../const';
-import { TCity } from '../../types/city';
+import { AppRoute, CITIES, CityName } from '../../const';
+import { City } from '../../types/city';
 import cn from 'classnames';
+import { Link } from 'react-router-dom';
 
 type TabsProps = {
-  currentCity: TCity;
-  onTabClick: Dispatch<SetStateAction<TCity>>;
+  currentCity: City;
+  onTabClick: Dispatch<SetStateAction<City>>;
 };
 
 function Tabs({ currentCity, onTabClick }: TabsProps) {
-  const cities = Object.values(CityMap);
+  const cities = CITIES.map((city) => city.name);
+
+  const handleTabClick = (city: keyof typeof CityName) => {
+    const selectedCity = CITIES.find((item) => item.name === city);
+    if (!selectedCity) {
+      return;
+    }
+    onTabClick(selectedCity);
+  };
 
   return (
     <div className="tabs">
@@ -17,18 +26,18 @@ function Tabs({ currentCity, onTabClick }: TabsProps) {
         <ul className="locations__list tabs__list">
           {cities.map((item) => (
             <li
-              key={item.id}
+              key={item}
               className="locations__item"
-              onClick={() => onTabClick(item)}
+              onClick={() => handleTabClick(item)}
             >
-              <a
+              <Link
                 className={cn('locations__item-link', 'tabs__item', {
-                  'tabs__item--active': item === currentCity,
+                  'tabs__item--active': item === currentCity.name,
                 })}
-                href="#"
+                to={AppRoute.root}
               >
-                <span>{item.name}</span>
-              </a>
+                <span>{item}</span>
+              </Link>
             </li>
           ))}
         </ul>
