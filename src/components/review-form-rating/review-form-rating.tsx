@@ -6,11 +6,11 @@ type ReviewFormRatingProps = {
 };
 
 const ratingMap: Array<{ title: RatingString; value: RatingNumber }> = [
-  { title: 'excellent', value: 5 },
+  { title: 'perfect', value: 5 },
   { title: 'good', value: 4 },
   { title: 'not bad', value: 3 },
-  { title: 'bad', value: 2 },
-  { title: 'terrible', value: 1 },
+  { title: 'badly', value: 2 },
+  { title: 'terribly', value: 1 },
 ];
 
 function ReviewFormRating({ handleChange }: ReviewFormRatingProps) {

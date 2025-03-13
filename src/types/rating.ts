@@ -1,8 +1,8 @@
 export type RatingString =
-  | 'excellent'
+  | 'perfect'
   | 'good'
   | 'not bad'
-  | 'bad'
-  | 'terrible';
+  | 'badly'
+  | 'terribly';
 
 export type RatingNumber = 5 | 4 | 3 | 2 | 1;
