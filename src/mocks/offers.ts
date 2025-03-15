@@ -2,7 +2,7 @@ import { CityName } from '../const';
 import { Offer } from '../types/offer';
 import { OfferType } from '../types/offer-preview';
 
-export const Offers: Offer[] = [
+export const OFFERS: Offer[] = [
   {
     id: 'cefbdb9e-af28-4166-90ed-273428016b25',
     title: 'Wood and stone place',

@@ -1,15 +1,47 @@
+/**
+ * Capitalizes the first letter of a given word.
+ *
+ * @param {string} word - The word to capitalize.
+ * @returns {string} - The word with its first letter capitalized.
+ */
 function capitalizeFirstLetter(word: string) {
   return word.slice(0, 1).toUpperCase() + word.slice(1);
 }
 
-function addPluralEnding(itemsCount: number) {
+/**
+ * Adds a plural ending to a word based on the count.
+ *
+ * @param {number} itemsCount - The number of items.
+ * @returns {string} - An empty string if the count is 1 or less, otherwise 's'.
+ */
+function addPluralEnding(itemsCount: number): string {
   return itemsCount > 1 ? 's' : '';
 }
 
-function formatDate(date: Date) {
+/**
+ * Formats a date by converting it into a string in the format "Month Year",
+ * where Month is the full English name of the month,
+ * and Year is the four-digit year.
+ *
+ * @param {Date} date The date to be formatted.
+ * @returns {string} The formatted date as a string.
+ */
+function formatDate(date: Date): string {
+  /**
+   * Gets the full English name of the month
+   * (e.g., 'January', 'February', etc.)
+   */
   const month = date.toLocaleString('en-US', { month: 'long' });
+
+  /**
+   * Obtains the full four-digit year (e.g., 2023)
+   */
   const year = date.getFullYear();
 
+  /**
+   * Constructs the final string in the format "Month Year"
+   * and returns the result.
+   */
   return `${month} ${year}`;
 }
 
