@@ -5,6 +5,7 @@ import { addPluralEnding } from '../../utils/common';
 import SortingForm from '../sortingForm/sortingForm';
 import { DEFAULT_SORTING_OPTION, Sorting } from '../../const';
 import OffersCardList from '../offers-card-list/offers-card-list';
+import Map from '../map/map';
 
 type MainBlockProps = {
   currentLocation: City;
@@ -12,10 +13,13 @@ type MainBlockProps = {
 };
 
 function MainBlock({ currentLocation, currentOffers }: MainBlockProps) {
-  const [, setHoveredOfferId] = useState<Offer['id'] | null>(null);
+  const [hoveredOfferId, setHoveredOfferId] = useState<Offer['id'] | null>(
+    null,
+  );
   const [activeSorting, setActiveSorting] = useState<Sorting>(
     DEFAULT_SORTING_OPTION,
   );
+  const locationForMap = currentOffers[0].city;
 
   function handleCardHover(offerId: Offer['id'] | null) {
     setHoveredOfferId(offerId);
@@ -43,7 +47,12 @@ function MainBlock({ currentLocation, currentOffers }: MainBlockProps) {
         />
       </section>
       <div className="cities__right-section">
-        <section className="cities__map map"></section>
+        <Map
+          offers={currentOffers}
+          city={locationForMap}
+          hoveredOfferId={hoveredOfferId}
+          className={'cities__map'}
+        />
       </div>
     </div>
   );

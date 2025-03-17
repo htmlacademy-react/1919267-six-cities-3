@@ -10,6 +10,7 @@ import { getRatingWidth } from '../../utils/offer';
 import cn from 'classnames';
 import ReviewsList from '../../components/reviews-list/reviews-list';
 import { Review } from '../../types/review';
+import Map from '../../components/map/map';
 
 type OfferPageProps = {
   offers: Offer[];
@@ -28,6 +29,7 @@ function OfferPage({ offers, authorizationStatus, reviews }: OfferPageProps) {
   }
 
   const {
+    id: offerId,
     images,
     isPremium,
     title,
@@ -39,6 +41,7 @@ function OfferPage({ offers, authorizationStatus, reviews }: OfferPageProps) {
     maxAdults,
     rating,
     description,
+    city,
   } = currentOffer;
 
   const { name: hostName, isPro, avatarUrl } = currentOffer.host;
@@ -143,7 +146,12 @@ function OfferPage({ offers, authorizationStatus, reviews }: OfferPageProps) {
               />
             </div>
           </div>
-          <section className="offer__map map"></section>
+          <Map
+            city={city}
+            offers={offers}
+            hoveredOfferId={offerId}
+            className="offer__map"
+          />
         </section>
         <div className="container">
           <section className="near-places places">

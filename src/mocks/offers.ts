@@ -14,13 +14,13 @@ export const OFFERS: Offer[] = [
       location: {
         latitude: 52.37403,
         longitude: 4.88969,
-        zoom: 13,
+        zoom: 12,
       },
     },
     location: {
       latitude: 52.3909553943508,
       longitude: 4.85309666406198,
-      zoom: 16,
+      zoom: 12,
     },
     goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
     isFavorite: true,
@@ -50,15 +50,15 @@ export const OFFERS: Offer[] = [
     city: {
       name: CityName.Amsterdam,
       location: {
-        latitude: 52.37403,
-        longitude: 4.88969,
-        zoom: 13,
+        latitude: 52.3609553943508,
+        longitude: 4.85309666406198,
+        zoom: 12,
       },
     },
     location: {
-      latitude: 48.858610000000006,
-      longitude: 2.330499,
-      zoom: 16,
+      latitude: 52.3609553943508,
+      longitude: 4.85309666406198,
+      zoom: 12,
     },
     goods: ['Laptop friendly workspace', 'Breakfast', 'Washer'],
     isFavorite: false,
@@ -88,14 +88,14 @@ export const OFFERS: Offer[] = [
     city: {
       name: CityName.Amsterdam,
       location: {
-        latitude: 52.37403,
-        longitude: 4.88969,
-        zoom: 13,
+        latitude: 52.3609553943508,
+        longitude: 4.940309666406198,
+        zoom: 12,
       },
     },
     location: {
-      latitude: 48.834610000000005,
-      longitude: 4.85309666406198,
+      latitude: 52.385540000000006,
+      longitude: 4.902976,
       zoom: 16,
     },
     goods: [
@@ -139,13 +139,13 @@ export const OFFERS: Offer[] = [
       location: {
         latitude: 52.37403,
         longitude: 4.88969,
-        zoom: 13,
+        zoom: 12,
       },
     },
     location: {
       latitude: 52.3909553943508,
       longitude: 4.929309666406198,
-      zoom: 16,
+      zoom: 12,
     },
     goods: [
       'Breakfast',
@@ -182,13 +182,13 @@ export const OFFERS: Offer[] = [
       location: {
         latitude: 48.85661,
         longitude: 2.351499,
-        zoom: 13,
+        zoom: 12,
       },
     },
     location: {
       latitude: 52.3809553943508,
       longitude: 4.939309666406198,
-      zoom: 16,
+      zoom: 12,
     },
     goods: ['Laptop friendly workspace', 'Breakfast', 'Washer'],
     isFavorite: true,
