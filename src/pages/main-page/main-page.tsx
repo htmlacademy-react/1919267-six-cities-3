@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Header from '../../components/header/header';
 import Tabs from '../../components/tabs/tabs';
 import { AuthStatus, DEFAULT_CITY } from '../../const';
-import { City } from '../../types/city';
 import { Offer } from '../../types/offer';
 import MainBlock from '../../components/main-block/main-block';
 
@@ -12,7 +11,7 @@ type MainPageProps = {
 };
 
 function MainPage({ offers, authorizationStatus }: MainPageProps) {
-  const [currentCity, setCurrentCity] = useState<City>(DEFAULT_CITY);
+  const [currentCity, setCurrentCity] = useState(DEFAULT_CITY);
 
   return (
     <div className="page page--gray page--main">
