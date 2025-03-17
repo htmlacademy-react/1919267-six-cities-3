@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction } from 'react';
 import { AppRoute, CITIES, CityName } from '../../const';
 import { City } from '../../types/city';
 import cn from 'classnames';
@@ -6,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 type TabsProps = {
   currentCity: City;
-  onTabClick: Dispatch<SetStateAction<City>>;
+  onTabClick: (city: City) => void;
 };
 
 function Tabs({ currentCity, onTabClick }: TabsProps) {

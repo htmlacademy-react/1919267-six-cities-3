@@ -1,6 +1,6 @@
 import { Review } from '../types/review';
 
-export const reviews: Review[] = [
+export const REVIEWS: Review[] = [
   {
     id: 'b67ddfd5-b953-4a30-8c8d-bd083cd6b62a',
     date: '2019-01-08T14:13:56.569Z',

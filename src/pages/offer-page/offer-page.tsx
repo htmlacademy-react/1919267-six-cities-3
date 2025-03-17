@@ -5,11 +5,12 @@ import { Offer } from '../../types/offer';
 import NotFoundPage from '../not-found-page/not-found-page';
 import PremiumMark from '../../components/premium-mark/premium-mark';
 import BookmarkButton from '../../components/bookmark-button/bookmark-button';
-import { capitalizeFirstLetter } from '../../utils/common';
+import { addPluralEnding, capitalizeFirstLetter } from '../../utils/common';
 import { getRatingWidth } from '../../utils/offer';
 import cn from 'classnames';
 import ReviewsList from '../../components/reviews-list/reviews-list';
 import { Review } from '../../types/review';
+import Map from '../../components/map/map';
 
 type OfferPageProps = {
   offers: Offer[];
@@ -28,6 +29,7 @@ function OfferPage({ offers, authorizationStatus, reviews }: OfferPageProps) {
   }
 
   const {
+    id: offerId,
     images,
     isPremium,
     title,
@@ -39,14 +41,10 @@ function OfferPage({ offers, authorizationStatus, reviews }: OfferPageProps) {
     maxAdults,
     rating,
     description,
+    city,
   } = currentOffer;
 
   const { name: hostName, isPro, avatarUrl } = currentOffer.host;
-
-  const bedroomsCapacity =
-    bedrooms > 1 ? `${bedrooms} Bedrooms` : `${bedrooms} Bedroom`;
-  const adultsQuantity =
-    maxAdults > 1 ? `Max ${maxAdults} adults` : `Max ${maxAdults} adult`;
 
   return (
     <div className="page">
@@ -92,10 +90,10 @@ function OfferPage({ offers, authorizationStatus, reviews }: OfferPageProps) {
                   {capitalizeFirstLetter(type)}
                 </li>
                 <li className="offer__feature offer__feature--bedrooms">
-                  {bedroomsCapacity}
+                  {bedrooms} Bedroom{addPluralEnding(bedrooms)}
                 </li>
                 <li className="offer__feature offer__feature--adults">
-                  {adultsQuantity}
+                  Max {maxAdults} adult{addPluralEnding(maxAdults)}
                 </li>
               </ul>
               <div className="offer__price">
@@ -143,7 +141,12 @@ function OfferPage({ offers, authorizationStatus, reviews }: OfferPageProps) {
               />
             </div>
           </div>
-          <section className="offer__map map"></section>
+          <Map
+            city={city}
+            offers={offers}
+            hoveredOfferId={offerId}
+            className="offer__map"
+          />
         </section>
         <div className="container">
           <section className="near-places places">

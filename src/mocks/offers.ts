@@ -2,7 +2,7 @@ import { CityName } from '../const';
 import { Offer } from '../types/offer';
 import { OfferType } from '../types/offer-preview';
 
-export const Offers: Offer[] = [
+export const OFFERS: Offer[] = [
   {
     id: 'cefbdb9e-af28-4166-90ed-273428016b25',
     title: 'Wood and stone place',
@@ -10,17 +10,17 @@ export const Offers: Offer[] = [
     price: 202,
     previewImage: 'https://15.design.htmlacademy.pro/static/hotel/8.jpg',
     city: {
-      name: CityName.Brussels,
+      name: CityName.Amsterdam,
       location: {
-        latitude: 48.85661,
-        longitude: 2.351499,
-        zoom: 13,
+        latitude: 52.37403,
+        longitude: 4.88969,
+        zoom: 12,
       },
     },
     location: {
-      latitude: 48.868610000000004,
-      longitude: 2.342499,
-      zoom: 16,
+      latitude: 52.3909553943508,
+      longitude: 4.85309666406198,
+      zoom: 12,
     },
     goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
     isFavorite: true,
@@ -48,17 +48,17 @@ export const Offers: Offer[] = [
     price: 243,
     previewImage: 'https://15.design.htmlacademy.pro/static/hotel/4.jpg',
     city: {
-      name: 'Paris',
+      name: CityName.Amsterdam,
       location: {
-        latitude: 48.85661,
-        longitude: 2.351499,
-        zoom: 13,
+        latitude: 52.3609553943508,
+        longitude: 4.85309666406198,
+        zoom: 12,
       },
     },
     location: {
-      latitude: 48.858610000000006,
-      longitude: 2.330499,
-      zoom: 16,
+      latitude: 52.3609553943508,
+      longitude: 4.85309666406198,
+      zoom: 12,
     },
     goods: ['Laptop friendly workspace', 'Breakfast', 'Washer'],
     isFavorite: false,
@@ -86,16 +86,16 @@ export const Offers: Offer[] = [
     price: 354,
     previewImage: 'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
     city: {
-      name: 'Paris',
+      name: CityName.Amsterdam,
       location: {
-        latitude: 48.85661,
-        longitude: 2.351499,
-        zoom: 13,
+        latitude: 52.3609553943508,
+        longitude: 4.940309666406198,
+        zoom: 12,
       },
     },
     location: {
-      latitude: 48.834610000000005,
-      longitude: 2.335499,
+      latitude: 52.385540000000006,
+      longitude: 4.902976,
       zoom: 16,
     },
     goods: [
@@ -135,17 +135,17 @@ export const Offers: Offer[] = [
     price: 196,
     previewImage: 'https://15.design.htmlacademy.pro/static/hotel/1.jpg',
     city: {
-      name: 'Paris',
+      name: CityName.Amsterdam,
       location: {
-        latitude: 48.85661,
-        longitude: 2.351499,
-        zoom: 13,
+        latitude: 52.37403,
+        longitude: 4.88969,
+        zoom: 12,
       },
     },
     location: {
-      latitude: 48.85761,
-      longitude: 2.358499,
-      zoom: 16,
+      latitude: 52.3909553943508,
+      longitude: 4.929309666406198,
+      zoom: 12,
     },
     goods: [
       'Breakfast',
@@ -178,17 +178,17 @@ export const Offers: Offer[] = [
     price: 1111,
     previewImage: 'https://15.design.htmlacademy.pro/static/hotel/12.jpg',
     city: {
-      name: 'Paris',
+      name: CityName.Amsterdam,
       location: {
         latitude: 48.85661,
         longitude: 2.351499,
-        zoom: 13,
+        zoom: 12,
       },
     },
     location: {
-      latitude: 48.858610000000006,
-      longitude: 2.330499,
-      zoom: 16,
+      latitude: 52.3809553943508,
+      longitude: 4.939309666406198,
+      zoom: 12,
     },
     goods: ['Laptop friendly workspace', 'Breakfast', 'Washer'],
     isFavorite: true,
