@@ -8,7 +8,7 @@ import { getRatingWidth } from '../../utils/offer';
 
 type OfferCardProps = {
   offer: Offer;
-  block: 'favorites' | 'cities';
+  block: 'favorites' | 'cities' | 'near-places';
   size: keyof Size;
   onCardHover?: (offerId: Offer['id'] | null) => void;
 };

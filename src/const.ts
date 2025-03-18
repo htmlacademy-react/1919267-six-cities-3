@@ -107,6 +107,8 @@ const MAX_COMMENT_LENGTH = 300;
 const URL_MARKER_DEFAULT = 'img/pin.svg';
 const URL_MARKER_CURRENT = 'img/pin-active.svg';
 
+const MAX_NEARBY_OFFERS_COUNT = 3;
+
 export {
   AppRoute,
   AuthStatus,
@@ -122,4 +124,5 @@ export {
   MAX_COMMENT_LENGTH,
   URL_MARKER_CURRENT,
   URL_MARKER_DEFAULT,
+  MAX_NEARBY_OFFERS_COUNT,
 };
