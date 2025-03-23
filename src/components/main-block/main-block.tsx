@@ -19,7 +19,6 @@ function MainBlock({ currentLocation, currentOffers }: MainBlockProps) {
   const [activeSorting, setActiveSorting] = useState<Sorting>(
     DEFAULT_SORTING_OPTION,
   );
-  const locationForMap = currentOffers[0].city;
 
   function handleCardHover(offerId: Offer['id'] | null) {
     setHoveredOfferId(offerId);
@@ -49,7 +48,7 @@ function MainBlock({ currentLocation, currentOffers }: MainBlockProps) {
       <div className="cities__right-section">
         <Map
           offers={currentOffers}
-          city={locationForMap}
+          city={currentLocation}
           hoveredOfferId={hoveredOfferId}
           className={'cities__map'}
         />

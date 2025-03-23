@@ -12,6 +12,9 @@ type MainPageProps = {
 
 function MainPage({ offers, authorizationStatus }: MainPageProps) {
   const [currentCity, setCurrentCity] = useState(DEFAULT_CITY);
+  const currentOffers = offers.filter(
+    (offer) => offer.city.name === currentCity.name,
+  );
 
   return (
     <div className="page page--gray page--main">
@@ -21,7 +24,10 @@ function MainPage({ offers, authorizationStatus }: MainPageProps) {
         <h1 className="visually-hidden">Cities</h1>
         <Tabs currentCity={currentCity} onTabClick={setCurrentCity} />
         <div className="cities">
-          <MainBlock currentLocation={currentCity} currentOffers={offers} />
+          <MainBlock
+            currentLocation={currentCity}
+            currentOffers={currentOffers}
+          />
         </div>
       </main>
     </div>
