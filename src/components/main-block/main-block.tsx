@@ -6,6 +6,7 @@ import SortingForm from '../sortingForm/sortingForm';
 import { DEFAULT_SORTING_OPTION, Sorting } from '../../const';
 import OffersCardList from '../offers-card-list/offers-card-list';
 import Map from '../map/map';
+import { sorting } from '../../utils/offer';
 
 type MainBlockProps = {
   currentLocation: City;
@@ -28,6 +29,8 @@ function MainBlock({ currentLocation, currentOffers }: MainBlockProps) {
     setActiveSorting(option);
   }
 
+  const sortedOffers = sorting[activeSorting](currentOffers);
+
   return (
     <div className="cities__places-container container">
       <section className="cities__places places">
@@ -41,7 +44,7 @@ function MainBlock({ currentLocation, currentOffers }: MainBlockProps) {
           onSortingOptionClick={handleSortingChange}
         />
         <OffersCardList
-          currentOffers={currentOffers}
+          currentOffers={sortedOffers}
           onCardHover={handleCardHover}
         />
       </section>
