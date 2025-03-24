@@ -1,7 +1,7 @@
 import { CityName } from '../const';
-import { OfferPreview } from '../types/offer-preview';
+import { Offer } from '../types/offer';
 
-export const OFFERS: OfferPreview[] = [
+export const OFFERS: Offer[] = [
   {
     id: '388bdf87-d63f-43d2-9509-d618dc0d35bc',
     title: 'Perfectly located Castro',
@@ -24,6 +24,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 3.4,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '0e4fffd4-f39e-47ad-9b7a-7ff8557a9f85',
@@ -47,6 +62,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 1.6,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'e76b1cfb-70f3-450b-a6f9-06867ef771cd',
@@ -70,6 +100,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 3,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '0ad44805-3a9d-4b17-b804-0336d1070ecf',
@@ -93,6 +138,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 1,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'b748c60b-531e-4fc9-a556-9e78668b83ac',
@@ -116,6 +176,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 1.8,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '3196a723-75c0-49f4-b170-76c218b45bf7',
@@ -139,6 +214,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 4.3,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'afb92448-d234-455f-a6fe-6a35d6a625d4',
@@ -162,6 +252,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 1.8,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '63546b77-cdc5-4ec5-a163-a67613816f16',
@@ -185,6 +290,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 3.3,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '52a506d2-61fb-445a-b6e6-65b326d81a14',
@@ -208,6 +328,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 2.7,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '4169dd87-f326-4925-a7f7-8723f6ac6f16',
@@ -231,6 +366,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 2.7,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'a4882fc6-926b-4544-b014-794ade78e6c5',
@@ -254,6 +404,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 4,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '3987b081-34ac-47e7-b646-cb440459ea24',
@@ -277,6 +442,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 3.6,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '2b9ae13d-f1bc-45b9-bc0b-59e61fd6b323',
@@ -300,6 +480,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 2.1,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '63612c93-15aa-471b-b151-e88dd6fb29a3',
@@ -323,6 +518,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 3.1,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'bf80130a-d53d-4d8d-a4e7-fcdc83dc64e8',
@@ -346,6 +556,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 4.4,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'e0e9a874-d9ad-4006-be8e-a65de6dba209',
@@ -369,6 +594,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 4.6,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '325016b0-33c5-464a-ad9a-d82c8130698d',
@@ -392,6 +632,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 3.5,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '5f96a83d-bf42-4471-b995-5d2a6b752215',
@@ -415,6 +670,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 4.7,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'd7faf9b7-76c8-42f0-af75-a19f74e08b91',
@@ -438,6 +708,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 2.2,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '91a1a9fa-bcd8-4aeb-b160-6ea1a68299dc',
@@ -461,6 +746,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 4.9,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '987e10ef-1b6a-47b6-ad8c-33c29ce0ea82',
@@ -484,6 +784,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 3.6,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'e1d09018-982e-4840-900b-34e76ab468e6',
@@ -507,6 +822,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 4.8,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '008af902-c7f1-4e14-ba93-a735adb0e9d2',
@@ -530,6 +860,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 4.2,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'bbf83c42-f0c4-4f45-af31-997521c9605e',
@@ -553,6 +898,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 4.1,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'e6b1cdca-31fa-4ef5-b279-d00c908f6ac9',
@@ -576,6 +936,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 3.5,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'b4d55e1d-864e-4c8d-a1d7-a120122e389e',
@@ -599,6 +974,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 4.6,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'd1e31602-f71f-4d9d-a317-64c37587281c',
@@ -622,6 +1012,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 4.6,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '8be8c1a8-16ce-4167-8f0d-e1a6e333418d',
@@ -645,6 +1050,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 4,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '21401fbe-ce64-4560-9f3b-34a42b4cd60e',
@@ -668,6 +1088,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 2.4,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '203c30cf-f634-4836-9ce2-eae6b0f0df97',
@@ -691,6 +1126,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 3.2,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '3cb9f3e2-9bdf-4348-a4f7-ec6fe235c9b4',
@@ -714,6 +1164,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 2.3,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '57ce10bf-1134-4b0c-83cd-f5e694c52f21',
@@ -737,6 +1202,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 4.6,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '21f58bd8-d729-4134-bca1-e12864c4f0ae',
@@ -760,6 +1240,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 4,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '3e285b8b-ffd0-4ad5-aa9d-831682231d85',
@@ -783,6 +1278,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 3.1,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '62d06d47-40b3-4744-94b6-ed5645279db1',
@@ -806,6 +1316,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 4.5,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'e69066bc-9f2c-4889-80c8-70f0952cbbae',
@@ -829,6 +1354,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 2.5,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'f91a5f71-eac8-4929-b2ad-3ca498e45191',
@@ -852,6 +1392,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 3,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '0263e431-23e7-408e-933f-b18e376a30dd',
@@ -875,6 +1430,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 3.5,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '0885191b-d61a-4bbe-a8fb-72339c4f5e58',
@@ -898,6 +1468,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 4.2,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '67a70e92-bb26-462e-92bc-15de59415f8b',
@@ -921,6 +1506,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 4.5,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'bf0acd4e-14f0-45e7-9e97-861bfdd14dc3',
@@ -944,6 +1544,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 4.7,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'd0888313-8938-4939-968b-7e98237de9f2',
@@ -967,6 +1582,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 3.7,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '9f520dbb-a89f-45bb-9c27-ef2efaff6c6d',
@@ -990,6 +1620,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 2.4,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '18e4cd46-5fc9-4b3a-84fa-9abdc69e39bc',
@@ -1013,6 +1658,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 1.5,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '2b8e689c-1432-4d12-9a22-59fc05a7aa69',
@@ -1036,6 +1696,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 3.8,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '09aa64b5-be2c-42ae-b35a-0059fd808428',
@@ -1059,6 +1734,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 2.6,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '220c9554-ecb9-48db-96fe-5593d1144c6a',
@@ -1082,6 +1772,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 2.2,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'b9bf3888-7c97-4a3f-a47a-b04f93e4013e',
@@ -1105,6 +1810,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 3.1,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'e6c02a55-57b7-4132-8b41-07aa4a94ea17',
@@ -1128,6 +1848,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 3.2,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'b48aaead-2587-4a62-ad17-957282f2c3dc',
@@ -1151,6 +1886,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 1.3,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'eee119db-650a-4f8a-90dc-10e256c37d3e',
@@ -1174,6 +1924,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 2.5,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'eeb61ff1-091c-4da2-a54f-ec944889eb62',
@@ -1197,6 +1962,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 4.3,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '89155901-824d-44c6-9067-9285f7f0f06c',
@@ -1220,6 +2000,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 2.9,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'e6f102a7-0476-4107-bd8d-e6e1e2d40569',
@@ -1243,6 +2038,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 2.3,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '8d0466d7-634a-4b1b-832f-c6c50a5da64f',
@@ -1266,6 +2076,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 2.7,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '9a8e431b-8684-4f80-b6d1-ed2f400986a7',
@@ -1289,6 +2114,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 4.7,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '22ecd8db-f85e-43dc-813f-39f71e6da230',
@@ -1312,6 +2152,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 4.4,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '248332e0-400c-487d-a90e-c93d6016024b',
@@ -1335,6 +2190,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 1.1,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '3bc5b1a7-c64c-4c57-84ee-c0e71cce798f',
@@ -1358,6 +2228,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 2.9,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '1e4816ea-c22c-48d3-900e-0c2525caa6b2',
@@ -1381,6 +2266,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 2.4,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '6c35d0f4-fe4d-4da0-8ba0-71cc164f3b6f',
@@ -1404,6 +2304,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 2.8,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '2cfc1c4b-23b1-4c5e-a12d-14ca64109a4b',
@@ -1427,6 +2342,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 3.2,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '87d1e624-89c6-4cd4-be37-33f83f4a21c4',
@@ -1450,6 +2380,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 2.2,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '7e83aad4-45c8-4384-8d16-4f93ac99a100',
@@ -1473,6 +2418,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 1.5,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '207360fd-b865-4ed0-a467-3a9b9f1f20b4',
@@ -1496,6 +2456,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 4.4,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'f2ad6b67-34d0-42fb-abdb-619e9e2099d1',
@@ -1519,6 +2494,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 4.4,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '1dfde439-a9be-41cd-9257-a4fdb99de4e7',
@@ -1542,6 +2532,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 2.2,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '6959b08e-cf42-4ada-a950-b413e6a6b126',
@@ -1565,6 +2570,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 3.7,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'b1167058-5261-408d-9607-1456a83de07f',
@@ -1588,6 +2608,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 4.7,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '898a5f52-e437-42b5-9697-3340fc3eb99f',
@@ -1611,6 +2646,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 4.9,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'c4b30e61-dea7-4e68-8c90-9097d215dc0f',
@@ -1634,6 +2684,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 3.2,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'd7373a39-c1e3-4645-bf5b-b9467469ced7',
@@ -1657,6 +2722,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 3,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'e60ff403-4f9b-4e47-8125-8c9b52de7829',
@@ -1680,6 +2760,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 2,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '82d87505-8b6e-4403-9df8-2db6c4d37469',
@@ -1703,6 +2798,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 2.1,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'fba5ceea-9bf1-4d28-b0d1-8c7dacb8a9f3',
@@ -1726,6 +2836,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 3.4,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'e4c40d3f-3147-4c73-b921-2ac15bdf8ffd',
@@ -1749,6 +2874,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 2.4,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'c39d059b-4ee4-4406-b19a-0b8b86221b59',
@@ -1772,6 +2912,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 3.9,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: '304b909a-2dc7-42e3-9487-ba6c5ac74058',
@@ -1795,6 +2950,21 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: false,
     rating: 4.8,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
   {
     id: 'b968770b-efc9-48c1-b427-d55b8bb7c8fb',
@@ -1818,5 +2988,20 @@ export const OFFERS: OfferPreview[] = [
     isFavorite: false,
     isPremium: true,
     rating: 1.9,
+    description:
+      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    bedrooms: 3,
+    goods: ['Laptop friendly workspace', 'Breakfast', 'Jacuzzi'],
+    host: {
+      id: 1,
+      name: 'Oliver Conner',
+      avatarUrl: 'https://url-to-image/image.png',
+      isPro: false,
+    },
+    images: [
+      'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+      'https://15.design.htmlacademy.pro/static/hotel/18.jpg',
+    ],
+    maxAdults: 4,
   },
 ];
