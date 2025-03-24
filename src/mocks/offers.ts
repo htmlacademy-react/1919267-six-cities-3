@@ -31,7 +31,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -69,7 +69,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -107,7 +107,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -145,7 +145,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -183,7 +183,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -221,7 +221,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -259,7 +259,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -297,7 +297,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -335,7 +335,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -373,7 +373,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -411,7 +411,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -449,7 +449,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -487,7 +487,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -525,7 +525,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -563,7 +563,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -601,7 +601,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -639,7 +639,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -677,7 +677,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -715,7 +715,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -753,7 +753,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -791,7 +791,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -829,7 +829,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -867,7 +867,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -905,7 +905,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -943,7 +943,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -981,7 +981,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1019,7 +1019,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1057,7 +1057,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1095,7 +1095,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1133,7 +1133,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1171,7 +1171,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1209,7 +1209,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1247,7 +1247,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1285,7 +1285,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1323,7 +1323,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1361,7 +1361,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1399,7 +1399,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1437,7 +1437,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1475,7 +1475,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1513,7 +1513,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1551,7 +1551,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1589,7 +1589,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1627,7 +1627,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1665,7 +1665,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1703,7 +1703,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1741,7 +1741,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1779,7 +1779,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1817,7 +1817,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1855,7 +1855,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1893,7 +1893,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1931,7 +1931,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -1969,7 +1969,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2007,7 +2007,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2045,7 +2045,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2083,7 +2083,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2121,7 +2121,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2159,7 +2159,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2197,7 +2197,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2235,7 +2235,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2273,7 +2273,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2311,7 +2311,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2349,7 +2349,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2387,7 +2387,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2425,7 +2425,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2463,7 +2463,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2501,7 +2501,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2539,7 +2539,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2577,7 +2577,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2615,7 +2615,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2653,7 +2653,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2691,7 +2691,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2729,7 +2729,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2767,7 +2767,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2805,7 +2805,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2843,7 +2843,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2881,7 +2881,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2919,7 +2919,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2957,7 +2957,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
@@ -2995,7 +2995,7 @@ export const OFFERS: Offer[] = [
     host: {
       id: 1,
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: [
