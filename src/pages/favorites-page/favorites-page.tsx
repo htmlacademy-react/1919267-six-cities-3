@@ -2,15 +2,15 @@ import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
 import OfferCard from '../../components/offer-card/offer-card';
 import { AuthStatus } from '../../const';
-import { Offer } from '../../types/offer';
+import { useAppSelector } from '../../hooks';
 import { groupOffersByLocation } from '../../utils/offer';
 
 type FavoritesPageProps = {
-  offers: Offer[];
   authorizationStatus: AuthStatus;
 };
 
-function FavoritesPage({ offers, authorizationStatus }: FavoritesPageProps) {
+function FavoritesPage({ authorizationStatus }: FavoritesPageProps) {
+  const offers = useAppSelector((state) => state.offers);
   const favorites = offers.filter((item) => item.isFavorite);
   const favoritesByLocation = groupOffersByLocation(favorites);
 

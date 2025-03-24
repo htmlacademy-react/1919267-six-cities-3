@@ -1,7 +1,7 @@
 import { CityName } from '../const';
 import { Offer } from '../types/offer';
 
-export const OFFERS: Offer[] = [
+export const MOCK_OFFERS: Offer[] = [
   {
     id: '388bdf87-d63f-43d2-9509-d618dc0d35bc',
     title: 'Perfectly located Castro',

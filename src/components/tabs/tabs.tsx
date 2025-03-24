@@ -1,14 +1,16 @@
 import { AppRoute, CITIES, CityName } from '../../const';
+import { useAppDispatch } from '../../hooks';
+import { setCurrentCity } from '../../store/action';
 import { City } from '../../types/city';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
 
 type TabsProps = {
   currentCity: City;
-  onTabClick: (city: City) => void;
 };
 
-function Tabs({ currentCity, onTabClick }: TabsProps) {
+function Tabs({ currentCity }: TabsProps) {
+  const dispatch = useAppDispatch();
   const cities = CITIES.map((city) => city.name);
 
   const handleTabClick = (city: keyof typeof CityName) => {
@@ -16,7 +18,7 @@ function Tabs({ currentCity, onTabClick }: TabsProps) {
     if (!selectedCity) {
       return;
     }
-    onTabClick(selectedCity);
+    dispatch(setCurrentCity(selectedCity));
   };
 
   return (

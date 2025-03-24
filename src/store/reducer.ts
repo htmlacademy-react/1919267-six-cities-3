@@ -1,10 +1,10 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { DEFAULT_CITY } from '../const';
 import { setCurrentCity, setOffers } from './action';
-import { Offer } from '../types/offer';
+import { MOCK_OFFERS } from '../mocks/offers';
 
 const initialState = {
-  offers: [] as Offer[],
+  offers: MOCK_OFFERS,
   currentCity: DEFAULT_CITY,
 };
 

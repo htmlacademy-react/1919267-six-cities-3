@@ -12,15 +12,16 @@ import ReviewsList from '../../components/reviews-list/reviews-list';
 import { Review } from '../../types/review';
 import Map from '../../components/map/map';
 import NearOffers from '../../components/near-offers/near-offers';
+import { useAppSelector } from '../../hooks';
 
 type OfferPageProps = {
-  offers: Offer[];
   authorizationStatus: AuthStatus;
   reviews: Review[];
 };
 
-function OfferPage({ offers, authorizationStatus, reviews }: OfferPageProps) {
+function OfferPage({ authorizationStatus, reviews }: OfferPageProps) {
   const { id } = useParams();
+  const offers = useAppSelector((state) => state.offers);
   const nearOffersToRender = offers.slice(0, MAX_NEARBY_OFFERS_COUNT);
   const currentOffer: Offer | undefined = offers.find(
     (offer) => offer.id === id,
