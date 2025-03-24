@@ -1,17 +1,19 @@
-import { useState } from 'react';
 import Header from '../../components/header/header';
 import Tabs from '../../components/tabs/tabs';
-import { AuthStatus, DEFAULT_CITY } from '../../const';
-import { Offer } from '../../types/offer';
+import { AuthStatus } from '../../const';
 import MainBlock from '../../components/main-block/main-block';
+import { useAppSelector } from '../../hooks';
 
 type MainPageProps = {
-  offers: Offer[];
   authorizationStatus: AuthStatus;
 };
 
-function MainPage({ offers, authorizationStatus }: MainPageProps) {
-  const [currentCity, setCurrentCity] = useState(DEFAULT_CITY);
+function MainPage({ authorizationStatus }: MainPageProps) {
+  const currentCity = useAppSelector((state) => state.currentCity);
+  const offers = useAppSelector((state) => state.offers);
+  const currentOffers = offers.filter(
+    (offer) => offer.city.name === currentCity.name,
+  );
 
   return (
     <div className="page page--gray page--main">
@@ -19,9 +21,12 @@ function MainPage({ offers, authorizationStatus }: MainPageProps) {
 
       <main className="page__main page__main--index">
         <h1 className="visually-hidden">Cities</h1>
-        <Tabs currentCity={currentCity} onTabClick={setCurrentCity} />
+        <Tabs currentCity={currentCity} />
         <div className="cities">
-          <MainBlock currentLocation={currentCity} currentOffers={offers} />
+          <MainBlock
+            currentLocation={currentCity}
+            currentOffers={currentOffers}
+          />
         </div>
       </main>
     </div>

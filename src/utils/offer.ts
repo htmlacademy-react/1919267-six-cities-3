@@ -1,3 +1,4 @@
+import { Sorting } from '../const';
 import { Offer } from '../types/offer';
 
 function getRatingWidth(rating: number | undefined) {
@@ -16,4 +17,30 @@ function groupOffersByLocation(items: Offer[]) {
   }, {});
 }
 
-export { getRatingWidth, groupOffersByLocation };
+function sortByRating(itemA: Offer, itemB: Offer) {
+  return itemB.rating - itemA.rating;
+}
+
+function sortFromLowToHigh(itemA: Offer, itemB: Offer) {
+  return itemA.price - itemB.price;
+}
+
+function sortFromHighToLow(itemA: Offer, itemB: Offer) {
+  return itemB.price - itemA.price;
+}
+
+// enum Sorting {
+//   Popular = 'Popular',
+//   LowToHigh = 'Price: low to high',
+//   HighToLow = 'Price: high to low',
+//   TopRating = 'Top rated first',
+// }
+
+const sorting = {
+  [Sorting.Popular]: (offers: Offer[]) => offers.slice(),
+  [Sorting.HighToLow]: (offers: Offer[]) => [...offers].sort(sortFromHighToLow),
+  [Sorting.LowToHigh]: (offers: Offer[]) => [...offers].sort(sortFromLowToHigh),
+  [Sorting.TopRating]: (offers: Offer[]) => [...offers].sort(sortByRating),
+};
+
+export { getRatingWidth, groupOffersByLocation, sorting };
