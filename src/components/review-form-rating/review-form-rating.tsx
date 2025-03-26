@@ -1,8 +1,10 @@
 import { Fragment } from 'react';
 import { RatingNumber, RatingString } from '../../types/rating';
+import { UseFormRegister } from 'react-hook-form';
+import { ReviewFormInputs } from '../review-form/review-form';
 
 type ReviewFormRatingProps = {
-  handleChange: (value: RatingNumber) => void;
+  register: UseFormRegister<ReviewFormInputs>;
 };
 
 const ratingMap: Array<{ title: RatingString; value: RatingNumber }> = [
@@ -13,18 +15,17 @@ const ratingMap: Array<{ title: RatingString; value: RatingNumber }> = [
   { title: 'terribly', value: 1 },
 ];
 
-function ReviewFormRating({ handleChange }: ReviewFormRatingProps) {
+function ReviewFormRating({ register }: ReviewFormRatingProps) {
   return (
     <div className="reviews__rating-form form__rating">
       {ratingMap.map(({ title, value }) => (
         <Fragment key={value}>
           <input
             className="form__rating-input visually-hidden"
-            name="rating"
-            defaultValue={value}
+            {...register('rating', { required: true })}
+            value={value}
             id={`${value}-stars`}
             type="radio"
-            onChange={() => handleChange(value)}
           />
           <label
             htmlFor={`${value}-stars`}
