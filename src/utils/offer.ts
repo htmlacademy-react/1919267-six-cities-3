@@ -29,13 +29,6 @@ function sortFromHighToLow(itemA: Offer, itemB: Offer) {
   return itemB.price - itemA.price;
 }
 
-// enum Sorting {
-//   Popular = 'Popular',
-//   LowToHigh = 'Price: low to high',
-//   HighToLow = 'Price: high to low',
-//   TopRating = 'Top rated first',
-// }
-
 const sorting = {
   [Sorting.Popular]: (offers: Offer[]) => offers.slice(),
   [Sorting.HighToLow]: (offers: Offer[]) => [...offers].sort(sortFromHighToLow),
