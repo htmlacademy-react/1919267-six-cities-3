@@ -7,6 +7,7 @@ import OfferPage from '../../pages/offer-page/offer-page';
 import NotFoundPage from '../../pages/not-found-page/not-found-page';
 import PrivateRoute from '../private-route/private-route';
 import { Review } from '../../types/review';
+import { HelmetProvider } from 'react-helmet-async';
 
 type AppProps = {
   reviews: Review[];
@@ -14,39 +15,41 @@ type AppProps = {
 
 function App({ reviews }: AppProps) {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path={AppRoute.root}
-          element={<MainPage authorizationStatus={AuthStatus.Auth} />}
-        />
-        <Route
-          path={`${AppRoute.offer}/:id`}
-          element={
-            <OfferPage
-              reviews={reviews}
-              authorizationStatus={AuthStatus.Auth}
-            />
-          }
-        />
-        <Route
-          path={AppRoute.favorites}
-          element={
-            <PrivateRoute authorizationStatus={AuthStatus.Auth}>
-              <FavoritesPage authorizationStatus={AuthStatus.Auth} />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path={AppRoute.login}
-          element={<LoginPage authorizationStatus={AuthStatus.Auth} />}
-        />
-        <Route
-          path={AppRoute.notFound}
-          element={<NotFoundPage type="page" />}
-        />
-      </Routes>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path={AppRoute.root}
+            element={<MainPage authorizationStatus={AuthStatus.Auth} />}
+          />
+          <Route
+            path={`${AppRoute.offer}/:id`}
+            element={
+              <OfferPage
+                reviews={reviews}
+                authorizationStatus={AuthStatus.Auth}
+              />
+            }
+          />
+          <Route
+            path={AppRoute.favorites}
+            element={
+              <PrivateRoute authorizationStatus={AuthStatus.Auth}>
+                <FavoritesPage authorizationStatus={AuthStatus.Auth} />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path={AppRoute.login}
+            element={<LoginPage authorizationStatus={AuthStatus.Auth} />}
+          />
+          <Route
+            path={AppRoute.notFound}
+            element={<NotFoundPage type="page" />}
+          />
+        </Routes>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
 

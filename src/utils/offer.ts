@@ -5,8 +5,8 @@ function getRatingWidth(rating: number | undefined) {
   return rating ? `${rating / 0.05}%` : '0%';
 }
 
-function groupOffersByLocation(items: Offer[]) {
-  return items.reduce<{ [key: string]: Offer[] }>((acc, current) => {
+function groupOffersByLocation(items: Offer[]): Record<string, Offer[]> {
+  return items.reduce<Record<string, Offer[]>>((acc, current) => {
     const location = current.city.name;
     if (!(location in acc)) {
       acc[location] = [];
@@ -28,13 +28,6 @@ function sortFromLowToHigh(itemA: Offer, itemB: Offer) {
 function sortFromHighToLow(itemA: Offer, itemB: Offer) {
   return itemB.price - itemA.price;
 }
-
-// enum Sorting {
-//   Popular = 'Popular',
-//   LowToHigh = 'Price: low to high',
-//   HighToLow = 'Price: high to low',
-//   TopRating = 'Top rated first',
-// }
 
 const sorting = {
   [Sorting.Popular]: (offers: Offer[]) => offers.slice(),

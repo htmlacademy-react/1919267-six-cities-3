@@ -1,40 +1,51 @@
-import { ChangeEvent, useState } from 'react';
 import { MAX_COMMENT_LENGTH, MIN_COMMENT_LENGTH } from '../../const';
-import { RatingNumber } from '../../types/rating';
 import ReviewFormRating from '../review-form-rating/review-form-rating';
+import { SubmitHandler, useForm } from 'react-hook-form';
+
+export type ReviewFormInputs = {
+  rating: number;
+  review: string;
+};
 
 function ReviewForm() {
-  const [comment, setComment] = useState<{
-    rating: 0 | RatingNumber;
-    review: string;
-  }>({ rating: 0, review: '' });
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { isValid, isSubmitting },
+  } = useForm<ReviewFormInputs>({
+    mode: 'onBlur',
+  });
 
-  const isValid =
-    comment.review.length >= MIN_COMMENT_LENGTH &&
-    comment.review.length <= MAX_COMMENT_LENGTH &&
-    comment.rating !== 0;
-
-  const handleRatingChange = (value: RatingNumber) => {
-    setComment({ ...comment, rating: value });
-  };
-
-  const handleTextareaChange = (evt: ChangeEvent<HTMLTextAreaElement>) => {
-    setComment({ ...comment, review: evt.currentTarget.value });
+  const onSubmit: SubmitHandler<ReviewFormInputs> = (
+    data: ReviewFormInputs,
+    event?: React.BaseSyntheticEvent
+  ) => {
+    event?.preventDefault();
+    // eslint-disable-next-line no-console
+    console.log(data);
+    reset();
   };
 
   return (
-    <form className="reviews__form form" action="#" method="post">
+    <form
+      className="reviews__form form"
+      method="post"
+      onSubmit={(event) => void handleSubmit(onSubmit)(event)}
+    >
       <label className="reviews__label form__label" htmlFor="review">
         Your review
       </label>
-      <ReviewFormRating handleChange={handleRatingChange} />
+      <ReviewFormRating register={register} />
       <textarea
         className="reviews__textarea form__textarea"
         id="review"
-        name="review"
         placeholder="Tell how was your stay, what you like and what can be improved"
-        defaultValue={comment.review}
-        onChange={handleTextareaChange}
+        {...register('review', {
+          required: true,
+          minLength: MIN_COMMENT_LENGTH,
+          maxLength: MAX_COMMENT_LENGTH,
+        })}
       />
       <div className="reviews__button-wrapper">
         <p className="reviews__help">
@@ -49,9 +60,9 @@ function ReviewForm() {
         <button
           className="reviews__submit form__submit button"
           type="submit"
-          disabled={!isValid}
+          disabled={!isValid || isSubmitting}
         >
-          Submit
+          {isSubmitting ? 'Submitting...' : 'Submit'}
         </button>
       </div>
     </form>

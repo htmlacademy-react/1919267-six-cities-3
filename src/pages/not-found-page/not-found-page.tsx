@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { AppRoute } from '../../const';
 import styles from './not-found-page.module.css';
 import Logo from '../../components/logo/logo';
+import { Helmet } from 'react-helmet-async';
 
 const pageContentVariants = {
   page: { text: 'Sorry! The page is not found' },
@@ -15,7 +16,10 @@ type NotFoundPageProps = {
 function NotFoundPage({ type }: NotFoundPageProps) {
   return (
     <main className="page page--favorites-empty container">
-      <title>6 Cities: Page not found</title>
+      <Helmet>
+        <title>6 cities. Error 404 page</title>
+      </Helmet>
+      <h1>6 Cities: Page not found</h1>
       <div className="header__wrapper">
         <Logo block="header" size="large" />
       </div>

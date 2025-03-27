@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import Header from '../../components/header/header';
 import { AuthStatus } from '../../const';
 
@@ -8,6 +9,9 @@ type LoginPageProps = {
 function LoginPage({ authorizationStatus }: LoginPageProps) {
   return (
     <div className="page page--gray page--login">
+      <Helmet>
+        <title>6 cities. Login page</title>
+      </Helmet>
       <Header isAuth={authorizationStatus} />
 
       <main className="page__main page__main--login">
