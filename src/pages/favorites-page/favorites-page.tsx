@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
 import OfferCard from '../../components/offer-card/offer-card';
@@ -16,6 +17,9 @@ function FavoritesPage({ authorizationStatus }: FavoritesPageProps) {
 
   return (
     <div className="page">
+      <Helmet>
+        <title>6 cities. Favorites page</title>
+      </Helmet>
       <Header isAuth={authorizationStatus} />
 
       <main className="page__main page__main--favorites">
@@ -44,7 +48,7 @@ function FavoritesPage({ authorizationStatus }: FavoritesPageProps) {
                       ))}
                     </div>
                   </li>
-                ),
+                )
               )}
             </ul>
           </section>

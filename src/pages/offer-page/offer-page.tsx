@@ -13,6 +13,7 @@ import { Review } from '../../types/review';
 import Map from '../../components/map/map';
 import NearOffers from '../../components/near-offers/near-offers';
 import { useAppSelector } from '../../hooks';
+import { Helmet } from 'react-helmet-async';
 
 type OfferPageProps = {
   authorizationStatus: AuthStatus;
@@ -24,7 +25,7 @@ function OfferPage({ authorizationStatus, reviews }: OfferPageProps) {
   const offers = useAppSelector((state) => state.offers);
   const nearOffersToRender = offers.slice(0, MAX_NEARBY_OFFERS_COUNT);
   const currentOffer: Offer | undefined = offers.find(
-    (offer) => offer.id === id,
+    (offer) => offer.id === id
   );
 
   if (!currentOffer) {
@@ -51,6 +52,9 @@ function OfferPage({ authorizationStatus, reviews }: OfferPageProps) {
 
   return (
     <div className="page">
+      <Helmet>
+        <title>6 cities. Offer page</title>
+      </Helmet>
       <Header isAuth={authorizationStatus} />
 
       <main className="page__main page__main--offer">
@@ -120,7 +124,7 @@ function OfferPage({ authorizationStatus, reviews }: OfferPageProps) {
                     className={cn(
                       'offer__avatar-wrapper',
                       'user__avatar-wrapper',
-                      { 'offer__avatar-wrapper--pro': isPro },
+                      { 'offer__avatar-wrapper--pro': isPro }
                     )}
                   >
                     <img
