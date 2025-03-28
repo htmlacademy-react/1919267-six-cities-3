@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { City } from '../../types/city';
 import { Offer } from '../../types/offer';
 import { addPluralEnding } from '../../utils/common';
-import SortingForm from '../sortingForm/sortingForm';
+import SortingForm from '../sorting-form/sorting-form';
 import { DEFAULT_SORTING_OPTION, Sorting } from '../../const';
 import OffersCardList from '../offers-card-list/offers-card-list';
 import Map from '../map/map';
@@ -15,10 +15,10 @@ type MainBlockProps = {
 
 function MainBlock({ currentLocation, currentOffers }: MainBlockProps) {
   const [hoveredOfferId, setHoveredOfferId] = useState<Offer['id'] | null>(
-    null,
+    null
   );
   const [activeSorting, setActiveSorting] = useState<Sorting>(
-    DEFAULT_SORTING_OPTION,
+    DEFAULT_SORTING_OPTION
   );
 
   function handleCardHover(offerId: Offer['id'] | null) {

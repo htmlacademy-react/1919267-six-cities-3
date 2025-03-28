@@ -2,12 +2,15 @@ import cn from 'classnames';
 import { Sorting } from '../../const';
 import { useState } from 'react';
 
-type SortingProps = {
+type SortingFormProps = {
   activeSorting: Sorting;
   onSortingOptionClick: (type: Sorting) => void;
 };
 
-function SortingForm({ activeSorting, onSortingOptionClick }: SortingProps) {
+function SortingForm({
+  activeSorting,
+  onSortingOptionClick,
+}: SortingFormProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   function handleTypeClick() {
