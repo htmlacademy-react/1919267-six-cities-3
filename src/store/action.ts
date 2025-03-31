@@ -30,3 +30,10 @@ export const setError = createAction(
     payload: error,
   })
 );
+
+export const setLoadingStatus = createAction(
+  'app/setLoadingStatus',
+  (loadingStatus: boolean) => ({
+    payload: loadingStatus,
+  })
+);

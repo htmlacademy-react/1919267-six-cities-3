@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks';
 import { Helmet } from 'react-helmet-async';
 import { useEffect } from 'react';
 import { fetchOffers } from '../../store/api-actions';
+import Spinner from '../../components/spinner/spinner';
 
 type MainPageProps = {
   authorizationStatus: AuthStatus;
@@ -18,10 +19,15 @@ function MainPage({ authorizationStatus }: MainPageProps) {
   const currentOffers = offers.filter(
     (offer) => offer.city.name === currentCity.name
   );
+  const isLoading = useAppSelector((state) => state.isLoading);
 
   useEffect(() => {
     dispatch(fetchOffers());
   }, [dispatch]);
+
+  if (authorizationStatus === AuthStatus.Unknown || isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <div className="page page--gray page--main">
