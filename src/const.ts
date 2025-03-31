@@ -118,6 +118,8 @@ const URL_MARKER_CURRENT = 'img/pin-active.svg';
 
 const MAX_NEARBY_OFFERS_COUNT = 3;
 
+const TIMEOUT_SHOW_ERROR = 2000;
+
 export {
   AppRoute,
   AuthStatus,
@@ -135,4 +137,5 @@ export {
   URL_MARKER_CURRENT,
   URL_MARKER_DEFAULT,
   MAX_NEARBY_OFFERS_COUNT,
+  TIMEOUT_SHOW_ERROR,
 };

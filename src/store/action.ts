@@ -23,3 +23,10 @@ export const requireAuthorization = createAction(
     payload: authorizationStatus,
   })
 );
+
+export const setError = createAction(
+  'app/setError',
+  (error: string | null) => ({
+    payload: error,
+  })
+);

@@ -19,7 +19,7 @@ function NotFoundPage({ type }: NotFoundPageProps) {
       <Helmet>
         <title>6 cities. Error 404 page</title>
       </Helmet>
-      <h1>6 Cities: Page not found</h1>
+      <h1 className="visually-hidden">6 Cities: Page not found</h1>
       <div className="header__wrapper">
         <Logo block="header" size="large" />
       </div>
