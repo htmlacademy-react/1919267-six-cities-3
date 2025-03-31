@@ -1,11 +1,12 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { DEFAULT_CITY } from '../const';
-import { setCurrentCity, setOffers } from './action';
-import { MOCK_OFFERS } from '../mocks/offers';
+import { AuthStatus, DEFAULT_CITY } from '../const';
+import { requireAuthorization, setCurrentCity, setOffers } from './action';
+import { Offer } from '../types/offer';
 
 const initialState = {
-  offers: MOCK_OFFERS,
+  offers: [] as Offer[],
   currentCity: DEFAULT_CITY,
+  authorizationStatus: AuthStatus.Unknown,
 };
 
 export const reducer = createReducer(initialState, (builder) => {
@@ -15,5 +16,8 @@ export const reducer = createReducer(initialState, (builder) => {
     })
     .addCase(setOffers, (state, action) => {
       state.offers = action.payload;
+    })
+    .addCase(requireAuthorization, (state, action) => {
+      state.authorizationStatus = action.payload;
     });
 });

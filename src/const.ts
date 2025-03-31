@@ -15,6 +15,15 @@ enum AuthStatus {
   Unknown = 'UNKNOWN',
 }
 
+enum APIRoute {
+  Offers = '/offers',
+  Login = '/login',
+  Logout = '/logout',
+  Reviews = '/comments',
+  NearbyOffers = '/nearby',
+  Favorite = '/favorite',
+}
+
 const BookmarkSize: Size = {
   small: { width: '18', height: '19' },
   large: { width: '31', height: '33' },
@@ -112,6 +121,7 @@ const MAX_NEARBY_OFFERS_COUNT = 3;
 export {
   AppRoute,
   AuthStatus,
+  APIRoute,
   BookmarkSize,
   ImageSize,
   LogoSize,

@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
+import axios, { AxiosInstance } from 'axios';
 import { getToken } from './token';
 
 const BACKEND_API = 'https://15.design.htmlacademy.pro/six-cities';
