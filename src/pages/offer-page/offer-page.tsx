@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import Header from '../../components/header/header';
-import { AuthStatus, MAX_NEARBY_OFFERS_COUNT } from '../../const';
+import { MAX_NEARBY_OFFERS_COUNT } from '../../const';
 import { Offer } from '../../types/offer';
 import NotFoundPage from '../not-found-page/not-found-page';
 import PremiumMark from '../../components/premium-mark/premium-mark';
@@ -16,16 +16,18 @@ import { useAppSelector } from '../../hooks';
 import { Helmet } from 'react-helmet-async';
 
 type OfferPageProps = {
-  authorizationStatus: AuthStatus;
   reviews: Review[];
 };
 
-function OfferPage({ authorizationStatus, reviews }: OfferPageProps) {
+function OfferPage({ reviews }: OfferPageProps) {
   const { id } = useParams();
   const offers = useAppSelector((state) => state.offers);
   const nearOffersToRender = offers.slice(0, MAX_NEARBY_OFFERS_COUNT);
   const currentOffer: Offer | undefined = offers.find(
     (offer) => offer.id === id
+  );
+  const authorizationStatus = useAppSelector(
+    (state) => state.authorizationStatus
   );
 
   if (!currentOffer) {
@@ -55,7 +57,7 @@ function OfferPage({ authorizationStatus, reviews }: OfferPageProps) {
       <Helmet>
         <title>6 cities. Offer page</title>
       </Helmet>
-      <Header isAuth={authorizationStatus} />
+      <Header />
 
       <main className="page__main page__main--offer">
         <section className="offer">

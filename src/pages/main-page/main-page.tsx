@@ -1,6 +1,5 @@
 import Header from '../../components/header/header';
 import Tabs from '../../components/tabs/tabs';
-import { AuthStatus } from '../../const';
 import MainBlock from '../../components/main-block/main-block';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { Helmet } from 'react-helmet-async';
@@ -10,11 +9,7 @@ import Spinner from '../../components/spinner/spinner';
 import classNames from 'classnames';
 import MainBlockEmpty from '../../components/main-block-empty/main-block-empty';
 
-type MainPageProps = {
-  authorizationStatus: AuthStatus;
-};
-
-function MainPage({ authorizationStatus }: MainPageProps) {
+function MainPage() {
   const dispatch = useAppDispatch();
   const currentCity = useAppSelector((state) => state.currentCity);
   const offers = useAppSelector((state) => state.offers);
@@ -32,7 +27,7 @@ function MainPage({ authorizationStatus }: MainPageProps) {
       <Helmet>
         <title>6 cities. Main page</title>
       </Helmet>
-      <Header isAuth={authorizationStatus} />
+      <Header />
 
       <main className="page__main page__main--index">
         <h1 className="visually-hidden">Cities</h1>

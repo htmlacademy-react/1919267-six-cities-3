@@ -1,16 +1,16 @@
 import { Link } from 'react-router-dom';
 import { AppRoute, AuthStatus } from '../../const';
+import { useAppSelector } from '../../hooks';
 
-type HeaderNavigationProps = {
-  isAuth: AuthStatus;
-};
-
-function HeaderNavigation({ isAuth }: HeaderNavigationProps) {
+function HeaderNavigation() {
+  const authorizationStatus = useAppSelector(
+    (state) => state.authorizationStatus
+  );
   return (
     <nav className="header__nav">
       <ul className="header__nav-list">
         <li className="header__nav-item user">
-          {isAuth === AuthStatus.Auth ? (
+          {authorizationStatus === AuthStatus.Auth ? (
             <Link
               to={AppRoute.favorites}
               className="header__nav-link header__nav-link--profile"
@@ -31,7 +31,7 @@ function HeaderNavigation({ isAuth }: HeaderNavigationProps) {
             </Link>
           )}
         </li>
-        {isAuth === AuthStatus.Auth && (
+        {authorizationStatus === AuthStatus.Auth && (
           <li className="header__nav-item">
             <Link to={AppRoute.root} className="header__nav-link">
               <span className="header__signout">Sign out</span>

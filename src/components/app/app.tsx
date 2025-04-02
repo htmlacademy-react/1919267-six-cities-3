@@ -9,7 +9,7 @@ import PrivateRoute from '../private-route/private-route';
 import { Review } from '../../types/review';
 import { HelmetProvider } from 'react-helmet-async';
 import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../hooks';
+import { useAppDispatch } from '../../hooks';
 import { checkAuth } from '../../store/api-actions';
 
 type AppProps = {
@@ -18,9 +18,6 @@ type AppProps = {
 
 function App({ reviews }: AppProps) {
   const dispatch = useAppDispatch();
-  const authorizationStatus = useAppSelector(
-    (state) => state.authorizationStatus
-  );
 
   useEffect(() => {
     dispatch(checkAuth());
@@ -30,31 +27,20 @@ function App({ reviews }: AppProps) {
     <HelmetProvider>
       <BrowserRouter>
         <Routes>
-          <Route
-            path={AppRoute.root}
-            element={<MainPage authorizationStatus={authorizationStatus} />}
-          />
+          <Route path={AppRoute.root} element={<MainPage />} />
           <Route
             path={`${AppRoute.offer}/:id`}
-            element={
-              <OfferPage
-                reviews={reviews}
-                authorizationStatus={authorizationStatus}
-              />
-            }
+            element={<OfferPage reviews={reviews} />}
           />
           <Route
             path={AppRoute.favorites}
             element={
-              <PrivateRoute authorizationStatus={authorizationStatus}>
-                <FavoritesPage authorizationStatus={authorizationStatus} />
+              <PrivateRoute>
+                <FavoritesPage />
               </PrivateRoute>
             }
           />
-          <Route
-            path={AppRoute.login}
-            element={<LoginPage authorizationStatus={authorizationStatus} />}
-          />
+          <Route path={AppRoute.login} element={<LoginPage />} />
           <Route
             path={AppRoute.notFound}
             element={<NotFoundPage type="page" />}
