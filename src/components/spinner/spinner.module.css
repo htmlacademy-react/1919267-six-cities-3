@@ -1,10 +1,18 @@
-.loading {
-  margin: 0;
-  margin-top: 322px;
-  font-weight: 500;
-  font-size: 44px;
-  line-height: 60px;
-  text-align: center;
-  opacity: 0.89;
-  background: #f5f5f5;
+.spinner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinnerImg {
+  width: 48px;
+  height: 48px;
+  animation: rotation 2s linear 0s infinite normal none;
+}
+
+@keyframes rotation {
+  100% {
+    transform: rotate(360deg);
+  }
 }

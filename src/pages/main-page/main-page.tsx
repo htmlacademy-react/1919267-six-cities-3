@@ -7,6 +7,8 @@ import { Helmet } from 'react-helmet-async';
 import { useEffect } from 'react';
 import { fetchOffers } from '../../store/api-actions';
 import Spinner from '../../components/spinner/spinner';
+import classNames from 'classnames';
+import MainBlockEmpty from '../../components/main-block-empty/main-block-empty';
 
 type MainPageProps = {
   authorizationStatus: AuthStatus;
@@ -25,10 +27,6 @@ function MainPage({ authorizationStatus }: MainPageProps) {
     dispatch(fetchOffers());
   }, [dispatch]);
 
-  if (authorizationStatus === AuthStatus.Unknown || isLoading) {
-    return <Spinner />;
-  }
-
   return (
     <div className="page page--gray page--main">
       <Helmet>
@@ -40,10 +38,23 @@ function MainPage({ authorizationStatus }: MainPageProps) {
         <h1 className="visually-hidden">Cities</h1>
         <Tabs currentCity={currentCity} />
         <div className="cities">
-          <MainBlock
-            currentLocation={currentCity}
-            currentOffers={currentOffers}
-          />
+          <div
+            className={classNames(
+              'cities__places-container',
+              'container',
+              !offers.length && 'cities__places-container--empty'
+            )}
+          >
+            {isLoading && <Spinner />}
+            {offers.length ? (
+              <MainBlock
+                currentLocation={currentCity}
+                currentOffers={currentOffers}
+              />
+            ) : (
+              <MainBlockEmpty cityName={currentCity.name} />
+            )}
+          </div>
         </div>
       </main>
     </div>
