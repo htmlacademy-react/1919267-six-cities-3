@@ -1,18 +1,27 @@
 import { City } from './types/city';
 import { Size } from './types/size';
 
-const AppRoute = {
-  root: '/',
-  login: '/login',
-  favorites: '/ favorites',
-  offer: '/offer',
-  notFound: '*',
-} as const;
+enum AppRoute {
+  Root = '/',
+  Login = '/login',
+  Favorites = '/favorites',
+  Offer = '/offer',
+  NotFound = '/*',
+}
 
 enum AuthStatus {
   Auth = 'AUTH',
   NoAuth = 'NO_AUTH',
   Unknown = 'UNKNOWN',
+}
+
+enum APIRoute {
+  Offers = '/offers',
+  Login = '/login',
+  Logout = '/logout',
+  Reviews = '/comments',
+  NearbyOffers = '/nearby',
+  Favorite = '/favorite',
 }
 
 const BookmarkSize: Size = {
@@ -41,7 +50,7 @@ const CityName = {
 
 const CITIES: City[] = [
   {
-    name: 'Paris',
+    name: CityName.Paris,
     location: {
       latitude: 48.85661,
       longitude: 2.351499,
@@ -49,7 +58,7 @@ const CITIES: City[] = [
     },
   },
   {
-    name: 'Cologne',
+    name: CityName.Cologne,
     location: {
       latitude: 50.938361,
       longitude: 6.959974,
@@ -57,7 +66,7 @@ const CITIES: City[] = [
     },
   },
   {
-    name: 'Brussels',
+    name: CityName.Brussels,
     location: {
       latitude: 50.846557,
       longitude: 4.351697,
@@ -65,7 +74,7 @@ const CITIES: City[] = [
     },
   },
   {
-    name: 'Amsterdam',
+    name: CityName.Amsterdam,
     location: {
       latitude: 52.37454,
       longitude: 4.897976,
@@ -73,7 +82,7 @@ const CITIES: City[] = [
     },
   },
   {
-    name: 'Hamburg',
+    name: CityName.Hamburg,
     location: {
       latitude: 53.550341,
       longitude: 10.000654,
@@ -81,7 +90,7 @@ const CITIES: City[] = [
     },
   },
   {
-    name: 'Dusseldorf',
+    name: CityName.Dusseldorf,
     location: {
       latitude: 51.225402,
       longitude: 6.776314,
@@ -109,9 +118,12 @@ const URL_MARKER_CURRENT = 'img/pin-active.svg';
 
 const MAX_NEARBY_OFFERS_COUNT = 3;
 
+const TIMEOUT_SHOW_ERROR = 2000;
+
 export {
   AppRoute,
   AuthStatus,
+  APIRoute,
   BookmarkSize,
   ImageSize,
   LogoSize,
@@ -125,4 +137,5 @@ export {
   URL_MARKER_CURRENT,
   URL_MARKER_DEFAULT,
   MAX_NEARBY_OFFERS_COUNT,
+  TIMEOUT_SHOW_ERROR,
 };

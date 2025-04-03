@@ -41,7 +41,7 @@ function OfferCard({ offer, block, size, onCardHover }: OfferCardProps) {
     >
       <PremiumMark block="place-card" isPremium={isPremium} />
       <div className={`${block}__image-wrapper place-card__image-wrapper`}>
-        <Link to={`${AppRoute.offer}/${id}`}>
+        <Link to={`${AppRoute.Offer}/${id}`}>
           <img
             className="place-card__image"
             src={previewImage}
@@ -69,7 +69,7 @@ function OfferCard({ offer, block, size, onCardHover }: OfferCardProps) {
           </div>
         </div>
         <h2 className="place-card__name">
-          <Link to={`${AppRoute.offer}/${id}`}>{title}</Link>
+          <Link to={`${AppRoute.Offer}/${id}`}>{title}</Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>

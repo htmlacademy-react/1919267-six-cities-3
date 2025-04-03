@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { City } from '../../types/city';
 import { Offer } from '../../types/offer';
 import { addPluralEnding } from '../../utils/common';
-import SortingForm from '../sortingForm/sortingForm';
+import SortingForm from '../sorting-form/sorting-form';
 import { DEFAULT_SORTING_OPTION, Sorting } from '../../const';
 import OffersCardList from '../offers-card-list/offers-card-list';
 import Map from '../map/map';
@@ -15,10 +15,10 @@ type MainBlockProps = {
 
 function MainBlock({ currentLocation, currentOffers }: MainBlockProps) {
   const [hoveredOfferId, setHoveredOfferId] = useState<Offer['id'] | null>(
-    null,
+    null
   );
   const [activeSorting, setActiveSorting] = useState<Sorting>(
-    DEFAULT_SORTING_OPTION,
+    DEFAULT_SORTING_OPTION
   );
 
   function handleCardHover(offerId: Offer['id'] | null) {
@@ -32,7 +32,7 @@ function MainBlock({ currentLocation, currentOffers }: MainBlockProps) {
   const sortedOffers = sorting[activeSorting](currentOffers);
 
   return (
-    <div className="cities__places-container container">
+    <>
       <section className="cities__places places">
         <h2 className="visually-hidden">Places</h2>
         <b className="places__found">
@@ -56,7 +56,7 @@ function MainBlock({ currentLocation, currentOffers }: MainBlockProps) {
           className={'cities__map'}
         />
       </div>
-    </div>
+    </>
   );
 }
 
