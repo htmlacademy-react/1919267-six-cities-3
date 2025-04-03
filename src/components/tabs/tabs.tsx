@@ -35,7 +35,7 @@ function Tabs({ currentCity }: TabsProps) {
                 className={cn('locations__item-link', 'tabs__item', {
                   'tabs__item--active': item === currentCity.name,
                 })}
-                to={AppRoute.root}
+                to={AppRoute.Root}
               >
                 <span>{item}</span>
               </Link>
