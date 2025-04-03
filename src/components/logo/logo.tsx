@@ -10,7 +10,7 @@ type LogoProps = {
 function Logo({ block, size }: LogoProps) {
   return (
     <Link
-      to={AppRoute.root}
+      to={AppRoute.Root}
       className={`${block}__logo-link ${block}__logo-link--active`}
     >
       <img

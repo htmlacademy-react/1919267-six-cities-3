@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import MainPage from '../../pages/main-page/main-page';
 import { AppRoute } from '../../const';
 import FavoritesPage from '../../pages/favorites-page/favorites-page';
@@ -11,6 +11,8 @@ import { HelmetProvider } from 'react-helmet-async';
 import { useEffect } from 'react';
 import { useAppDispatch } from '../../hooks';
 import { checkAuth } from '../../store/api-actions';
+import HistoryRouter from '../history-route/history-route';
+import browserHistory from '../../browser-history';
 
 type AppProps = {
   reviews: Review[];
@@ -25,28 +27,28 @@ function App({ reviews }: AppProps) {
 
   return (
     <HelmetProvider>
-      <BrowserRouter>
+      <HistoryRouter history={browserHistory}>
         <Routes>
-          <Route path={AppRoute.root} element={<MainPage />} />
+          <Route path={AppRoute.Root} element={<MainPage />} />
           <Route
-            path={`${AppRoute.offer}/:id`}
+            path={`${AppRoute.Offer}/:id`}
             element={<OfferPage reviews={reviews} />}
           />
           <Route
-            path={AppRoute.favorites}
+            path={AppRoute.Favorites}
             element={
               <PrivateRoute>
                 <FavoritesPage />
               </PrivateRoute>
             }
           />
-          <Route path={AppRoute.login} element={<LoginPage />} />
+          <Route path={AppRoute.Login} element={<LoginPage />} />
           <Route
-            path={AppRoute.notFound}
+            path={AppRoute.NotFound}
             element={<NotFoundPage type="page" />}
           />
         </Routes>
-      </BrowserRouter>
+      </HistoryRouter>
     </HelmetProvider>
   );
 }

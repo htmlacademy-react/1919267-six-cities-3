@@ -26,7 +26,7 @@ function NotFoundPage({ type }: NotFoundPageProps) {
       <section className="page__favorites-container container">
         <div className="favorites__status-wrapper">
           <b className="favorites__status">{pageContentVariants[type].text}</b>
-          <Link to={AppRoute.root} className={styles.link}>
+          <Link to={AppRoute.Root} className={styles.link}>
             Go back to main page
           </Link>
         </div>
