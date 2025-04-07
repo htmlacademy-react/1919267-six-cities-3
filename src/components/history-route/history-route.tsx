@@ -1,10 +1,9 @@
 import { BrowserHistory } from 'history';
-import { ReactNode, useLayoutEffect, useState } from 'react';
+import { PropsWithChildren, useLayoutEffect, useState } from 'react';
 import { Router } from 'react-router-dom';
 
-export type HistoryRouterProps = {
+export type HistoryRouterProps = PropsWithChildren & {
   basename?: string;
-  children?: ReactNode;
   history: BrowserHistory;
 };
 

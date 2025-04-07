@@ -9,7 +9,7 @@ function HeaderNavigation() {
     (state) => state.authorizationStatus
   );
 
-  const favorites = useAppSelector((state) => state.favorites);
+  const favoritesCount = useAppSelector((state) => state.favorites)?.length;
   const user = useAppSelector((state) => state.user);
 
   function onLogoutClickHandler() {
@@ -35,7 +35,7 @@ function HeaderNavigation() {
               <span className="header__user-name user__name">
                 {user?.email}
               </span>
-              <span className="header__favorite-count">{favorites.length}</span>
+              <span className="header__favorite-count">{favoritesCount}</span>
             </Link>
           ) : (
             <Link
