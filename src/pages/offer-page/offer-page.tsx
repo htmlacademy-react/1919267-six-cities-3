@@ -12,7 +12,11 @@ import NearOffers from '../../components/near-offers/near-offers';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { Helmet } from 'react-helmet-async';
 import { useEffect } from 'react';
-import { fetchCurrentOffer, fetchReviews } from '../../store/api-actions';
+import {
+  fetchCurrentOffer,
+  fetchNearbyOffers,
+  fetchReviews,
+} from '../../store/api-actions';
 import { MAX_NEARBY_OFFERS_COUNT } from '../../const';
 
 function OfferPage() {
@@ -22,15 +26,20 @@ function OfferPage() {
     if (id) {
       dispatch(fetchCurrentOffer(id));
       dispatch(fetchReviews(id));
+      dispatch(fetchNearbyOffers(id));
     }
   }, [dispatch, id]);
+
   const currentOffer = useAppSelector((state) => state.currentOffer);
+
   const authorizationStatus = useAppSelector(
     (state) => state.authorizationStatus
   );
   const reviews = useAppSelector((state) => state.reviews);
-  const offers = useAppSelector((state) => state.offers);
-  const nearOffersToRender = offers.slice(0, MAX_NEARBY_OFFERS_COUNT);
+  const nearbyOffers = useAppSelector((state) => state.nearbyOffers).slice(
+    0,
+    MAX_NEARBY_OFFERS_COUNT
+  );
 
   if (!currentOffer) {
     return <NotFoundPage type="offer" />;
@@ -154,12 +163,12 @@ function OfferPage() {
           </div>
           <Map
             city={city}
-            offers={nearOffersToRender}
+            offers={[...nearbyOffers, currentOffer]}
             hoveredOfferId={offerId}
             className="offer__map"
           />
         </section>
-        <NearOffers nearbyPlaces={nearOffersToRender} />
+        <NearOffers nearbyPlaces={nearbyOffers} />
       </main>
     </div>
   );

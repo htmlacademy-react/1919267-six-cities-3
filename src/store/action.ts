@@ -51,3 +51,4 @@ export const setUserInfo = createAction(
 
 export const setCurrentOffer = createAction<Offer>('offer/setCurrentOffer');
 export const setOfferReviews = createAction<Review[]>('offer/setOfferReviews');
+export const setNearbyOffers = createAction<Offer[]>('offer/setNearbyOffers');

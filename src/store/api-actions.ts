@@ -9,6 +9,7 @@ import {
   setCurrentOffer,
   setError,
   setLoadingStatus,
+  setNearbyOffers,
   setOfferReviews,
   setOffers,
   setUserInfo,
@@ -79,6 +80,23 @@ export const fetchReviews = createAsyncThunk<
   const { data } = await api.get<Review[]>(`${APIRoute.Reviews}/${offerId}`);
   dispatch(setLoadingStatus(false));
   dispatch(setOfferReviews(data));
+});
+
+export const fetchNearbyOffers = createAsyncThunk<
+  void,
+  Offer['id'],
+  {
+    dispatch: AppDispatch;
+    state: State;
+    extra: AxiosInstance;
+  }
+>('offer/fetchNearbyOffers', async (offerId, { dispatch, extra: api }) => {
+  dispatch(setLoadingStatus(true));
+  const { data } = await api.get<Offer[]>(
+    `${APIRoute.Offers}/${offerId}${APIRoute.NearbyOffers}`
+  );
+  dispatch(setLoadingStatus(false));
+  dispatch(setNearbyOffers(data));
 });
 
 export const login = createAsyncThunk<

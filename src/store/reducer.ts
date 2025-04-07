@@ -6,6 +6,7 @@ import {
   setCurrentOffer,
   setError,
   setLoadingStatus,
+  setNearbyOffers,
   setOfferReviews,
   setOffers,
   setUserInfo,
@@ -20,6 +21,7 @@ const initialState = {
   currentCity: DEFAULT_CITY,
   currentOffer: null as Offer | null,
   reviews: [] as Review[],
+  nearbyOffers: [] as Offer[],
   authorizationStatus: AuthStatus.Unknown,
   error: null as null | string,
   isLoading: false,
@@ -51,5 +53,8 @@ export const reducer = createReducer(initialState, (builder) => {
     })
     .addCase(setOfferReviews, (state, action) => {
       state.reviews = action.payload;
+    })
+    .addCase(setNearbyOffers, (state, action) => {
+      state.nearbyOffers = action.payload;
     });
 });
