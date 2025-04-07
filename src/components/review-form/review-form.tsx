@@ -1,4 +1,7 @@
 import { MAX_COMMENT_LENGTH, MIN_COMMENT_LENGTH } from '../../const';
+import { useAppDispatch } from '../../hooks';
+import { sendReview } from '../../store/api-actions';
+import { Offer } from '../../types/offer';
 import ReviewFormRating from '../review-form-rating/review-form-rating';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
@@ -7,7 +10,12 @@ export type ReviewFormInputs = {
   review: string;
 };
 
-function ReviewForm() {
+type ReviewFormProps = {
+  offerId: Offer['id'];
+};
+
+function ReviewForm({ offerId }: ReviewFormProps) {
+  const dispatch = useAppDispatch();
   const {
     register,
     handleSubmit,
@@ -22,8 +30,13 @@ function ReviewForm() {
     event?: React.BaseSyntheticEvent
   ) => {
     event?.preventDefault();
-    // eslint-disable-next-line no-console
-    console.log(data);
+    dispatch(
+      sendReview({
+        comment: data.review,
+        rating: Number(data.rating),
+        id: offerId,
+      })
+    );
     reset();
   };
 

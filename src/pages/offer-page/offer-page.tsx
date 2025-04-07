@@ -12,30 +12,21 @@ import NearOffers from '../../components/near-offers/near-offers';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { Helmet } from 'react-helmet-async';
 import { useEffect } from 'react';
-import {
-  fetchCurrentOffer,
-  fetchNearbyOffers,
-  fetchReviews,
-} from '../../store/api-actions';
+import { fetchCurrentOffer, fetchNearbyOffers } from '../../store/api-actions';
 import { MAX_NEARBY_OFFERS_COUNT } from '../../const';
 
 function OfferPage() {
   const { id } = useParams();
   const dispatch = useAppDispatch();
-  useEffect(() => {
-    if (id) {
-      dispatch(fetchCurrentOffer(id));
-      dispatch(fetchReviews(id));
-      dispatch(fetchNearbyOffers(id));
-    }
-  }, [dispatch, id]);
-
   const currentOffer = useAppSelector((state) => state.currentOffer);
 
-  const authorizationStatus = useAppSelector(
-    (state) => state.authorizationStatus
-  );
-  const reviews = useAppSelector((state) => state.reviews);
+  useEffect(() => {
+    if (id && currentOffer?.id !== id) {
+      dispatch(fetchCurrentOffer(id));
+      dispatch(fetchNearbyOffers(id));
+    }
+  }, [dispatch, id, currentOffer]);
+
   const nearbyOffers = useAppSelector((state) => state.nearbyOffers).slice(
     0,
     MAX_NEARBY_OFFERS_COUNT
@@ -155,10 +146,7 @@ function OfferPage() {
                   <p className="offer__text">{description}</p>
                 </div>
               </div>
-              <ReviewsList
-                reviews={reviews}
-                authorizationStatus={authorizationStatus}
-              />
+              {offerId && <ReviewsList offerId={offerId} />}
             </div>
           </div>
           <Map

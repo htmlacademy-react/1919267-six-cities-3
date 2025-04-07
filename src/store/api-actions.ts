@@ -18,7 +18,7 @@ import { dropToken, setToken } from '../services/token';
 import { AuthData } from '../types/auth-data';
 import { store } from './';
 import { User } from '../types/user';
-import { Review } from '../types/review';
+import { Review, ReviewData } from '../types/review';
 
 export const fetchOffers = createAsyncThunk<
   void,
@@ -137,3 +137,23 @@ export const clearError = createAsyncThunk('app/setError', () => {
     store.dispatch(setError(null));
   }, TIMEOUT_SHOW_ERROR);
 });
+
+export const sendReview = createAsyncThunk<
+  void,
+  ReviewData,
+  {
+    dispatch: AppDispatch;
+    state: State;
+    extra: AxiosInstance;
+  }
+>(
+  'offer/sendreview',
+  async ({ comment, rating, id }, { dispatch, getState, extra: api }) => {
+    const { data } = await api.post<Review>(`${APIRoute.Reviews}/${id}`, {
+      rating,
+      comment,
+    });
+    const state = getState();
+    dispatch(setOfferReviews([data, ...state.reviews]));
+  }
+);
