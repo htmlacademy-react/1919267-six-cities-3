@@ -12,6 +12,7 @@ import { useAppDispatch } from '../../hooks';
 import { checkAuth } from '../../store/api-actions';
 import HistoryRouter from '../history-route/history-route';
 import browserHistory from '../../browser-history';
+import ScrollToTop from '../scroll-to-top/scroll-to-top';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -23,6 +24,7 @@ function App() {
   return (
     <HelmetProvider>
       <HistoryRouter history={browserHistory}>
+        <ScrollToTop />
         <Routes>
           <Route path={AppRoute.Root} element={<MainPage />} />
           <Route path={`${AppRoute.Offer}/:id`} element={<OfferPage />} />
