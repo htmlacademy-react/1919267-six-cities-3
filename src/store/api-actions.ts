@@ -6,8 +6,10 @@ import { Offer } from '../types/offer';
 import {
   redirectToRoute,
   requireAuthorization,
+  setCurrentOffer,
   setError,
   setLoadingStatus,
+  setOfferReviews,
   setOffers,
   setUserInfo,
 } from './action';
@@ -15,6 +17,7 @@ import { dropToken, setToken } from '../services/token';
 import { AuthData } from '../types/auth-data';
 import { store } from './';
 import { User } from '../types/user';
+import { Review } from '../types/review';
 
 export const fetchOffers = createAsyncThunk<
   void,
@@ -46,6 +49,36 @@ export const checkAuth = createAsyncThunk<
   } catch {
     dispatch(requireAuthorization(AuthStatus.NoAuth));
   }
+});
+
+export const fetchCurrentOffer = createAsyncThunk<
+  void,
+  Offer['id'],
+  {
+    dispatch: AppDispatch;
+    state: State;
+    extra: AxiosInstance;
+  }
+>('offer/fetchCurrentOffer', async (offerId, { dispatch, extra: api }) => {
+  dispatch(setLoadingStatus(true));
+  const { data } = await api.get<Offer>(`${APIRoute.Offers}/${offerId}`);
+  dispatch(setLoadingStatus(false));
+  dispatch(setCurrentOffer(data));
+});
+
+export const fetchReviews = createAsyncThunk<
+  void,
+  Offer['id'],
+  {
+    dispatch: AppDispatch;
+    state: State;
+    extra: AxiosInstance;
+  }
+>('offer/fetchReviews', async (offerId, { dispatch, extra: api }) => {
+  dispatch(setLoadingStatus(true));
+  const { data } = await api.get<Review[]>(`${APIRoute.Reviews}/${offerId}`);
+  dispatch(setLoadingStatus(false));
+  dispatch(setOfferReviews(data));
 });
 
 export const login = createAsyncThunk<

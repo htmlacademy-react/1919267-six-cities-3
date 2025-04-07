@@ -3,18 +3,23 @@ import { AuthStatus, DEFAULT_CITY } from '../const';
 import {
   requireAuthorization,
   setCurrentCity,
+  setCurrentOffer,
   setError,
   setLoadingStatus,
+  setOfferReviews,
   setOffers,
   setUserInfo,
 } from './action';
 import { Offer } from '../types/offer';
 import { User } from '../types/user';
+import { Review } from '../types/review';
 
 const initialState = {
   offers: [] as Offer[],
   favorites: [] as Offer[],
   currentCity: DEFAULT_CITY,
+  currentOffer: null as Offer | null,
+  reviews: [] as Review[],
   authorizationStatus: AuthStatus.Unknown,
   error: null as null | string,
   isLoading: false,
@@ -40,5 +45,11 @@ export const reducer = createReducer(initialState, (builder) => {
     })
     .addCase(setUserInfo, (state, action) => {
       state.user = action.payload;
+    })
+    .addCase(setCurrentOffer, (state, action) => {
+      state.currentOffer = action.payload;
+    })
+    .addCase(setOfferReviews, (state, action) => {
+      state.reviews = action.payload;
     });
 });

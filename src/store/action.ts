@@ -3,6 +3,7 @@ import { City } from '../types/city';
 import { Offer } from '../types/offer';
 import { AuthStatus, AppRoute } from '../const';
 import { User } from '../types/user';
+import { Review } from '../types/review';
 
 export const setCurrentCity = createAction(
   'offers/setCurrentCity',
@@ -47,3 +48,6 @@ export const setUserInfo = createAction(
     payload: userData,
   })
 );
+
+export const setCurrentOffer = createAction<Offer>('offer/setCurrentOffer');
+export const setOfferReviews = createAction<Review[]>('offer/setOfferReviews');

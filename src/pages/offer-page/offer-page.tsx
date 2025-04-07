@@ -1,7 +1,5 @@
 import { useParams } from 'react-router-dom';
 import Header from '../../components/header/header';
-import { MAX_NEARBY_OFFERS_COUNT } from '../../const';
-import { Offer } from '../../types/offer';
 import NotFoundPage from '../not-found-page/not-found-page';
 import PremiumMark from '../../components/premium-mark/premium-mark';
 import BookmarkButton from '../../components/bookmark-button/bookmark-button';
@@ -9,26 +7,30 @@ import { addPluralEnding, capitalizeFirstLetter } from '../../utils/common';
 import { getRatingWidth } from '../../utils/offer';
 import cn from 'classnames';
 import ReviewsList from '../../components/reviews-list/reviews-list';
-import { Review } from '../../types/review';
 import Map from '../../components/map/map';
 import NearOffers from '../../components/near-offers/near-offers';
-import { useAppSelector } from '../../hooks';
+import { useAppDispatch, useAppSelector } from '../../hooks';
 import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
+import { fetchCurrentOffer, fetchReviews } from '../../store/api-actions';
+import { MAX_NEARBY_OFFERS_COUNT } from '../../const';
 
-type OfferPageProps = {
-  reviews: Review[];
-};
-
-function OfferPage({ reviews }: OfferPageProps) {
+function OfferPage() {
   const { id } = useParams();
-  const offers = useAppSelector((state) => state.offers);
-  const nearOffersToRender = offers.slice(0, MAX_NEARBY_OFFERS_COUNT);
-  const currentOffer: Offer | undefined = offers.find(
-    (offer) => offer.id === id
-  );
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    if (id) {
+      dispatch(fetchCurrentOffer(id));
+      dispatch(fetchReviews(id));
+    }
+  }, [dispatch, id]);
+  const currentOffer = useAppSelector((state) => state.currentOffer);
   const authorizationStatus = useAppSelector(
     (state) => state.authorizationStatus
   );
+  const reviews = useAppSelector((state) => state.reviews);
+  const offers = useAppSelector((state) => state.offers);
+  const nearOffersToRender = offers.slice(0, MAX_NEARBY_OFFERS_COUNT);
 
   if (!currentOffer) {
     return <NotFoundPage type="offer" />;
