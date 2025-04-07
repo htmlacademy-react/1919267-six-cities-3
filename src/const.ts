@@ -120,6 +120,8 @@ const MAX_NEARBY_OFFERS_COUNT = 3;
 
 const TIMEOUT_SHOW_ERROR = 2000;
 
+const ACTION_TYPE_REDIRECT = 'app/redirectToRoute';
+
 export {
   AppRoute,
   AuthStatus,
@@ -138,4 +140,5 @@ export {
   URL_MARKER_DEFAULT,
   MAX_NEARBY_OFFERS_COUNT,
   TIMEOUT_SHOW_ERROR,
+  ACTION_TYPE_REDIRECT,
 };
