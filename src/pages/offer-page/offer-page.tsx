@@ -1,7 +1,5 @@
 import { useParams } from 'react-router-dom';
 import Header from '../../components/header/header';
-import { MAX_NEARBY_OFFERS_COUNT } from '../../const';
-import { Offer } from '../../types/offer';
 import NotFoundPage from '../not-found-page/not-found-page';
 import PremiumMark from '../../components/premium-mark/premium-mark';
 import BookmarkButton from '../../components/bookmark-button/bookmark-button';
@@ -9,25 +7,29 @@ import { addPluralEnding, capitalizeFirstLetter } from '../../utils/common';
 import { getRatingWidth } from '../../utils/offer';
 import cn from 'classnames';
 import ReviewsList from '../../components/reviews-list/reviews-list';
-import { Review } from '../../types/review';
 import Map from '../../components/map/map';
 import NearOffers from '../../components/near-offers/near-offers';
-import { useAppSelector } from '../../hooks';
+import { useAppDispatch, useAppSelector } from '../../hooks';
 import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
+import { fetchCurrentOffer, fetchNearbyOffers } from '../../store/api-actions';
+import { MAX_NEARBY_OFFERS_COUNT } from '../../const';
 
-type OfferPageProps = {
-  reviews: Review[];
-};
-
-function OfferPage({ reviews }: OfferPageProps) {
+function OfferPage() {
   const { id } = useParams();
-  const offers = useAppSelector((state) => state.offers);
-  const nearOffersToRender = offers.slice(0, MAX_NEARBY_OFFERS_COUNT);
-  const currentOffer: Offer | undefined = offers.find(
-    (offer) => offer.id === id
-  );
-  const authorizationStatus = useAppSelector(
-    (state) => state.authorizationStatus
+  const dispatch = useAppDispatch();
+  const currentOffer = useAppSelector((state) => state.currentOffer);
+
+  useEffect(() => {
+    if (id && currentOffer?.id !== id) {
+      dispatch(fetchCurrentOffer(id));
+      dispatch(fetchNearbyOffers(id));
+    }
+  }, [dispatch, id, currentOffer]);
+
+  const nearbyOffers = useAppSelector((state) => state.nearbyOffers).slice(
+    0,
+    MAX_NEARBY_OFFERS_COUNT
   );
 
   if (!currentOffer) {
@@ -144,20 +146,17 @@ function OfferPage({ reviews }: OfferPageProps) {
                   <p className="offer__text">{description}</p>
                 </div>
               </div>
-              <ReviewsList
-                reviews={reviews}
-                authorizationStatus={authorizationStatus}
-              />
+              {offerId && <ReviewsList offerId={offerId} />}
             </div>
           </div>
           <Map
             city={city}
-            offers={nearOffersToRender}
+            offers={[...nearbyOffers, currentOffer]}
             hoveredOfferId={offerId}
             className="offer__map"
           />
         </section>
-        <NearOffers nearbyPlaces={nearOffersToRender} />
+        <NearOffers nearbyPlaces={nearbyOffers} />
       </main>
     </div>
   );
