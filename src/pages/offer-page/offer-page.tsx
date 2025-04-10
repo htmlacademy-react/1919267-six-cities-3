@@ -21,15 +21,14 @@ function OfferPage() {
   const currentOffer = useAppSelector((state) => state.currentOffer);
 
   useEffect(() => {
-    if (id && currentOffer?.id !== id) {
+    if (id) {
       dispatch(fetchCurrentOffer(id));
       dispatch(fetchNearbyOffers(id));
     }
-  }, [dispatch, id, currentOffer]);
+  }, [dispatch, id]);
 
-  const nearbyOffers = useAppSelector((state) => state.nearbyOffers).slice(
-    0,
-    MAX_NEARBY_OFFERS_COUNT
+  const nearbyOffers = useAppSelector((state) =>
+    state.nearbyOffers.slice(0, MAX_NEARBY_OFFERS_COUNT)
   );
 
   if (!currentOffer) {
