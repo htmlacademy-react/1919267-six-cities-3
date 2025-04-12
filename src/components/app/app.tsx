@@ -14,7 +14,7 @@ import { selectAuthorizationStatus } from '../../store/user-data/selectors';
 import HistoryRouter from '../history-route/history-route';
 import browserHistory from '../../browser-history';
 
-function App(): JSX.Element {
+function App() {
   const authorizationStatus = useAppSelector(selectAuthorizationStatus);
 
   const dispatch = useAppDispatch();
