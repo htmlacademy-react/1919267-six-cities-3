@@ -131,6 +131,8 @@ enum Sorting {
 
 const DEFAULT_SORTING_OPTION = Sorting['Popular'];
 
+const ACTION_TYPE_REDIRECT = 'app/redirectToRoute';
+
 export {
   Settings,
   AppRoute,
@@ -156,4 +158,5 @@ export {
   HttpStatus,
   CityMap,
   FavoriteStatus,
+  ACTION_TYPE_REDIRECT,
 };
