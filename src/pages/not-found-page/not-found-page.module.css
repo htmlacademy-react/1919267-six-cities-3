@@ -6,9 +6,7 @@
   text-align: center;
   color: #4481c3;
 
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .link:hover {

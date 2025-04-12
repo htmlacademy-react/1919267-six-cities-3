@@ -1,22 +1,28 @@
-import Header from '../../components/header/header';
-import Tabs from '../../components/tabs/tabs';
-import MainBlock from '../../components/main-block/main-block';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { Helmet } from 'react-helmet-async';
 import { useEffect } from 'react';
 import { fetchOffers } from '../../store/api-actions';
-import Spinner from '../../components/spinner/spinner';
 import classNames from 'classnames';
-import MainBlockEmpty from '../../components/main-block-empty/main-block-empty';
+import MainBlock from '../../components/main-block/main-block';
+import Header from '../../components/header/header';
+import {
+  selectCurrentCity,
+  selectOffers,
+  selectOffersFetchingStatus,
+} from '../../store/offers-data/selectors';
+import Tabs from '../../components/tabs/tabs';
+import { RequestStatus } from '../../const';
+import Spinner from '../../components/spinner/spinner';
+import MainEmptyBlock from '../../components/main-empty-block/main-empty-block';
 
 function MainPage() {
   const dispatch = useAppDispatch();
-  const currentCity = useAppSelector((state) => state.currentCity);
-  const offers = useAppSelector((state) => state.offers);
+  const currentCity = useAppSelector(selectCurrentCity);
+  const offers = useAppSelector(selectOffers);
   const currentOffers = offers.filter(
     (offer) => offer.city.name === currentCity.name
   );
-  const isLoading = useAppSelector((state) => state.isLoading);
+  const fetchingStatus = useAppSelector(selectOffersFetchingStatus);
 
   useEffect(() => {
     dispatch(fetchOffers());
@@ -40,14 +46,14 @@ function MainPage() {
               !offers.length && 'cities__places-container--empty'
             )}
           >
-            {isLoading && <Spinner />}
+            {fetchingStatus === RequestStatus.Loading && <Spinner />}
             {offers.length ? (
               <MainBlock
                 currentLocation={currentCity}
                 currentOffers={currentOffers}
               />
             ) : (
-              <MainBlockEmpty cityName={currentCity.name} />
+              <MainEmptyBlock cityName={currentCity.name} />
             )}
           </div>
         </div>

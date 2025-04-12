@@ -1,4 +1,4 @@
-import SpinnerIcon from '../assets/icons/spinner-icon';
+import SpinnerIcon from '../../assets/icons/spinner-icon';
 import styles from './spinner.module.css';
 
 function Spinner() {

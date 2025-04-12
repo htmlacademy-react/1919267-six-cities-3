@@ -1,11 +1,10 @@
-import { Host } from './host';
 import { OfferPreview } from './offer-preview';
+import { Host } from './host';
 
 export type Offer = OfferPreview & {
   bedrooms: number;
   description: string;
   host: Host;
-  goods: string[];
   images: string[];
   maxAdults: number;
-};
+}

@@ -1,5 +1,8 @@
-import { City } from './types/city';
 import { Size } from './types/size';
+
+const Settings = {
+  PlacesCount: 5,
+} as const;
 
 enum AppRoute {
   Root = '/',
@@ -9,19 +12,19 @@ enum AppRoute {
   NotFound = '/*',
 }
 
-enum AuthStatus {
+enum AuthorizationStatus {
   Auth = 'AUTH',
   NoAuth = 'NO_AUTH',
   Unknown = 'UNKNOWN',
 }
 
-enum APIRoute {
-  Offers = '/offers',
-  Login = '/login',
-  Logout = '/logout',
-  Reviews = '/comments',
-  NearbyOffers = '/nearby',
-  Favorite = '/favorite',
+enum Cities {
+  Paris = 'Paris',
+  Cologne = 'Cologne',
+  Brussels = 'Brussels',
+  Amsterdam = 'Amsterdam',
+  Hamburg = 'Hamburg',
+  Dusseldorf = 'Dusseldorf',
 }
 
 const BookmarkSize: Size = {
@@ -39,76 +42,34 @@ const LogoSize: Size = {
   large: { width: '81', height: '41' },
 } as const;
 
-const CityName = {
-  Paris: 'Paris',
-  Cologne: 'Cologne',
-  Brussels: 'Brussels',
-  Amsterdam: 'Amsterdam',
-  Hamburg: 'Hamburg',
-  Dusseldorf: 'Dusseldorf',
+const CityMap = {
+  Paris: {
+    name: Cities.Paris,
+    location: { latitude: 48.8566, longitude: 2.3522, zoom: 13 },
+  },
+  Cologne: {
+    name: Cities.Cologne,
+    location: { latitude: 50.935173, longitude: 6.953101, zoom: 13 },
+  },
+  Brussels: {
+    name: Cities.Brussels,
+    location: { latitude: 50.8476, longitude: 4.3572, zoom: 13 },
+  },
+  Amsterdam: {
+    name: Cities.Amsterdam,
+    location: { latitude: 52.3676, longitude: 4.9041, zoom: 13 },
+  },
+  Hamburg: {
+    name: Cities.Hamburg,
+    location: { latitude: 53.5488, longitude: 9.9872, zoom: 13 },
+  },
+  Dusseldorf: {
+    name: Cities.Dusseldorf,
+    location: { latitude: 51.2277, longitude: 6.7735, zoom: 13 },
+  },
 } as const;
 
-const CITIES: City[] = [
-  {
-    name: CityName.Paris,
-    location: {
-      latitude: 48.85661,
-      longitude: 2.351499,
-      zoom: 13,
-    },
-  },
-  {
-    name: CityName.Cologne,
-    location: {
-      latitude: 50.938361,
-      longitude: 6.959974,
-      zoom: 13,
-    },
-  },
-  {
-    name: CityName.Brussels,
-    location: {
-      latitude: 50.846557,
-      longitude: 4.351697,
-      zoom: 13,
-    },
-  },
-  {
-    name: CityName.Amsterdam,
-    location: {
-      latitude: 52.37454,
-      longitude: 4.897976,
-      zoom: 13,
-    },
-  },
-  {
-    name: CityName.Hamburg,
-    location: {
-      latitude: 53.550341,
-      longitude: 10.000654,
-      zoom: 13,
-    },
-  },
-  {
-    name: CityName.Dusseldorf,
-    location: {
-      latitude: 51.225402,
-      longitude: 6.776314,
-      zoom: 13,
-    },
-  },
-];
-
-const DEFAULT_CITY = CITIES[0];
-
-enum Sorting {
-  Popular = 'Popular',
-  LowToHigh = 'Price: low to high',
-  HighToLow = 'Price: high to low',
-  TopRating = 'Top rated first',
-}
-
-const DEFAULT_SORTING_OPTION = Sorting['Popular'];
+const DEFAULT_CITY = Cities.Paris;
 
 const MIN_COMMENT_LENGTH = 50;
 const MAX_COMMENT_LENGTH = 300;
@@ -119,28 +80,80 @@ const URL_MARKER_CURRENT = 'img/pin-active.svg';
 const MAX_NEARBY_OFFERS_COUNT = 3;
 const MAX_SHOWN_REVIEWS = 10;
 
-const TIMEOUT_SHOW_ERROR = 2000;
+enum APIRoute {
+  Offers = '/offers',
+  Login = '/login',
+  Logout = '/logout',
+  Reviews = '/comments',
+  NearbyOffers = '/nearby',
+  Favorite = '/favorite',
+}
 
-const ACTION_TYPE_REDIRECT = 'app/redirectToRoute';
+const BACKEND_URL = 'https://15.design.htmlacademy.pro/six-cities';
+const REQUEST_TIMEOUT = 5000;
+
+enum RequestStatus {
+  Loading = 'Loading',
+  Idle = 'Idle',
+  Error = 'Error',
+  Success = 'Success',
+}
+
+enum NameSpace {
+  OffersData = 'OFFERS_DATA',
+  OfferData = 'OFFER_DATA',
+  ReviewData = 'REVIEW_DATA',
+  UserData = 'USER_DATA',
+  FavoritesData = 'FAVORITES_DATA',
+  NearbyOffersData = 'NEARBY_OFFERS_DATA',
+}
+
+const HttpStatus = {
+  Ok: 200,
+  Created: 201,
+  BadRequest: 400,
+  Unauthorized: 401,
+  Forbidden: 403,
+  NotFound: 404,
+} as const;
+
+const enum FavoriteStatus {
+  Added = 1,
+  Deleted = 0,
+}
+
+enum Sorting {
+  Popular = 'Popular',
+  LowToHigh = 'Price: low to high',
+  HighToLow = 'Price: high to low',
+  TopRating = 'Top rated first',
+}
+
+const DEFAULT_SORTING_OPTION = Sorting['Popular'];
 
 export {
+  Settings,
   AppRoute,
-  AuthStatus,
+  AuthorizationStatus,
+  Cities,
+  DEFAULT_CITY,
+  MAX_COMMENT_LENGTH,
+  MIN_COMMENT_LENGTH,
+  URL_MARKER_CURRENT,
+  URL_MARKER_DEFAULT,
+  Sorting,
+  DEFAULT_SORTING_OPTION,
   APIRoute,
   BookmarkSize,
   ImageSize,
   LogoSize,
-  CityName,
-  CITIES,
-  DEFAULT_CITY,
-  Sorting,
-  DEFAULT_SORTING_OPTION,
-  MIN_COMMENT_LENGTH,
-  MAX_COMMENT_LENGTH,
-  URL_MARKER_CURRENT,
-  URL_MARKER_DEFAULT,
+  BACKEND_URL,
+  REQUEST_TIMEOUT,
   MAX_NEARBY_OFFERS_COUNT,
   MAX_SHOWN_REVIEWS,
-  TIMEOUT_SHOW_ERROR,
-  ACTION_TYPE_REDIRECT,
+  RequestStatus,
+  NameSpace,
+  HttpStatus,
+  CityMap,
+  FavoriteStatus,
 };

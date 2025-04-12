@@ -1,9 +1,11 @@
-import { AppRoute, CITIES, CityName } from '../../const';
+import { useMemo } from 'react';
+import { AppRoute, CityMap } from '../../const';
 import { useAppDispatch } from '../../hooks';
-import { setCurrentCity } from '../../store/action';
-import { City } from '../../types/city';
+
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
+import { setCurrentCity } from '../../store/offers-data/offers-data';
+import { City } from '../../types/city';
 
 type TabsProps = {
   currentCity: City;
@@ -11,14 +13,10 @@ type TabsProps = {
 
 function Tabs({ currentCity }: TabsProps) {
   const dispatch = useAppDispatch();
-  const cities = CITIES.map((city) => city.name);
+  const cities = useMemo(() => Object.values(CityMap), []);
 
-  const handleTabClick = (city: keyof typeof CityName) => {
-    const selectedCity = CITIES.find((item) => item.name === city);
-    if (!selectedCity) {
-      return;
-    }
-    dispatch(setCurrentCity(selectedCity));
+  const handleTabClick = (city: City) => {
+    dispatch(setCurrentCity(city));
   };
 
   return (
@@ -27,17 +25,17 @@ function Tabs({ currentCity }: TabsProps) {
         <ul className="locations__list tabs__list">
           {cities.map((item) => (
             <li
-              key={item}
+              key={item.name}
               className="locations__item"
               onClick={() => handleTabClick(item)}
             >
               <Link
                 className={cn('locations__item-link', 'tabs__item', {
-                  'tabs__item--active': item === currentCity.name,
+                  'tabs__item--active': item.name === currentCity.name,
                 })}
                 to={AppRoute.Root}
               >
-                <span>{item}</span>
+                <span>{item.name}</span>
               </Link>
             </li>
           ))}

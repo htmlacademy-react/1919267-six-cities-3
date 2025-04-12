@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
-import HeaderNavigation from '../header-navigation/header-navigation';
 import Logo from '../logo/logo';
 import { AppRoute } from '../../const';
+import HeaderNavigation from '../header-navigation/header-navigation';
 
 function Header() {
   const { pathname } = useLocation();

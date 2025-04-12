@@ -8,28 +8,42 @@ import { getRatingWidth } from '../../utils/offer';
 import cn from 'classnames';
 import ReviewsList from '../../components/reviews-list/reviews-list';
 import Map from '../../components/map/map';
-import NearOffers from '../../components/near-offers/near-offers';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { Helmet } from 'react-helmet-async';
 import { useEffect } from 'react';
-import { fetchCurrentOffer, fetchNearbyOffers } from '../../store/api-actions';
-import { MAX_NEARBY_OFFERS_COUNT } from '../../const';
+import { fetchActiveOffer, fetchNearbyOffers } from '../../store/api-actions';
+import { MAX_NEARBY_OFFERS_COUNT, RequestStatus } from '../../const';
+import {
+  selectActiveOffer,
+  selectOfferFetchingStatus,
+} from '../../store/offer-data/selectors';
+import { dropActiveOffer } from '../../store/offer-data/offer-data';
+import { selectNearbyOffers } from '../../store/nearby-offers-data/selectors';
+import NearOffers from '../../components/near-offers/near-offers';
+import Spinner from '../../components/spinner/spinner';
 
 function OfferPage() {
   const { id } = useParams();
   const dispatch = useAppDispatch();
-  const currentOffer = useAppSelector((state) => state.currentOffer);
+  const currentOffer = useAppSelector(selectActiveOffer);
+  const offerFetchingStatus = useAppSelector(selectOfferFetchingStatus);
+  const nearbyOffers = useAppSelector(selectNearbyOffers);
+  const nearbyOffersToRender = nearbyOffers.slice(0, MAX_NEARBY_OFFERS_COUNT);
 
   useEffect(() => {
     if (id) {
-      dispatch(fetchCurrentOffer(id));
+      dispatch(fetchActiveOffer(id));
       dispatch(fetchNearbyOffers(id));
     }
+
+    return () => {
+      dispatch(dropActiveOffer());
+    };
   }, [dispatch, id]);
 
-  const nearbyOffers = useAppSelector((state) =>
-    state.nearbyOffers.slice(0, MAX_NEARBY_OFFERS_COUNT)
-  );
+  if (offerFetchingStatus === RequestStatus.Loading) {
+    return <Spinner />;
+  }
 
   if (!currentOffer) {
     return <NotFoundPage type="offer" />;
@@ -150,12 +164,12 @@ function OfferPage() {
           </div>
           <Map
             city={city}
-            offers={[...nearbyOffers, currentOffer]}
+            offers={[...nearbyOffersToRender, currentOffer]}
             hoveredOfferId={offerId}
             className="offer__map"
           />
         </section>
-        <NearOffers nearbyPlaces={nearbyOffers} />
+        <NearOffers nearbyPlaces={nearbyOffersToRender} />
       </main>
     </div>
   );

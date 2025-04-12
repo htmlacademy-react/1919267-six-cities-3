@@ -6,7 +6,7 @@ type OffersCardListProps = {
   onCardHover: (offerId: Offer['id'] | null) => void;
 };
 
-function OffersCardList({ currentOffers, onCardHover }: OffersCardListProps) {
+function OffersList({ currentOffers, onCardHover }: OffersCardListProps) {
   return (
     <div className="cities__places-list places__list tabs__content">
       {currentOffers.map((offer) => (
@@ -22,4 +22,4 @@ function OffersCardList({ currentOffers, onCardHover }: OffersCardListProps) {
   );
 }
 
-export default OffersCardList;
+export default OffersList;

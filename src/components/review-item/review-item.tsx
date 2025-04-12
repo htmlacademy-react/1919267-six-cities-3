@@ -9,7 +9,7 @@ type ReviewItemProps = {
   date: string;
 };
 
-function ReviewsItem({ rating, user, comment, date }: ReviewItemProps) {
+function ReviewItem({ rating, user, comment, date }: ReviewItemProps) {
   const commentDate = new Date(date);
   const dateTime = commentDate.toDateString();
 
@@ -43,4 +43,4 @@ function ReviewsItem({ rating, user, comment, date }: ReviewItemProps) {
   );
 }
 
-export default ReviewsItem;
+export default ReviewItem;

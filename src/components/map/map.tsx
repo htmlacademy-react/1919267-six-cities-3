@@ -39,7 +39,7 @@ function Map({
     if (map) {
       map.flyTo(
         [city.location.latitude, city.location.longitude],
-        city.location.zoom,
+        city.location.zoom
       );
       markerLayer.current.addTo(map);
       markerLayer.current.clearLayers();
@@ -51,7 +51,7 @@ function Map({
       offers.forEach((offer) => {
         marker([offer?.location.latitude, offer?.location.longitude])
           .setIcon(
-            offer.id === hoveredOfferId ? currentCustomIcon : defaultCustomIcon,
+            offer.id === hoveredOfferId ? currentCustomIcon : defaultCustomIcon
           )
           .addTo(markerLayer.current);
       });

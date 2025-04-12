@@ -1,10 +1,10 @@
-import { CityName } from '../../const';
+import { Cities } from '../../const';
 
-type MainBlockEmptyProps = {
-  cityName: keyof typeof CityName;
+type MainEmptyBlockProps = {
+  cityName: keyof typeof Cities;
 };
 
-function MainBlockEmpty({ cityName }: MainBlockEmptyProps) {
+function MainEmptyBlock({ cityName }: MainEmptyBlockProps) {
   return (
     <>
       <section className="cities__no-places">
@@ -20,4 +20,4 @@ function MainBlockEmpty({ cityName }: MainBlockEmptyProps) {
   );
 }
 
-export default MainBlockEmpty;
+export default MainEmptyBlock;

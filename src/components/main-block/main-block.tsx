@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { City } from '../../types/city';
 import { Offer } from '../../types/offer';
 import { addPluralEnding } from '../../utils/common';
-import SortingForm from '../sorting-form/sorting-form';
 import { DEFAULT_SORTING_OPTION, Sorting } from '../../const';
-import OffersCardList from '../offers-card-list/offers-card-list';
 import Map from '../map/map';
 import { sorting } from '../../utils/offer';
+import OffersList from '../offers-list/offers-list';
+import SortingForm from '../sorting-form/sorting-form';
 
 type MainBlockProps = {
   currentLocation: City;
@@ -43,7 +43,7 @@ function MainBlock({ currentLocation, currentOffers }: MainBlockProps) {
           activeSorting={activeSorting}
           onSortingOptionClick={handleSortingChange}
         />
-        <OffersCardList
+        <OffersList
           currentOffers={sortedOffers}
           onCardHover={handleCardHover}
         />
