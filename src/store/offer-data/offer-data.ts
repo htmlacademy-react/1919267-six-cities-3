@@ -1,22 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { NameSpace, RequestStatus } from '../../const';
-import { TOfferData } from '../../types/state';
+import { OfferData } from '../../types/state';
 import { fetchActiveOffer } from '../api-actions';
 
-const initialState: TOfferData = {
+const initialState: OfferData = {
   activeOffer: null,
-  offerFetchingStatus: RequestStatus.Idle
+  offerFetchingStatus: RequestStatus.Idle,
 };
 
 export const offerData = createSlice({
   name: NameSpace.OfferData,
   initialState,
   reducers: {
-    dropActiveOffer (state) {
+    dropActiveOffer(state) {
       state.activeOffer = null;
     },
   },
-  extraReducers (builder) {
+  extraReducers(builder) {
     builder
       .addCase(fetchActiveOffer.pending, (state) => {
         state.offerFetchingStatus = RequestStatus.Loading;
@@ -28,7 +28,7 @@ export const offerData = createSlice({
       .addCase(fetchActiveOffer.rejected, (state) => {
         state.offerFetchingStatus = RequestStatus.Error;
       });
-  }
+  },
 });
 
-export const {dropActiveOffer} = offerData.actions;
+export const { dropActiveOffer } = offerData.actions;

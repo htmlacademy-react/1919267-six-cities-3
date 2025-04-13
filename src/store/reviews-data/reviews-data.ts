@@ -1,19 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { NameSpace, RequestStatus } from '../../const';
-import { TReviewsData } from '../../types/state';
+import { ReviewsData } from '../../types/state';
 import { fetchReviews, sendReview } from '../api-actions';
 
-const initialState: TReviewsData = {
+const initialState: ReviewsData = {
   reviews: [],
   reviewFetchingStatus: RequestStatus.Idle,
-  reviewSendingStatus: RequestStatus.Idle
+  reviewSendingStatus: RequestStatus.Idle,
 };
 
 export const reviewsData = createSlice({
   name: NameSpace.ReviewData,
   initialState,
   reducers: {},
-  extraReducers (builder) {
+  extraReducers(builder) {
     builder
       .addCase(fetchReviews.pending, (state) => {
         state.reviewFetchingStatus = RequestStatus.Loading;
@@ -35,5 +35,5 @@ export const reviewsData = createSlice({
       .addCase(sendReview.rejected, (state) => {
         state.reviewSendingStatus = RequestStatus.Error;
       });
-  }
+  },
 });

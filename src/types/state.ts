@@ -9,35 +9,35 @@ export type State = ReturnType<typeof store.getState>;
 
 export type AppDispatch = typeof store.dispatch;
 
-export type TReviewsData = {
+export type ReviewsData = {
   reviews: Review[];
   reviewFetchingStatus: RequestStatus;
   reviewSendingStatus: RequestStatus;
 };
 
-export type TUserData = {
+export type UserData = {
   user: TUser | null;
   authorizationStatus: AuthorizationStatus;
   loginSendingStatus: RequestStatus;
 };
 
-export type TOffersData = {
+export type OffersData = {
   offers: Offer[];
   currentCity: City;
   offersFetchingStatus: RequestStatus;
 };
 
-export type TFavoritesData = {
+export type FavoritesData = {
   favorites: Offer[];
   favoritesFetchingStatus: RequestStatus;
 };
 
-export type TOfferData = {
+export type OfferData = {
   activeOffer: null | Offer;
   offerFetchingStatus: RequestStatus;
 };
 
-export type TNearbyOffersData = {
+export type NearbyOffersData = {
   nearbyOffers: Offer[];
   nearbyOffersFetchingStatus: RequestStatus;
 };

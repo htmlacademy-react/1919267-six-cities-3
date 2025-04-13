@@ -1,9 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { NameSpace, RequestStatus } from '../../const';
-import { TFavoritesData } from '../../types/state';
-import { fetchFavoriteOffers, logout, updateFavoriteStatus } from '../api-actions';
+import { FavoritesData } from '../../types/state';
+import {
+  fetchFavoriteOffers,
+  logout,
+  updateFavoriteStatus,
+} from '../api-actions';
 
-const initialState: TFavoritesData = {
+const initialState: FavoritesData = {
   favorites: [],
   favoritesFetchingStatus: RequestStatus.Idle,
 };
@@ -12,7 +16,7 @@ export const favoritesData = createSlice({
   name: NameSpace.FavoritesData,
   initialState,
   reducers: {},
-  extraReducers (builder) {
+  extraReducers(builder) {
     builder
       .addCase(fetchFavoriteOffers.pending, (state) => {
         state.favoritesFetchingStatus = RequestStatus.Loading;
@@ -26,7 +30,7 @@ export const favoritesData = createSlice({
       })
       .addCase(updateFavoriteStatus.fulfilled, (state, action) => {
         const toBeRemoved = action.meta.arg.status === 0;
-        const {id, isFavorite} = action.payload;
+        const { id, isFavorite } = action.payload;
 
         state.favorites.forEach((item) => {
           if (item.id === id) {
@@ -36,7 +40,8 @@ export const favoritesData = createSlice({
 
         if (toBeRemoved) {
           state.favorites = state.favorites.filter(
-            (item) => item.id !== action.payload.id);
+            (item) => item.id !== action.payload.id
+          );
         } else {
           state.favorites = [...state.favorites, action.payload];
         }
@@ -44,5 +49,5 @@ export const favoritesData = createSlice({
       .addCase(logout.fulfilled, (state) => {
         state.favorites = [];
       });
-  }
+  },
 });

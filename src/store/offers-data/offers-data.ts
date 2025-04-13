@@ -1,13 +1,13 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { CityMap, NameSpace, RequestStatus } from '../../const';
 import { fetchOffers, updateFavoriteStatus } from '../api-actions';
-import { TOffersData } from '../../types/state';
+import { OffersData } from '../../types/state';
 import { City } from '../../types/city';
 
-const initialState: TOffersData = {
+const initialState: OffersData = {
   offers: [],
   currentCity: CityMap.Paris,
-  offersFetchingStatus: RequestStatus.Idle
+  offersFetchingStatus: RequestStatus.Idle,
 };
 
 export const offersData = createSlice({
@@ -16,9 +16,9 @@ export const offersData = createSlice({
   reducers: {
     setCurrentCity(state, action: PayloadAction<City>) {
       state.currentCity = action.payload;
-    }
+    },
   },
-  extraReducers (builder) {
+  extraReducers(builder) {
     builder
       .addCase(fetchOffers.pending, (state) => {
         state.offersFetchingStatus = RequestStatus.Loading;
@@ -33,12 +33,13 @@ export const offersData = createSlice({
       .addCase(updateFavoriteStatus.fulfilled, (state, action) => {
         state.offers.map((item) => ({
           ...item,
-          isFavorite: item.id === action.payload.id
-            ? action.payload.isFavorite
-            : item.isFavorite
+          isFavorite:
+            item.id === action.payload.id
+              ? action.payload.isFavorite
+              : item.isFavorite,
         }));
       });
-  }
+  },
 });
 
-export const {setCurrentCity} = offersData.actions;
+export const { setCurrentCity } = offersData.actions;

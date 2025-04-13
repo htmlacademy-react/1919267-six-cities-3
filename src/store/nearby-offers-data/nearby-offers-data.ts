@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { NameSpace, RequestStatus } from '../../const';
-import { TNearbyOffersData } from '../../types/state';
+import { NearbyOffersData } from '../../types/state';
 import { fetchNearbyOffers } from '../api-actions';
 
 export const nearbyOffersData = createSlice({
@@ -8,9 +8,9 @@ export const nearbyOffersData = createSlice({
   initialState: {
     nearbyOffers: [],
     nearbyOffersFetchingStatus: RequestStatus.Idle,
-  } as TNearbyOffersData,
+  } as NearbyOffersData,
   reducers: {},
-  extraReducers (builder) {
+  extraReducers(builder) {
     builder
       .addCase(fetchNearbyOffers.pending, (state) => {
         state.nearbyOffersFetchingStatus = RequestStatus.Loading;
@@ -22,5 +22,5 @@ export const nearbyOffersData = createSlice({
       .addCase(fetchNearbyOffers.rejected, (state) => {
         state.nearbyOffersFetchingStatus = RequestStatus.Error;
       });
-  }
+  },
 });

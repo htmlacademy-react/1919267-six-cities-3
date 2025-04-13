@@ -1,14 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AuthorizationStatus, NameSpace, RequestStatus } from '../../const';
-import { TUserData } from '../../types/state';
-import { checkAuth, login, logout} from '../api-actions';
+import { UserData } from '../../types/state';
+import { checkAuth, login, logout } from '../api-actions';
 
-const initialState: TUserData = {
+const initialState: UserData = {
   user: null,
   authorizationStatus: AuthorizationStatus.Unknown,
-  loginSendingStatus: RequestStatus.Idle
+  loginSendingStatus: RequestStatus.Idle,
 };
-
 
 export const userData = createSlice({
   name: NameSpace.UserData,
@@ -16,9 +15,9 @@ export const userData = createSlice({
   reducers: {
     setSendingStatus: (state, action: PayloadAction<RequestStatus>) => {
       state.loginSendingStatus = action.payload;
-    }
+    },
   },
-  extraReducers (builder) {
+  extraReducers(builder) {
     builder
       .addCase(checkAuth.pending, (state) => {
         state.user = null;
@@ -48,7 +47,7 @@ export const userData = createSlice({
         state.user = null;
         state.authorizationStatus = AuthorizationStatus.NoAuth;
       });
-  }
+  },
 });
 
-export const {setSendingStatus} = userData.actions;
+export const { setSendingStatus } = userData.actions;
