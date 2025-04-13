@@ -165,7 +165,6 @@ function OfferPage() {
           <Map
             city={city}
             offers={[...nearbyOffersToRender, currentOffer]}
-            hoveredOfferId={offerId}
             className="offer__map"
           />
         </section>

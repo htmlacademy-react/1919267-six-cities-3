@@ -23,6 +23,7 @@ export type UserData = {
 
 export type OffersData = {
   offers: Offer[];
+  activeId: undefined | string;
   currentCity: City;
   offersFetchingStatus: RequestStatus;
 };

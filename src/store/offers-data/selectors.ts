@@ -14,3 +14,5 @@ export const selectOffersByCurrentCity = createSelector(
 );
 export const selectOffersFetchingStatus = (state: State) =>
   state[NameSpace.OffersData].offersFetchingStatus;
+export const selectActiveId = (state: State) =>
+  state[NameSpace.OffersData].activeId;

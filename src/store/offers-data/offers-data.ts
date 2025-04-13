@@ -3,9 +3,11 @@ import { CityMap, NameSpace, RequestStatus } from '../../const';
 import { fetchOffers, updateFavoriteStatus } from '../api-actions';
 import { OffersData } from '../../types/state';
 import { City } from '../../types/city';
+import { Offer } from '../../types/offer';
 
 const initialState: OffersData = {
   offers: [],
+  activeId: undefined,
   currentCity: CityMap.Paris,
   offersFetchingStatus: RequestStatus.Idle,
 };
@@ -16,6 +18,9 @@ export const offersData = createSlice({
   reducers: {
     setCurrentCity(state, action: PayloadAction<City>) {
       state.currentCity = action.payload;
+    },
+    setActiveId(state, action: PayloadAction<Offer['id'] | undefined>) {
+      state.activeId = action.payload;
     },
   },
   extraReducers(builder) {
@@ -42,4 +47,4 @@ export const offersData = createSlice({
   },
 });
 
-export const { setCurrentCity } = offersData.actions;
+export const { setCurrentCity, setActiveId } = offersData.actions;

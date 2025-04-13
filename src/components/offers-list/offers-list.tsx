@@ -1,12 +1,23 @@
+import { useAppDispatch } from '../../hooks';
+import { setActiveId } from '../../store/offers-data/offers-data';
 import { Offer } from '../../types/offer';
 import OfferCard from '../offer-card/offer-card';
 
 type OffersCardListProps = {
   currentOffers: Offer[];
-  onCardHover: (offerId: Offer['id'] | null) => void;
+  // onCardHover: (offerId: Offer['id'] | null) => void;
 };
 
-function OffersList({ currentOffers, onCardHover }: OffersCardListProps) {
+function OffersList({ currentOffers }: OffersCardListProps) {
+  const dispatch = useAppDispatch();
+  const handleMouseEnter = (offerId: Offer['id']) => {
+    dispatch(setActiveId(offerId));
+  };
+
+  const handleMouseLeave = () => {
+    dispatch(setActiveId(undefined));
+  };
+
   return (
     <div className="cities__places-list places__list tabs__content">
       {currentOffers.map((offer) => (
@@ -15,7 +26,8 @@ function OffersList({ currentOffers, onCardHover }: OffersCardListProps) {
           offer={offer}
           block="cities"
           size="large"
-          onCardHover={onCardHover}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         />
       ))}
     </div>

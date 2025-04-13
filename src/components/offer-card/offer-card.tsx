@@ -10,10 +10,17 @@ type OfferCardProps = {
   offer: Offer;
   block: 'favorites' | 'cities' | 'near-places';
   size: keyof Size;
-  onCardHover?: (offerId: Offer['id'] | null) => void;
+  onMouseEnter?: (offerId: Offer['id']) => void;
+  onMouseLeave?: () => void;
 };
 
-function OfferCard({ offer, block, size, onCardHover }: OfferCardProps) {
+function OfferCard({
+  offer,
+  block,
+  size,
+  onMouseEnter,
+  onMouseLeave,
+}: OfferCardProps) {
   const {
     id,
     previewImage,
@@ -26,11 +33,11 @@ function OfferCard({ offer, block, size, onCardHover }: OfferCardProps) {
   } = offer;
 
   function handleMouseEnter() {
-    onCardHover?.(id);
+    onMouseEnter?.(id);
   }
 
   function handleMouseLeave() {
-    onCardHover?.(null);
+    onMouseLeave?.();
   }
 
   return (

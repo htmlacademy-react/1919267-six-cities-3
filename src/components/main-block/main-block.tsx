@@ -14,16 +14,9 @@ type MainBlockProps = {
 };
 
 function MainBlock({ currentLocation, currentOffers }: MainBlockProps) {
-  const [hoveredOfferId, setHoveredOfferId] = useState<Offer['id'] | null>(
-    null
-  );
   const [activeSorting, setActiveSorting] = useState<Sorting>(
     DEFAULT_SORTING_OPTION
   );
-
-  function handleCardHover(offerId: Offer['id'] | null) {
-    setHoveredOfferId(offerId);
-  }
 
   function handleSortingChange(option: Sorting) {
     setActiveSorting(option);
@@ -45,14 +38,13 @@ function MainBlock({ currentLocation, currentOffers }: MainBlockProps) {
         />
         <OffersList
           currentOffers={sortedOffers}
-          onCardHover={handleCardHover}
+          // onCardHover={handleCardHover}
         />
       </section>
       <div className="cities__right-section">
         <Map
           offers={currentOffers}
           city={currentLocation}
-          hoveredOfferId={hoveredOfferId}
           className={'cities__map'}
         />
       </div>
