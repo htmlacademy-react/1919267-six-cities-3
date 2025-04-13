@@ -2,14 +2,13 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../../components/header/header';
 import { useAppSelector } from '../../hooks';
 import { groupOffersByLocation } from '../../utils/offer';
-import { selectOffers } from '../../store/offers-data/selectors';
 import FavoritesListBlock from '../../components/favorites-list-block/favorites-list-block';
 import FavoritesEmptyBlock from '../../components/favorites-empty-block/favorites-empty-block';
 import Footer from '../../components/footer/footer';
+import { selectFavorites } from '../../store/favorites-data/selectors';
 
 function FavoritesPage() {
-  const offers = useAppSelector(selectOffers);
-  const favorites = offers.filter((item) => item.isFavorite);
+  const favorites = useAppSelector(selectFavorites);
   const favoritesByLocation = groupOffersByLocation(favorites);
   const hasFavorites = Boolean(favorites?.length);
 

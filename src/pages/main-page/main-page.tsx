@@ -7,7 +7,7 @@ import MainBlock from '../../components/main-block/main-block';
 import Header from '../../components/header/header';
 import {
   selectCurrentCity,
-  selectOffers,
+  selectOffersByCurrentCity,
   selectOffersFetchingStatus,
 } from '../../store/offers-data/selectors';
 import Tabs from '../../components/tabs/tabs';
@@ -18,10 +18,7 @@ import MainEmptyBlock from '../../components/main-empty-block/main-empty-block';
 function MainPage() {
   const dispatch = useAppDispatch();
   const currentCity = useAppSelector(selectCurrentCity);
-  const offers = useAppSelector(selectOffers);
-  const currentOffers = offers.filter(
-    (offer) => offer.city.name === currentCity.name
-  );
+  const currentOffers = useAppSelector(selectOffersByCurrentCity);
   const fetchingStatus = useAppSelector(selectOffersFetchingStatus);
 
   useEffect(() => {
@@ -43,11 +40,11 @@ function MainPage() {
             className={classNames(
               'cities__places-container',
               'container',
-              !offers.length && 'cities__places-container--empty'
+              !currentOffers.length && 'cities__places-container--empty'
             )}
           >
             {fetchingStatus === RequestStatus.Loading && <Spinner />}
-            {offers.length ? (
+            {currentOffers.length ? (
               <MainBlock
                 currentLocation={currentCity}
                 currentOffers={currentOffers}
