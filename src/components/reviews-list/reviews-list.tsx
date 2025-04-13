@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
-import { AuthStatus, MAX_SHOWN_REVIEWS } from '../../const';
+import { AuthorizationStatus, MAX_SHOWN_REVIEWS } from '../../const';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { Offer } from '../../types/offer';
 import { Review } from '../../types/review';
 import ReviewForm from '../review-form/review-form';
-import ReviewsItem from '../reviews-item/reviews-item';
 import { fetchReviews } from '../../store/api-actions';
+import { selectReviews } from '../../store/reviews-data/selectors';
+import { selectAuthorizationStatus } from '../../store/user-data/selectors';
+import ReviewItem from '../review-item/review-item';
 
 type ReviewsListProps = {
   offerId: Offer['id'];
@@ -13,14 +15,13 @@ type ReviewsListProps = {
 
 function ReviewsList({ offerId }: ReviewsListProps) {
   const dispatch = useAppDispatch();
-  const reviews = useAppSelector((state) => state.reviews);
+  const reviews = useAppSelector(selectReviews);
   const sortedReviews = reviews.toSorted(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
   const reviewsToShow = sortedReviews.slice(0, MAX_SHOWN_REVIEWS);
-  const authorizationStatus = useAppSelector(
-    (state) => state.authorizationStatus
-  );
+  const authorizationStatus = useAppSelector(selectAuthorizationStatus);
+
   useEffect(() => {
     dispatch(fetchReviews(offerId));
   }, [dispatch, offerId]);
@@ -37,10 +38,10 @@ function ReviewsList({ offerId }: ReviewsListProps) {
       </h2>
       <ul className="reviews__list">
         {reviewsToShow.map((item: Review) => (
-          <ReviewsItem key={item.id} {...item} />
+          <ReviewItem key={item.id} {...item} />
         ))}
       </ul>
-      {authorizationStatus === AuthStatus.Auth && (
+      {authorizationStatus === AuthorizationStatus.Auth && (
         <ReviewForm offerId={offerId} />
       )}
     </section>

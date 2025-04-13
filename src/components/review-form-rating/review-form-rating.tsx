@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
-import { RatingNumber, RatingString } from '../../types/rating';
 import { UseFormRegister } from 'react-hook-form';
 import { ReviewFormInputs } from '../review-form/review-form';
+import { RatingNumber, RatingString } from '../../types/rating';
 
 type ReviewFormRatingProps = {
   register: UseFormRegister<ReviewFormInputs>;

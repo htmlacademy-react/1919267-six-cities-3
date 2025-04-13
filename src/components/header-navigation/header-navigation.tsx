@@ -1,16 +1,19 @@
 import { Link } from 'react-router-dom';
-import { AppRoute, AuthStatus } from '../../const';
+import { AppRoute, AuthorizationStatus } from '../../const';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { logout } from '../../store/api-actions';
+import {
+  selectAuthorizationStatus,
+  selectUserData,
+} from '../../store/user-data/selectors';
+import { selectFavorites } from '../../store/favorites-data/selectors';
 
 function HeaderNavigation() {
   const dispatch = useAppDispatch();
-  const authorizationStatus = useAppSelector(
-    (state) => state.authorizationStatus
-  );
+  const authorizationStatus = useAppSelector(selectAuthorizationStatus);
 
-  const favoritesCount = useAppSelector((state) => state.favorites)?.length;
-  const user = useAppSelector((state) => state.user);
+  const favoritesCount = useAppSelector(selectFavorites)?.length;
+  const user = useAppSelector(selectUserData);
 
   function onLogoutClickHandler() {
     dispatch(logout());
@@ -20,7 +23,7 @@ function HeaderNavigation() {
     <nav className="header__nav">
       <ul className="header__nav-list">
         <li className="header__nav-item user">
-          {authorizationStatus === AuthStatus.Auth ? (
+          {authorizationStatus === AuthorizationStatus.Auth ? (
             <Link
               to={AppRoute.Favorites}
               className="header__nav-link header__nav-link--profile"
@@ -47,7 +50,7 @@ function HeaderNavigation() {
             </Link>
           )}
         </li>
-        {authorizationStatus === AuthStatus.Auth && (
+        {authorizationStatus === AuthorizationStatus.Auth && (
           <li className="header__nav-item">
             <Link
               to={AppRoute.Root}

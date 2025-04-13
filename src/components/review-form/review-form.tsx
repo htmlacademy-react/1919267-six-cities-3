@@ -2,8 +2,8 @@ import { MAX_COMMENT_LENGTH, MIN_COMMENT_LENGTH } from '../../const';
 import { useAppDispatch } from '../../hooks';
 import { sendReview } from '../../store/api-actions';
 import { Offer } from '../../types/offer';
-import ReviewFormRating from '../review-form-rating/review-form-rating';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import ReviewFormRating from '../review-form-rating/review-form-rating';
 
 export type ReviewFormInputs = {
   rating: number;

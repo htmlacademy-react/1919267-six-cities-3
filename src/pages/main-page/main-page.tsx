@@ -1,22 +1,25 @@
-import Header from '../../components/header/header';
-import Tabs from '../../components/tabs/tabs';
-import MainBlock from '../../components/main-block/main-block';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { Helmet } from 'react-helmet-async';
 import { useEffect } from 'react';
 import { fetchOffers } from '../../store/api-actions';
-import Spinner from '../../components/spinner/spinner';
 import classNames from 'classnames';
-import MainBlockEmpty from '../../components/main-block-empty/main-block-empty';
+import MainBlock from '../../components/main-block/main-block';
+import Header from '../../components/header/header';
+import {
+  selectCurrentCity,
+  selectOffersByCurrentCity,
+  selectOffersFetchingStatus,
+} from '../../store/offers-data/selectors';
+import Tabs from '../../components/tabs/tabs';
+import { RequestStatus } from '../../const';
+import Spinner from '../../components/spinner/spinner';
+import MainEmptyBlock from '../../components/main-empty-block/main-empty-block';
 
 function MainPage() {
   const dispatch = useAppDispatch();
-  const currentCity = useAppSelector((state) => state.currentCity);
-  const offers = useAppSelector((state) => state.offers);
-  const currentOffers = offers.filter(
-    (offer) => offer.city.name === currentCity.name
-  );
-  const isLoading = useAppSelector((state) => state.isLoading);
+  const currentCity = useAppSelector(selectCurrentCity);
+  const currentOffers = useAppSelector(selectOffersByCurrentCity);
+  const fetchingStatus = useAppSelector(selectOffersFetchingStatus);
 
   useEffect(() => {
     dispatch(fetchOffers());
@@ -37,17 +40,17 @@ function MainPage() {
             className={classNames(
               'cities__places-container',
               'container',
-              !offers.length && 'cities__places-container--empty'
+              !currentOffers.length && 'cities__places-container--empty'
             )}
           >
-            {isLoading && <Spinner />}
-            {offers.length ? (
+            {fetchingStatus === RequestStatus.Loading && <Spinner />}
+            {currentOffers.length ? (
               <MainBlock
                 currentLocation={currentCity}
                 currentOffers={currentOffers}
               />
             ) : (
-              <MainBlockEmpty cityName={currentCity.name} />
+              <MainEmptyBlock cityName={currentCity.name} />
             )}
           </div>
         </div>

@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { City } from '../../types/city';
 import { Offer } from '../../types/offer';
 import { addPluralEnding } from '../../utils/common';
-import SortingForm from '../sorting-form/sorting-form';
 import { DEFAULT_SORTING_OPTION, Sorting } from '../../const';
-import OffersCardList from '../offers-card-list/offers-card-list';
 import Map from '../map/map';
 import { sorting } from '../../utils/offer';
+import OffersList from '../offers-list/offers-list';
+import SortingForm from '../sorting-form/sorting-form';
 
 type MainBlockProps = {
   currentLocation: City;
@@ -14,16 +14,9 @@ type MainBlockProps = {
 };
 
 function MainBlock({ currentLocation, currentOffers }: MainBlockProps) {
-  const [hoveredOfferId, setHoveredOfferId] = useState<Offer['id'] | null>(
-    null
-  );
   const [activeSorting, setActiveSorting] = useState<Sorting>(
     DEFAULT_SORTING_OPTION
   );
-
-  function handleCardHover(offerId: Offer['id'] | null) {
-    setHoveredOfferId(offerId);
-  }
 
   function handleSortingChange(option: Sorting) {
     setActiveSorting(option);
@@ -43,16 +36,15 @@ function MainBlock({ currentLocation, currentOffers }: MainBlockProps) {
           activeSorting={activeSorting}
           onSortingOptionClick={handleSortingChange}
         />
-        <OffersCardList
+        <OffersList
           currentOffers={sortedOffers}
-          onCardHover={handleCardHover}
+          // onCardHover={handleCardHover}
         />
       </section>
       <div className="cities__right-section">
         <Map
           offers={currentOffers}
           city={currentLocation}
-          hoveredOfferId={hoveredOfferId}
           className={'cities__map'}
         />
       </div>

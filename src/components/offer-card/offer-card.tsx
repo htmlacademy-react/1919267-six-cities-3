@@ -1,19 +1,26 @@
 import { Link } from 'react-router-dom';
 import { AppRoute, ImageSize } from '../../const';
 import { Offer } from '../../types/offer';
-import { Size } from '../../types/size';
 import BookmarkButton from '../bookmark-button/bookmark-button';
-import PremiumMark from '../premium-mark/premium-mark';
 import { getRatingWidth } from '../../utils/offer';
+import PremiumMark from '../premium-mark/premium-mark';
+import { Size } from '../../types/size';
 
 type OfferCardProps = {
   offer: Offer;
   block: 'favorites' | 'cities' | 'near-places';
   size: keyof Size;
-  onCardHover?: (offerId: Offer['id'] | null) => void;
+  onMouseEnter?: (offerId: Offer['id']) => void;
+  onMouseLeave?: () => void;
 };
 
-function OfferCard({ offer, block, size, onCardHover }: OfferCardProps) {
+function OfferCard({
+  offer,
+  block,
+  size,
+  onMouseEnter,
+  onMouseLeave,
+}: OfferCardProps) {
   const {
     id,
     previewImage,
@@ -26,11 +33,11 @@ function OfferCard({ offer, block, size, onCardHover }: OfferCardProps) {
   } = offer;
 
   function handleMouseEnter() {
-    onCardHover?.(id);
+    onMouseEnter?.(id);
   }
 
   function handleMouseLeave() {
-    onCardHover?.(null);
+    onMouseLeave?.();
   }
 
   return (

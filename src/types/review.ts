@@ -2,14 +2,14 @@ import { Host } from './host';
 
 export type Review = {
   id: string;
-  user: Omit<Host, 'id'>;
+  user: Host;
   rating: number;
   comment: string;
   date: string;
-};
+}
 
 export type ReviewData = {
   id: string;
   comment: string;
   rating: number;
-};
+}

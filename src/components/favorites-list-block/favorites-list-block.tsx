@@ -1,9 +1,9 @@
-import { CityName } from '../../const';
+import { Cities } from '../../const';
 import { Offer } from '../../types/offer';
 import OfferCard from '../offer-card/offer-card';
 
 type FavoritesListBlockProps = {
-  favoritesByLocation: Record<keyof typeof CityName, Offer[]>;
+  favoritesByLocation: Record<Cities, Offer[]>;
 };
 
 function FavoritesListBlock({ favoritesByLocation }: FavoritesListBlockProps) {
