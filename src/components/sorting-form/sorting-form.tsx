@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import { Sorting } from '../../const';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type SortingFormProps = {
   activeSorting: Sorting;
@@ -25,6 +25,23 @@ function SortingForm({
   const arrowStyle = {
     transform: `translateY(-50%) ${isOpen ? 'rotate(180deg)' : ''}`,
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      const onEscKeyDown = (evt: KeyboardEvent) => {
+        if (evt.key === 'Escape') {
+          evt.preventDefault();
+          setIsOpen(false);
+        }
+      };
+
+      document.addEventListener('keydown', onEscKeyDown);
+
+      return () => {
+        document.removeEventListener('keydown', onEscKeyDown);
+      };
+    }
+  }, [isOpen]);
 
   return (
     <form className="places__sorting" action="#" method="get">
