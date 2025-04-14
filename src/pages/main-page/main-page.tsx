@@ -12,8 +12,8 @@ import {
 } from '../../store/offers-data/selectors';
 import Tabs from '../../components/tabs/tabs';
 import { RequestStatus } from '../../const';
-import Spinner from '../../components/spinner/spinner';
 import MainEmptyBlock from '../../components/main-empty-block/main-empty-block';
+import Loader from '../../components/loader/loader';
 
 function MainPage() {
   const dispatch = useAppDispatch();
@@ -30,6 +30,7 @@ function MainPage() {
       <Helmet>
         <title>6 cities. Main page</title>
       </Helmet>
+      {fetchingStatus === RequestStatus.Loading && <Loader />}
       <Header />
 
       <main className="page__main page__main--index">
@@ -43,7 +44,6 @@ function MainPage() {
               !currentOffers.length && 'cities__places-container--empty'
             )}
           >
-            {fetchingStatus === RequestStatus.Loading && <Spinner />}
             {currentOffers.length ? (
               <MainBlock
                 currentLocation={currentCity}

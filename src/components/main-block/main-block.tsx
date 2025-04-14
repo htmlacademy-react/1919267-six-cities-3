@@ -36,10 +36,7 @@ function MainBlock({ currentLocation, currentOffers }: MainBlockProps) {
           activeSorting={activeSorting}
           onSortingOptionClick={handleSortingChange}
         />
-        <OffersList
-          currentOffers={sortedOffers}
-          // onCardHover={handleCardHover}
-        />
+        <OffersList currentOffers={sortedOffers} />
       </section>
       <div className="cities__right-section">
         <Map
