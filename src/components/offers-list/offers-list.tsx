@@ -3,12 +3,11 @@ import { setActiveId } from '../../store/offers-data/offers-data';
 import { Offer } from '../../types/offer';
 import OfferCard from '../offer-card/offer-card';
 
-type OffersCardListProps = {
+type OffersListProps = {
   currentOffers: Offer[];
-  // onCardHover: (offerId: Offer['id'] | null) => void;
 };
 
-function OffersList({ currentOffers }: OffersCardListProps) {
+function OffersList({ currentOffers }: OffersListProps) {
   const dispatch = useAppDispatch();
   const handleMouseEnter = (offerId: Offer['id']) => {
     dispatch(setActiveId(offerId));

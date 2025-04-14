@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { City } from '../../types/city';
 import { Offer } from '../../types/offer';
 import { addPluralEnding } from '../../utils/common';
@@ -6,7 +6,7 @@ import { DEFAULT_SORTING_OPTION, Sorting } from '../../const';
 import Map from '../map/map';
 import { sorting } from '../../utils/offer';
 import OffersList from '../offers-list/offers-list';
-import SortingForm from '../sorting-form/sorting-form';
+import { SortingForm } from '../sorting-form/sorting-form';
 
 type MainBlockProps = {
   currentLocation: City;
@@ -22,7 +22,10 @@ function MainBlock({ currentLocation, currentOffers }: MainBlockProps) {
     setActiveSorting(option);
   }
 
-  const sortedOffers = sorting[activeSorting](currentOffers);
+  const sortedOffers = useMemo(
+    () => sorting[activeSorting](currentOffers),
+    [activeSorting, currentOffers]
+  );
 
   return (
     <>
@@ -36,10 +39,7 @@ function MainBlock({ currentLocation, currentOffers }: MainBlockProps) {
           activeSorting={activeSorting}
           onSortingOptionClick={handleSortingChange}
         />
-        <OffersList
-          currentOffers={sortedOffers}
-          // onCardHover={handleCardHover}
-        />
+        <OffersList currentOffers={sortedOffers} />
       </section>
       <div className="cities__right-section">
         <Map

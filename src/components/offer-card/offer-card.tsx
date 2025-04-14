@@ -64,6 +64,7 @@ function OfferCard({
             <span className="place-card__price-text">&#47;&nbsp;night</span>
           </div>
           <BookmarkButton
+            id={id}
             block="place-card"
             size="small"
             isFavorite={isFavorite}

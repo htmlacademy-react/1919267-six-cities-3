@@ -20,7 +20,7 @@ import {
 import { dropActiveOffer } from '../../store/offer-data/offer-data';
 import { selectNearbyOffers } from '../../store/nearby-offers-data/selectors';
 import NearOffers from '../../components/near-offers/near-offers';
-import Spinner from '../../components/spinner/spinner';
+import Loader from '../../components/loader/loader';
 
 function OfferPage() {
   const { id } = useParams();
@@ -42,7 +42,15 @@ function OfferPage() {
   }, [dispatch, id]);
 
   if (offerFetchingStatus === RequestStatus.Loading) {
-    return <Spinner />;
+    return (
+      <>
+        <Helmet>
+          <title>6 cities. Offer page</title>
+        </Helmet>
+        <Loader />
+        <Header />
+      </>
+    );
   }
 
   if (!currentOffer) {
@@ -95,6 +103,7 @@ function OfferPage() {
               <div className="offer__name-wrapper">
                 <h1 className="offer__name">{title}</h1>
                 <BookmarkButton
+                  id={offerId}
                   block="offer"
                   size="large"
                   isFavorite={isFavorite}
