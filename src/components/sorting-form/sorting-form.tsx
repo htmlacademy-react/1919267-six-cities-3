@@ -1,13 +1,13 @@
 import cn from 'classnames';
 import { Sorting } from '../../const';
-import { memo, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type SortingFormProps = {
   activeSorting: Sorting;
   onSortingOptionClick: (type: Sorting) => void;
 };
 
-function SortingForm_({
+function SortingForm({
   activeSorting,
   onSortingOptionClick,
 }: SortingFormProps) {
@@ -83,4 +83,4 @@ function SortingForm_({
   );
 }
 
-export const SortingForm = memo(SortingForm_);
+export default SortingForm;

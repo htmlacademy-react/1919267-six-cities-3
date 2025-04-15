@@ -11,7 +11,11 @@ import Map from '../../components/map/map';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { Helmet } from 'react-helmet-async';
 import { useEffect } from 'react';
-import { fetchActiveOffer, fetchNearbyOffers } from '../../store/api-actions';
+import {
+  fetchActiveOffer,
+  fetchNearbyOffers,
+  fetchReviews,
+} from '../../store/api-actions';
 import { MAX_NEARBY_OFFERS_COUNT, RequestStatus } from '../../const';
 import {
   selectActiveOffer,
@@ -21,6 +25,7 @@ import { dropActiveOffer } from '../../store/offer-data/offer-data';
 import { selectNearbyOffers } from '../../store/nearby-offers-data/selectors';
 import NearOffers from '../../components/near-offers/near-offers';
 import Loader from '../../components/loader/loader';
+import { selectReviews } from '../../store/reviews-data/selectors';
 
 function OfferPage() {
   const { id } = useParams();
@@ -29,11 +34,15 @@ function OfferPage() {
   const offerFetchingStatus = useAppSelector(selectOfferFetchingStatus);
   const nearbyOffers = useAppSelector(selectNearbyOffers);
   const nearbyOffersToRender = nearbyOffers.slice(0, MAX_NEARBY_OFFERS_COUNT);
+  const reviews = useAppSelector(selectReviews);
 
   useEffect(() => {
     if (id) {
-      dispatch(fetchActiveOffer(id));
-      dispatch(fetchNearbyOffers(id));
+      Promise.all([
+        dispatch(fetchActiveOffer(id)),
+        dispatch(fetchNearbyOffers(id)),
+        dispatch(fetchReviews(id)),
+      ]);
     }
 
     return () => {
@@ -53,7 +62,7 @@ function OfferPage() {
     );
   }
 
-  if (!currentOffer) {
+  if (offerFetchingStatus === RequestStatus.Error || !currentOffer) {
     return <NotFoundPage type="offer" />;
   }
 
@@ -62,7 +71,6 @@ function OfferPage() {
     images,
     isPremium,
     title,
-    isFavorite,
     price,
     goods,
     type,
@@ -102,12 +110,7 @@ function OfferPage() {
               {isPremium && <PremiumMark block="offer" isPremium={isPremium} />}
               <div className="offer__name-wrapper">
                 <h1 className="offer__name">{title}</h1>
-                <BookmarkButton
-                  id={offerId}
-                  block="offer"
-                  size="large"
-                  isFavorite={isFavorite}
-                />
+                <BookmarkButton id={offerId} block="offer" size="large" />
               </div>
               <div className="offer__rating rating">
                 <div className="offer__stars rating__stars">
@@ -168,7 +171,7 @@ function OfferPage() {
                   <p className="offer__text">{description}</p>
                 </div>
               </div>
-              {offerId && <ReviewsList offerId={offerId} />}
+              {offerId && <ReviewsList offerId={offerId} reviews={reviews} />}
             </div>
           </div>
           <Map

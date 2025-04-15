@@ -6,7 +6,7 @@ import { DEFAULT_SORTING_OPTION, Sorting } from '../../const';
 import Map from '../map/map';
 import { sorting } from '../../utils/offer';
 import OffersList from '../offers-list/offers-list';
-import { SortingForm } from '../sorting-form/sorting-form';
+import SortingForm from '../sorting-form/sorting-form';
 
 type MainBlockProps = {
   currentLocation: City;

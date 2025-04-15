@@ -4,51 +4,44 @@ import { Size } from '../../types/size';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { useNavigate } from 'react-router-dom';
 import { selectAuthorizationStatus } from '../../store/user-data/selectors';
-import { useState } from 'react';
-import {
-  fetchFavoriteOffers,
-  updateFavoriteStatus,
-} from '../../store/api-actions';
+import { updateFavoriteStatus } from '../../store/api-actions';
 import { Offer } from '../../types/offer';
+import { selectFavorites } from '../../store/favorites-data/selectors';
 
 type BookmarkButtonProps = {
   id: Offer['id'];
   block: 'place-card' | 'offer';
   size: keyof Size;
-  isFavorite: boolean;
 };
 
-function BookmarkButton({
-  id,
-  block,
-  size = 'small',
-  isFavorite,
-}: BookmarkButtonProps) {
+function BookmarkButton({ id, block, size = 'small' }: BookmarkButtonProps) {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const authorizationStatus = useAppSelector(selectAuthorizationStatus);
   const isAuthorized = authorizationStatus === AuthorizationStatus.Auth;
-  const [favoriteStatus, setFavoriteStatus] = useState<boolean>(isFavorite);
+  const favoriteOffers = useAppSelector(selectFavorites);
+  const isFavorite = favoriteOffers.some(
+    (currentOffer) => currentOffer.id === id
+  );
 
   function onButtonClickHandler() {
     if (!isAuthorized) {
       navigate(AppRoute.Login);
       return;
     }
-    setFavoriteStatus((prevState) => !prevState);
 
     dispatch(
       updateFavoriteStatus({
         id,
-        status: Number(!favoriteStatus),
+        status: Number(!isFavorite),
       })
-    ).then(() => dispatch(fetchFavoriteOffers()));
+    );
   }
 
   return (
     <button
       className={cn(`${block}__bookmark-button`, 'button', {
-        [`${block}__bookmark-button--active`]: favoriteStatus,
+        [`${block}__bookmark-button--active`]: isFavorite,
       })}
       type="button"
       onClick={onButtonClickHandler}
