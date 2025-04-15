@@ -19,14 +19,17 @@ function FavoritesPage() {
   const favoritesFetchingStatus = useAppSelector(selectFetchingFavoritesStatus);
 
   return (
-    <div className="page">
+    <div className={hasFavorites ? 'page' : 'page page--favorites-empty'}>
       <Helmet>
         <title>6 cities. Favorites page</title>
       </Helmet>
       {favoritesFetchingStatus === RequestStatus.Loading && <Loader />}
       <Header />
-
-      <main className="page__main page__main--favorites">
+      <main
+        className={`page__main page__main--favorites ${
+          hasFavorites ? '' : 'page__main--favorites-empty'
+        }`}
+      >
         <div className="page__favorites-container container">
           {hasFavorites ? (
             <FavoritesListBlock favoritesByLocation={favoritesByLocation} />
