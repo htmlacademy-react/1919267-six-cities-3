@@ -53,7 +53,7 @@ function HeaderNavigation() {
         {authorizationStatus === AuthorizationStatus.Auth && (
           <li className="header__nav-item">
             <Link
-              to={AppRoute.Root}
+              to="#"
               className="header__nav-link"
               onClick={onLogoutClickHandler}
             >
