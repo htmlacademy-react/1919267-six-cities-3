@@ -1,30 +1,22 @@
-import { useEffect } from 'react';
 import { AuthorizationStatus, MAX_SHOWN_REVIEWS } from '../../const';
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { Offer } from '../../types/offer';
+import { useAppSelector } from '../../hooks';
 import { Review } from '../../types/review';
 import ReviewForm from '../review-form/review-form';
-import { fetchReviews } from '../../store/api-actions';
-import { selectReviews } from '../../store/reviews-data/selectors';
 import { selectAuthorizationStatus } from '../../store/user-data/selectors';
 import ReviewItem from '../review-item/review-item';
+import { Offer } from '../../types/offer';
 
 type ReviewsListProps = {
   offerId: Offer['id'];
+  reviews: Review[];
 };
 
-function ReviewsList({ offerId }: ReviewsListProps) {
-  const dispatch = useAppDispatch();
-  const reviews = useAppSelector(selectReviews);
-  const sortedReviews = reviews.toSorted(
+function ReviewsList({ offerId, reviews }: ReviewsListProps) {
+  const sortedReviews = [...reviews].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
   const reviewsToShow = sortedReviews.slice(0, MAX_SHOWN_REVIEWS);
   const authorizationStatus = useAppSelector(selectAuthorizationStatus);
-
-  useEffect(() => {
-    dispatch(fetchReviews(offerId));
-  }, [dispatch, offerId]);
 
   return (
     <section className="offer__reviews reviews">

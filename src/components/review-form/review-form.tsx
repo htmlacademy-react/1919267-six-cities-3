@@ -1,9 +1,15 @@
-import { MAX_COMMENT_LENGTH, MIN_COMMENT_LENGTH } from '../../const';
-import { useAppDispatch } from '../../hooks';
+import {
+  MAX_COMMENT_LENGTH,
+  MIN_COMMENT_LENGTH,
+  RequestStatus,
+} from '../../const';
+import { useAppDispatch, useAppSelector } from '../../hooks';
 import { sendReview } from '../../store/api-actions';
 import { Offer } from '../../types/offer';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import ReviewFormRating from '../review-form-rating/review-form-rating';
+import { toast } from 'react-toastify';
+import { selectReviewsSendingStatus } from '../../store/reviews-data/selectors';
 
 export type ReviewFormInputs = {
   rating: number;
@@ -16,11 +22,13 @@ type ReviewFormProps = {
 
 function ReviewForm({ offerId }: ReviewFormProps) {
   const dispatch = useAppDispatch();
+  const reviewSendingStatus = useAppSelector(selectReviewsSendingStatus);
+  const isFormBlocked = reviewSendingStatus === RequestStatus.Loading;
   const {
     register,
     handleSubmit,
     reset,
-    formState: { isValid, isSubmitting },
+    formState: { isValid },
   } = useForm<ReviewFormInputs>({
     mode: 'onBlur',
   });
@@ -36,8 +44,15 @@ function ReviewForm({ offerId }: ReviewFormProps) {
         rating: Number(data.rating),
         id: offerId,
       })
-    );
-    reset();
+    )
+      .unwrap()
+      .then(() => {
+        toast.success('Комментарий успешно отправлен!');
+        reset();
+      })
+      .catch(() => {
+        toast.error('Возникла ошибка при добавлении комментария!');
+      });
   };
 
   return (
@@ -49,7 +64,7 @@ function ReviewForm({ offerId }: ReviewFormProps) {
       <label className="reviews__label form__label" htmlFor="review">
         Your review
       </label>
-      <ReviewFormRating register={register} />
+      <ReviewFormRating register={register} isDisabled={isFormBlocked} />
       <textarea
         className="reviews__textarea form__textarea"
         id="review"
@@ -59,6 +74,7 @@ function ReviewForm({ offerId }: ReviewFormProps) {
           minLength: MIN_COMMENT_LENGTH,
           maxLength: MAX_COMMENT_LENGTH,
         })}
+        disabled={isFormBlocked}
       />
       <div className="reviews__button-wrapper">
         <p className="reviews__help">
@@ -73,9 +89,9 @@ function ReviewForm({ offerId }: ReviewFormProps) {
         <button
           className="reviews__submit form__submit button"
           type="submit"
-          disabled={!isValid || isSubmitting}
+          disabled={!isValid || isFormBlocked}
         >
-          {isSubmitting ? 'Submitting...' : 'Submit'}
+          {isFormBlocked ? 'Submitting...' : 'Submit'}
         </button>
       </div>
     </form>

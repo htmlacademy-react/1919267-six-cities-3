@@ -33,4 +33,13 @@ function formatDate(date: Date): string {
   return `${month} ${year}`;
 }
 
-export { capitalizeFirstLetter, addPluralEnding, formatDate };
+function getRandomArrayElement<T>(items: T[]): T {
+  return items[Math.floor(Math.random() * items.length)];
+}
+
+export {
+  capitalizeFirstLetter,
+  addPluralEnding,
+  formatDate,
+  getRandomArrayElement,
+};

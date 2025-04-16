@@ -33,7 +33,11 @@ function MainPage() {
       {fetchingStatus === RequestStatus.Loading && <Loader />}
       <Header />
 
-      <main className="page__main page__main--index">
+      <main
+        className={`page__main page__main--index ${
+          !currentOffers.length && 'page__main--index-empty'
+        }`}
+      >
         <h1 className="visually-hidden">Cities</h1>
         <Tabs currentCity={currentCity} />
         <div className="cities">

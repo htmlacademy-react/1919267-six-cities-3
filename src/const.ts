@@ -1,9 +1,5 @@
 import { Size } from './types/size';
 
-const Settings = {
-  PlacesCount: 5,
-} as const;
-
 enum AppRoute {
   Root = '/',
   Login = '/login',
@@ -78,6 +74,7 @@ const URL_MARKER_DEFAULT = 'img/pin.svg';
 const URL_MARKER_CURRENT = 'img/pin-active.svg';
 
 const MAX_NEARBY_OFFERS_COUNT = 3;
+const MAX_OFFER_PHOTOS_COUNT = 6;
 const MAX_SHOWN_REVIEWS = 10;
 
 enum APIRoute {
@@ -117,11 +114,6 @@ const HttpStatus = {
   NotFound: 404,
 } as const;
 
-const enum FavoriteStatus {
-  Added = 1,
-  Deleted = 0,
-}
-
 enum Sorting {
   Popular = 'Popular',
   LowToHigh = 'Price: low to high',
@@ -131,10 +123,13 @@ enum Sorting {
 
 const DEFAULT_SORTING_OPTION = Sorting['Popular'];
 
-const ACTION_TYPE_REDIRECT = 'app/redirectToRoute';
+enum FavoritesStatus {
+  Removed,
+  Added,
+}
 
 export {
-  Settings,
+  MAX_OFFER_PHOTOS_COUNT,
   AppRoute,
   AuthorizationStatus,
   Cities,
@@ -157,6 +152,5 @@ export {
   NameSpace,
   HttpStatus,
   CityMap,
-  FavoriteStatus,
-  ACTION_TYPE_REDIRECT,
+  FavoritesStatus,
 };

@@ -5,6 +5,7 @@ import { RatingNumber, RatingString } from '../../types/rating';
 
 type ReviewFormRatingProps = {
   register: UseFormRegister<ReviewFormInputs>;
+  isDisabled: boolean;
 };
 
 const ratingMap: Array<{ title: RatingString; value: RatingNumber }> = [
@@ -15,7 +16,7 @@ const ratingMap: Array<{ title: RatingString; value: RatingNumber }> = [
   { title: 'terribly', value: 1 },
 ];
 
-function ReviewFormRating({ register }: ReviewFormRatingProps) {
+function ReviewFormRating({ register, isDisabled }: ReviewFormRatingProps) {
   return (
     <div className="reviews__rating-form form__rating">
       {ratingMap.map(({ title, value }) => (
@@ -26,6 +27,7 @@ function ReviewFormRating({ register }: ReviewFormRatingProps) {
             value={value}
             id={`${value}-stars`}
             type="radio"
+            disabled={isDisabled}
           />
           <label
             htmlFor={`${value}-stars`}

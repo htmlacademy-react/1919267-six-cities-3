@@ -1,17 +1,16 @@
 import { useRef, useEffect } from 'react';
-import { Icon, LayerGroup, layerGroup, marker } from 'leaflet';
+import leaflet, { Icon } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { City } from '../../types/city';
 import { Offer } from '../../types/offer';
 import useMap from '../../hooks/use-map';
 import { URL_MARKER_DEFAULT, URL_MARKER_CURRENT } from '../../const';
-import { useAppSelector } from '../../hooks';
-import { selectActiveId } from '../../store/offers-data/selectors';
 
 type MapProps = {
   city: City;
   offers: Offer[];
   className: string;
+  hoveredOfferId?: Offer['id'] | null;
 };
 
 const defaultCustomIcon = new Icon({
@@ -26,34 +25,41 @@ const currentCustomIcon = new Icon({
   iconAnchor: [20, 40],
 });
 
-function Map({ city, offers, className }: MapProps): JSX.Element {
-  const mapRef = useRef<HTMLElement>(null);
-  const map = useMap({ location: city?.location, mapRef });
-  const markerLayer = useRef<LayerGroup>(layerGroup());
-  const hoveredOfferId = useAppSelector(selectActiveId);
+function Map({
+  city,
+  offers,
+  className,
+  hoveredOfferId,
+}: MapProps): JSX.Element {
+  const mapRef = useRef<HTMLDivElement | null>(null);
+  const map = useMap({ city, mapRef });
 
   useEffect(() => {
     if (map) {
-      map.flyTo(
-        [city.location.latitude, city.location.longitude],
-        city.location.zoom
-      );
-      markerLayer.current.addTo(map);
-      markerLayer.current.clearLayers();
-    }
-  }, [city, map]);
+      const markerLayer = leaflet.layerGroup().addTo(map);
 
-  useEffect(() => {
-    if (map) {
-      offers.forEach((offer) => {
-        marker([offer?.location.latitude, offer?.location.longitude])
-          .setIcon(
-            offer.id === hoveredOfferId ? currentCustomIcon : defaultCustomIcon
-          )
-          .addTo(markerLayer.current);
+      offers.forEach((point) => {
+        const marker = leaflet.marker(
+          {
+            lat: point.location.latitude,
+            lng: point.location.longitude,
+          },
+          {
+            icon:
+              point.id === hoveredOfferId
+                ? currentCustomIcon
+                : defaultCustomIcon,
+          }
+        );
+
+        marker.addTo(markerLayer);
       });
+
+      return () => {
+        map.removeLayer(markerLayer);
+      };
     }
-  }, [map, offers, hoveredOfferId]);
+  }, [city, map, hoveredOfferId, offers]);
 
   return (
     <section

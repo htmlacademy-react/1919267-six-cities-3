@@ -39,8 +39,8 @@ export const offersData = createSlice({
         state.offers.map((item) => ({
           ...item,
           isFavorite:
-            item.id === action.payload.id
-              ? action.payload.isFavorite
+            item.id === action.payload.offer.id
+              ? Boolean(action.payload.status)
               : item.isFavorite,
         }));
       });

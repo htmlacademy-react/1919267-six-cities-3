@@ -6,7 +6,9 @@ import { DEFAULT_SORTING_OPTION, Sorting } from '../../const';
 import Map from '../map/map';
 import { sorting } from '../../utils/offer';
 import OffersList from '../offers-list/offers-list';
-import { SortingForm } from '../sorting-form/sorting-form';
+import SortingForm from '../sorting-form/sorting-form';
+import { useAppSelector } from '../../hooks';
+import { selectActiveId } from '../../store/offers-data/selectors';
 
 type MainBlockProps = {
   currentLocation: City;
@@ -14,6 +16,7 @@ type MainBlockProps = {
 };
 
 function MainBlock({ currentLocation, currentOffers }: MainBlockProps) {
+  const activeId = useAppSelector(selectActiveId);
   const [activeSorting, setActiveSorting] = useState<Sorting>(
     DEFAULT_SORTING_OPTION
   );
@@ -46,6 +49,7 @@ function MainBlock({ currentLocation, currentOffers }: MainBlockProps) {
           offers={currentOffers}
           city={currentLocation}
           className={'cities__map'}
+          hoveredOfferId={activeId}
         />
       </div>
     </>

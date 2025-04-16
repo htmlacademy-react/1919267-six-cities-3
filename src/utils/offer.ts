@@ -2,7 +2,7 @@ import { Sorting } from '../const';
 import { Offer } from '../types/offer';
 
 function getRatingWidth(rating: number | undefined) {
-  return rating ? `${rating / 0.05}%` : '0%';
+  return rating ? `${Math.round(rating) / 0.05}%` : '0%';
 }
 
 function groupOffersByLocation(items: Offer[]): Record<string, Offer[]> {
