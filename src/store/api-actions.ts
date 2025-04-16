@@ -4,7 +4,7 @@ import { AxiosError, AxiosInstance } from 'axios';
 import { Offer } from '../types/offer';
 import { TLoginData } from '../types/login-data';
 import { TUser } from '../types/user';
-import { APIRoute, HttpStatus } from '../const';
+import { APIRoute, FavoritesStatus, HttpStatus } from '../const';
 import { setToken, dropToken } from '../services/token';
 import { ReviewData, Review } from '../types/review';
 import { UpdateFavoriteStatus } from '../types/update-favorite-status';
@@ -13,6 +13,11 @@ type Extra = {
   dispatch: AppDispatch;
   state: State;
   extra: AxiosInstance;
+};
+
+type ChangeResponse = {
+  offer: Offer;
+  status: FavoritesStatus;
 };
 
 export const fetchOffers = createAsyncThunk<Offer[], undefined, Extra>(
@@ -69,14 +74,14 @@ export const fetchFavoriteOffers = createAsyncThunk<Offer[], undefined, Extra>(
 );
 
 export const updateFavoriteStatus = createAsyncThunk<
-  Offer,
+  ChangeResponse,
   UpdateFavoriteStatus,
   Extra
 >('favorites/updateFavoriteStatus', async ({ id, status }, { extra: api }) => {
   const { data } = await api.post<Offer>(
     `${APIRoute.Favorite}/${id}/${status}`
   );
-  return data;
+  return { offer: data, status };
 });
 
 export const checkAuth = createAsyncThunk<TUser, undefined, Extra>(

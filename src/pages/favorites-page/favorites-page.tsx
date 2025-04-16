@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import Header from '../../components/header/header';
-import { useAppSelector } from '../../hooks';
+import { useAppDispatch, useAppSelector } from '../../hooks';
 import { groupOffersByLocation } from '../../utils/offer';
 import FavoritesListBlock from '../../components/favorites-list-block/favorites-list-block';
 import FavoritesEmptyBlock from '../../components/favorites-empty-block/favorites-empty-block';
@@ -11,12 +11,19 @@ import {
 } from '../../store/favorites-data/selectors';
 import { RequestStatus } from '../../const';
 import Loader from '../../components/loader/loader';
+import { useEffect } from 'react';
+import { fetchFavoriteOffers } from '../../store/api-actions';
 
 function FavoritesPage() {
+  const dispatch = useAppDispatch();
   const favorites = useAppSelector(selectFavorites);
   const favoritesByLocation = groupOffersByLocation(favorites);
   const hasFavorites = Boolean(favorites?.length);
   const favoritesFetchingStatus = useAppSelector(selectFetchingFavoritesStatus);
+
+  useEffect(() => {
+    dispatch(fetchFavoriteOffers());
+  }, [dispatch]);
 
   return (
     <div className={hasFavorites ? 'page' : 'page page--favorites-empty'}>

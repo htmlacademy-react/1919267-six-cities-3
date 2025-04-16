@@ -5,13 +5,12 @@ import { City } from '../../types/city';
 import { Offer } from '../../types/offer';
 import useMap from '../../hooks/use-map';
 import { URL_MARKER_DEFAULT, URL_MARKER_CURRENT } from '../../const';
-import { useAppSelector } from '../../hooks';
-import { selectActiveId } from '../../store/offers-data/selectors';
 
 type MapProps = {
   city: City;
   offers: Offer[];
   className: string;
+  hoveredOfferId?: Offer['id'] | null;
 };
 
 const defaultCustomIcon = new Icon({
@@ -26,10 +25,14 @@ const currentCustomIcon = new Icon({
   iconAnchor: [20, 40],
 });
 
-function Map({ city, offers, className }: MapProps): JSX.Element {
+function Map({
+  city,
+  offers,
+  className,
+  hoveredOfferId,
+}: MapProps): JSX.Element {
   const mapRef = useRef<HTMLDivElement | null>(null);
   const map = useMap({ city, mapRef });
-  const hoveredOfferId = useAppSelector(selectActiveId);
 
   useEffect(() => {
     if (map) {

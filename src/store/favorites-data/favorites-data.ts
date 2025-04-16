@@ -30,7 +30,7 @@ export const favoritesData = createSlice({
       })
       .addCase(updateFavoriteStatus.fulfilled, (state, action) => {
         const toBeRemoved = action.meta.arg.status === 0;
-        const { id, isFavorite } = action.payload;
+        const { id, isFavorite } = action.payload.offer;
 
         state.favorites.forEach((item) => {
           if (item.id === id) {
@@ -40,10 +40,10 @@ export const favoritesData = createSlice({
 
         if (toBeRemoved) {
           state.favorites = state.favorites.filter(
-            (item) => item.id !== action.payload.id
+            (item) => item.id !== action.payload.offer.id
           );
         } else {
-          state.favorites = [...state.favorites, action.payload];
+          state.favorites = [...state.favorites, action.payload.offer];
         }
       })
       .addCase(logout.fulfilled, (state) => {

@@ -16,7 +16,11 @@ import {
   fetchNearbyOffers,
   fetchReviews,
 } from '../../store/api-actions';
-import { MAX_NEARBY_OFFERS_COUNT, RequestStatus } from '../../const';
+import {
+  MAX_NEARBY_OFFERS_COUNT,
+  MAX_OFFER_PHOTOS_COUNT,
+  RequestStatus,
+} from '../../const';
 import {
   selectActiveOffer,
   selectOfferFetchingStatus,
@@ -82,6 +86,7 @@ function OfferPage() {
   } = currentOffer;
 
   const { name: hostName, isPro, avatarUrl } = currentOffer.host;
+  const offersforMap = [currentOffer, ...nearbyOffersToRender];
 
   return (
     <div className="page">
@@ -94,7 +99,7 @@ function OfferPage() {
         <section className="offer">
           <div className="offer__gallery-container container">
             <div className="offer__gallery">
-              {images.map((image) => (
+              {images.slice(0, MAX_OFFER_PHOTOS_COUNT).map((image) => (
                 <div className="offer__image-wrapper" key={image}>
                   <img
                     className="offer__image"
@@ -176,7 +181,8 @@ function OfferPage() {
           </div>
           <Map
             city={city}
-            offers={[...nearbyOffersToRender, currentOffer]}
+            offers={offersforMap}
+            hoveredOfferId={offerId}
             className="offer__map"
           />
         </section>
