@@ -1,5 +1,5 @@
 import { City } from './city';
-import { Location } from './location';
+import { TLocation } from './location';
 
 export type OfferPreview = {
   id: string;
@@ -7,10 +7,10 @@ export type OfferPreview = {
   goods: string[];
   isFavorite: boolean;
   isPremium: boolean;
-  location: Location;
+  location: TLocation;
   previewImage: string;
   price: number;
   rating: number;
   title: string;
   type: string;
-}
+};
