@@ -6,13 +6,13 @@ import {
   selectAuthorizationStatus,
   selectUserData,
 } from '../../store/user-data/selectors';
-import { selectFavorites } from '../../store/favorites-data/selectors';
+import { useFavoriteCount } from '../../hooks/use-favorites-count';
 
 function HeaderNavigation() {
   const dispatch = useAppDispatch();
   const authorizationStatus = useAppSelector(selectAuthorizationStatus);
 
-  const favoritesCount = useAppSelector(selectFavorites)?.length;
+  const favoritesCount = useFavoriteCount();
   const user = useAppSelector(selectUserData);
 
   function onLogoutClickHandler() {
