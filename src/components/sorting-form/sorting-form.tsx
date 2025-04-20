@@ -50,6 +50,7 @@ function SortingForm({
         className="places__sorting-type"
         tabIndex={0}
         onClick={handleTypeClick}
+        data-testid="active-sorting"
       >
         {activeSorting}
         <svg

@@ -1,7 +1,8 @@
+/* eslint-disable indent */
 import { createSlice } from '@reduxjs/toolkit';
 import { NameSpace, RequestStatus } from '../../const';
 import { OfferData } from '../../types/state';
-import { fetchActiveOffer } from '../api-actions';
+import { fetchActiveOffer, updateFavoriteStatus } from '../api-actions';
 
 const initialState: OfferData = {
   activeOffer: null,
@@ -27,6 +28,15 @@ export const offerData = createSlice({
       })
       .addCase(fetchActiveOffer.rejected, (state) => {
         state.offerFetchingStatus = RequestStatus.Error;
+      })
+      .addCase(updateFavoriteStatus.fulfilled, (state, action) => {
+        state.activeOffer =
+          state.activeOffer?.id === action.payload.offer.id
+            ? {
+                ...state.activeOffer,
+                isFavorite: !state.activeOffer?.isFavorite,
+              }
+            : state.activeOffer;
       });
   },
 });

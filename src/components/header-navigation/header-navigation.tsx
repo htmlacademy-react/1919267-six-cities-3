@@ -6,13 +6,14 @@ import {
   selectAuthorizationStatus,
   selectUserData,
 } from '../../store/user-data/selectors';
-import { selectFavorites } from '../../store/favorites-data/selectors';
+import { useFavoritesCount } from '../../hooks/use-favorites-count';
+import { memo } from 'react';
 
 function HeaderNavigation() {
   const dispatch = useAppDispatch();
   const authorizationStatus = useAppSelector(selectAuthorizationStatus);
 
-  const favoritesCount = useAppSelector(selectFavorites)?.length;
+  const favoritesCount = useFavoritesCount();
   const user = useAppSelector(selectUserData);
 
   function onLogoutClickHandler() {
@@ -20,7 +21,7 @@ function HeaderNavigation() {
   }
 
   return (
-    <nav className="header__nav">
+    <nav className="header__nav" data-testid="header-nav">
       <ul className="header__nav-list">
         <li className="header__nav-item user">
           {authorizationStatus === AuthorizationStatus.Auth ? (
@@ -35,7 +36,10 @@ function HeaderNavigation() {
                   alt="avatar"
                 />
               </div>
-              <span className="header__user-name user__name">
+              <span
+                className="header__user-name user__name"
+                data-testid="user-name"
+              >
                 {user?.email}
               </span>
               <span className="header__favorite-count">{favoritesCount}</span>
@@ -66,4 +70,5 @@ function HeaderNavigation() {
   );
 }
 
-export default HeaderNavigation;
+const MemoizedCard = memo(HeaderNavigation);
+export default MemoizedCard;

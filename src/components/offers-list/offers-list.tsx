@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { useAppDispatch } from '../../hooks';
 import { setActiveId } from '../../store/offers-data/offers-data';
 import { Offer } from '../../types/offer';
@@ -9,13 +10,16 @@ type OffersListProps = {
 
 function OffersList({ currentOffers }: OffersListProps) {
   const dispatch = useAppDispatch();
-  const handleMouseEnter = (offerId: Offer['id']) => {
-    dispatch(setActiveId(offerId));
-  };
+  const handleMouseEnter = useCallback(
+    (offerId: Offer['id']) => {
+      dispatch(setActiveId(offerId));
+    },
+    [dispatch]
+  );
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     dispatch(setActiveId(undefined));
-  };
+  }, [dispatch]);
 
   return (
     <div className="cities__places-list places__list tabs__content">

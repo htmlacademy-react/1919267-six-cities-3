@@ -28,7 +28,11 @@ export const favoritesData = createSlice({
       .addCase(fetchFavoriteOffers.rejected, (state) => {
         state.favoritesFetchingStatus = RequestStatus.Error;
       })
+      .addCase(updateFavoriteStatus.pending, (state) => {
+        state.favoritesFetchingStatus = RequestStatus.Loading;
+      })
       .addCase(updateFavoriteStatus.fulfilled, (state, action) => {
+        state.favoritesFetchingStatus = RequestStatus.Success;
         const toBeRemoved = action.meta.arg.status === 0;
         const { id, isFavorite } = action.payload.offer;
 
@@ -48,6 +52,9 @@ export const favoritesData = createSlice({
       })
       .addCase(logout.fulfilled, (state) => {
         state.favorites = [];
+      })
+      .addCase(updateFavoriteStatus.rejected, (state) => {
+        state.favoritesFetchingStatus = RequestStatus.Error;
       });
   },
 });

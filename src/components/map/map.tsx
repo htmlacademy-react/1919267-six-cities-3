@@ -72,6 +72,7 @@ function Map({
         margin: '0 auto',
       }}
       ref={mapRef}
+      data-testid="map"
     />
   );
 }

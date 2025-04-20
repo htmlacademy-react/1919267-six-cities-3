@@ -36,13 +36,11 @@ export const offersData = createSlice({
         state.offersFetchingStatus = RequestStatus.Error;
       })
       .addCase(updateFavoriteStatus.fulfilled, (state, action) => {
-        state.offers.map((item) => ({
-          ...item,
-          isFavorite:
-            item.id === action.payload.offer.id
-              ? Boolean(action.payload.status)
-              : item.isFavorite,
-        }));
+        state.offers = state.offers.map((offer) =>
+          offer.id === action.payload.offer.id
+            ? { ...offer, isFavorite: !offer.isFavorite }
+            : offer
+        );
       });
   },
 });

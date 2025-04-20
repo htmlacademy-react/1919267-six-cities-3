@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import { AppRoute, CityMap } from '../../const';
 import { useAppDispatch } from '../../hooks';
 
@@ -6,6 +5,7 @@ import cn from 'classnames';
 import { Link } from 'react-router-dom';
 import { setCurrentCity } from '../../store/offers-data/offers-data';
 import { City } from '../../types/city';
+import { memo } from 'react';
 
 type TabsProps = {
   currentCity: City;
@@ -13,7 +13,7 @@ type TabsProps = {
 
 function Tabs({ currentCity }: TabsProps) {
   const dispatch = useAppDispatch();
-  const cities = useMemo(() => Object.values(CityMap), []);
+  const cities = Object.values(CityMap);
 
   const handleTabClick = (city: City) => {
     dispatch(setCurrentCity(city));
@@ -45,4 +45,5 @@ function Tabs({ currentCity }: TabsProps) {
   );
 }
 
-export default Tabs;
+const MemoizedTabs = memo(Tabs);
+export default MemoizedTabs;

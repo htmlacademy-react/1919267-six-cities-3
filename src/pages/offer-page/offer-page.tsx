@@ -83,6 +83,7 @@ function OfferPage() {
     rating,
     description,
     city,
+    isFavorite,
   } = currentOffer;
 
   const { name: hostName, isPro, avatarUrl } = currentOffer.host;
@@ -95,7 +96,7 @@ function OfferPage() {
       </Helmet>
       <Header />
 
-      <main className="page__main page__main--offer">
+      <main className="page__main page__main--offer" data-testid="offer-page">
         <section className="offer">
           <div className="offer__gallery-container container">
             <div className="offer__gallery">
@@ -115,7 +116,12 @@ function OfferPage() {
               {isPremium && <PremiumMark block="offer" isPremium={isPremium} />}
               <div className="offer__name-wrapper">
                 <h1 className="offer__name">{title}</h1>
-                <BookmarkButton id={offerId} block="offer" size="large" />
+                <BookmarkButton
+                  id={offerId}
+                  block="offer"
+                  size="large"
+                  isFavorite={isFavorite}
+                />
               </div>
               <div className="offer__rating rating">
                 <div className="offer__stars rating__stars">
