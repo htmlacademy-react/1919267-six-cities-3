@@ -52,6 +52,9 @@ export const favoritesData = createSlice({
       })
       .addCase(logout.fulfilled, (state) => {
         state.favorites = [];
+      })
+      .addCase(updateFavoriteStatus.rejected, (state) => {
+        state.favoritesFetchingStatus = RequestStatus.Error;
       });
   },
 });
