@@ -1,16 +1,12 @@
-import { ReactElement, ReactNode } from 'react';
-import userEvent from '@testing-library/user-event';
-import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 
-export const renderWithRouter = (
-  ui: ReactElement<ReactNode>,
-  { route = '/' } = {}
-) => {
-  window.history.pushState({}, 'Test page', route);
-
+export function withRouterAndHelmet(component: JSX.Element) {
   return {
-    user: userEvent.setup(),
-    ...render(ui, { wrapper: BrowserRouter }),
+    withRouterComponent: (
+      <BrowserRouter>
+        <HelmetProvider>{component}</HelmetProvider>
+      </BrowserRouter>
+    ),
   };
-};
+}

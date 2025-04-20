@@ -96,7 +96,7 @@ function OfferPage() {
       </Helmet>
       <Header />
 
-      <main className="page__main page__main--offer">
+      <main className="page__main page__main--offer" data-testid="offer-page">
         <section className="offer">
           <div className="offer__gallery-container container">
             <div className="offer__gallery">

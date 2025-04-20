@@ -36,6 +36,7 @@ function FavoritesPage() {
         className={`page__main page__main--favorites ${
           hasFavorites ? '' : 'page__main--favorites-empty'
         }`}
+        data-testid="favorites-page"
       >
         <div className="page__favorites-container container">
           {hasFavorites ? (

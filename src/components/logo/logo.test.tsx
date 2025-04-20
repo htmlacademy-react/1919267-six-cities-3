@@ -1,12 +1,18 @@
-import { screen } from '@testing-library/react';
-import { renderWithRouter } from '../../mock-components/with-router';
+import { render, screen } from '@testing-library/react';
 import Logo from './logo';
+import { withStore } from '../../mock-components/with-store';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('Component: Logo', () => {
   it('should render correctly', () => {
     const expectedAltText = '6 cities logo';
-    renderWithRouter(<Logo block="footer" size="small" />);
+    const { withStoreComponent } = withStore(
+      <BrowserRouter>
+        <Logo block="footer" size="small" />
+      </BrowserRouter>
+    );
 
+    render(withStoreComponent);
     expect(screen.getByAltText(expectedAltText)).toBeInTheDocument();
   });
 });

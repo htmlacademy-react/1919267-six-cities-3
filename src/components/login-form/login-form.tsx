@@ -44,6 +44,7 @@ function LoginForm() {
             {...register('email', {
               required: true,
             })}
+            data-testid="emailElement"
           />
         </div>
         <div className="login__input-wrapper form__input-wrapper">
@@ -57,6 +58,7 @@ function LoginForm() {
               required: true,
               pattern: /^(?=.*[0-9])(?=.*[a-zA-Z]).{2,}$/i,
             })}
+            data-testid="passwordElement"
           />
           {errors.password && (
             <p className={styles.errorMessage}>
