@@ -15,6 +15,6 @@ describe('Component: ReviewItem', () => {
       />
     );
 
-    expect(screen.getByText(mockReview.comment)).toBeInTheDocument();
+    expect(screen.getByText(mockReview.user.name)).toBeInTheDocument();
   });
 });

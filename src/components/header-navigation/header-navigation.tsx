@@ -6,14 +6,14 @@ import {
   selectAuthorizationStatus,
   selectUserData,
 } from '../../store/user-data/selectors';
-import { useFavoriteCount } from '../../hooks/use-favorites-count';
+import { useFavoritesCount } from '../../hooks/use-favorites-count';
 import { memo } from 'react';
 
 function HeaderNavigation() {
   const dispatch = useAppDispatch();
   const authorizationStatus = useAppSelector(selectAuthorizationStatus);
 
-  const favoritesCount = useFavoriteCount();
+  const favoritesCount = useFavoritesCount();
   const user = useAppSelector(selectUserData);
 
   function onLogoutClickHandler() {

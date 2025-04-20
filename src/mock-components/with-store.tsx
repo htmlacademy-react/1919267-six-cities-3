@@ -8,7 +8,7 @@ import { AppThunkDispatch } from '../test-mocks/test-mocks';
 import { State } from '../types/state';
 
 type ComponentWithMockStore = {
-  withStoreComponent: JSX.Element;
+  withStoreComponent: React.ReactElement;
   mockStore: MockStore;
   mockAxiosAdapter: MockAdapter;
 };

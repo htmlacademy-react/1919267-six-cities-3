@@ -8,7 +8,7 @@ import {
 import { RequestStatus } from '../const';
 import { fetchFavoriteOffers } from '../store/api-actions';
 
-export const useFavoriteCount = () => {
+export const useFavoritesCount = () => {
   const dispatch = useAppDispatch();
   const favoritesStatus = useAppSelector(selectFetchingFavoritesStatus);
   const count = useAppSelector(selectFavorites).length;
