@@ -41,27 +41,27 @@ const LogoSize: Size = {
 const CityMap = {
   Paris: {
     name: Cities.Paris,
-    location: { latitude: 48.8566, longitude: 2.3522, zoom: 13 },
+    location: { latitude: 48.85661, longitude: 2.351499, zoom: 13 },
   },
   Cologne: {
     name: Cities.Cologne,
-    location: { latitude: 50.935173, longitude: 6.953101, zoom: 13 },
+    location: { latitude: 50.938361, longitude: 6.959974, zoom: 13 },
   },
   Brussels: {
     name: Cities.Brussels,
-    location: { latitude: 50.8476, longitude: 4.3572, zoom: 13 },
+    location: { latitude: 50.846557, longitude: 4.351697, zoom: 13 },
   },
   Amsterdam: {
     name: Cities.Amsterdam,
-    location: { latitude: 52.3676, longitude: 4.9041, zoom: 13 },
+    location: { latitude: 52.37454, longitude: 4.897976, zoom: 13 },
   },
   Hamburg: {
     name: Cities.Hamburg,
-    location: { latitude: 53.5488, longitude: 9.9872, zoom: 13 },
+    location: { latitude: 53.550341, longitude: 10.000654, zoom: 13 },
   },
   Dusseldorf: {
     name: Cities.Dusseldorf,
-    location: { latitude: 51.2277, longitude: 6.7735, zoom: 13 },
+    location: { latitude: 51.225402, longitude: 6.776314, zoom: 13 },
   },
 } as const;
 

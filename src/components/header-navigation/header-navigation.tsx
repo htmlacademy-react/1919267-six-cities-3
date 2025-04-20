@@ -7,6 +7,7 @@ import {
   selectUserData,
 } from '../../store/user-data/selectors';
 import { useFavoriteCount } from '../../hooks/use-favorites-count';
+import { memo } from 'react';
 
 function HeaderNavigation() {
   const dispatch = useAppDispatch();
@@ -66,4 +67,5 @@ function HeaderNavigation() {
   );
 }
 
-export default HeaderNavigation;
+const MemoizedCard = memo(HeaderNavigation);
+export default MemoizedCard;
