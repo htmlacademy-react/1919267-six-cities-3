@@ -21,7 +21,7 @@ function HeaderNavigation() {
   }
 
   return (
-    <nav className="header__nav">
+    <nav className="header__nav" data-testid="header-nav">
       <ul className="header__nav-list">
         <li className="header__nav-item user">
           {authorizationStatus === AuthorizationStatus.Auth ? (
@@ -36,7 +36,10 @@ function HeaderNavigation() {
                   alt="avatar"
                 />
               </div>
-              <span className="header__user-name user__name">
+              <span
+                className="header__user-name user__name"
+                data-testid="user-name"
+              >
                 {user?.email}
               </span>
               <span className="header__favorite-count">{favoritesCount}</span>

@@ -18,7 +18,10 @@ const ratingMap: Array<{ title: RatingString; value: RatingNumber }> = [
 
 function ReviewFormRating({ register, isDisabled }: ReviewFormRatingProps) {
   return (
-    <div className="reviews__rating-form form__rating">
+    <div
+      className="reviews__rating-form form__rating"
+      data-testid="form-rating"
+    >
       {ratingMap.map(({ title, value }) => (
         <Fragment key={value}>
           <input

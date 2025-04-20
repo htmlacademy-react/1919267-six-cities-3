@@ -65,6 +65,7 @@ export const makeFakeFullOffer = (): Offer =>
     type: faker.lorem.word(),
     price: faker.datatype.number(500),
     location: Location,
+    title: faker.lorem.words(3),
     isFavorite: faker.datatype.boolean(),
     isPremium: faker.datatype.boolean(),
     rating: faker.datatype.number({ min: 1, max: 5 }),

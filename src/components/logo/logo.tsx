@@ -7,7 +7,7 @@ type LogoProps = {
   size: keyof Size;
 };
 
-function Logo({ block, size }: LogoProps) {
+function Logo({ block = 'header', size = 'small' }: LogoProps) {
   return (
     <Link
       to={AppRoute.Root}

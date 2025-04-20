@@ -3,6 +3,7 @@ import { AuthorizationStatus, RequestStatus } from '../../const';
 import { render, screen } from '@testing-library/react';
 import BookmarkButton from './bookmark-button';
 import { withStore } from '../../mock-components/with-store';
+import { makeFakeFullOffer } from '../../test-mocks/test-mocks';
 
 describe('Component: BookmarkButton', () => {
   it('renders correct label when user is logged in', () => {
@@ -16,6 +17,10 @@ describe('Component: BookmarkButton', () => {
           user: null,
           authorizationStatus: AuthorizationStatus.Auth,
           loginSendingStatus: RequestStatus.Success,
+        },
+        FAVORITES_DATA: {
+          favorites: [makeFakeFullOffer()],
+          favoritesFetchingStatus: RequestStatus.Success,
         },
       }
     );
@@ -34,6 +39,10 @@ describe('Component: BookmarkButton', () => {
           user: null,
           authorizationStatus: AuthorizationStatus.Auth,
           loginSendingStatus: RequestStatus.Success,
+        },
+        FAVORITES_DATA: {
+          favorites: [],
+          favoritesFetchingStatus: RequestStatus.Idle,
         },
       }
     );

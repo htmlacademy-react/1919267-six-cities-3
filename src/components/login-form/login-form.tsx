@@ -27,7 +27,9 @@ function LoginForm() {
   };
   return (
     <section className="login">
-      <h1 className="login__title">Sign in</h1>
+      <h1 className="login__title" data-testid="login-title">
+        Sign in
+      </h1>
       <form
         className="login__form form"
         method="post"
